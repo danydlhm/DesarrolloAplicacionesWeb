@@ -76,16 +76,18 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h9 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse1"><img id="imagenProfesor" src="http://images.eldiario.es/hojaderouter/Imagen-aparece-Facebook-usuario-perfil_EDIIMA20140628_0051_5.jpg" alt="sombra de profesor" class="img-circle"> LogIn</a>
+                                        <a data-toggle="collapse" href="#collapse1"><img id="imagenProfesor" src="http://images.eldiario.es/hojaderouter/Imagen-aparece-Facebook-usuario-perfil_EDIIMA20140628_0051_5.jpg" alt="sombra de profesor" class="img-circle"> Registrarse</a>
                                     </h9>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><input type="text" class="form-control" placeholder="Nombre de Usuario" aria-describedby="basic-addon1"></li>
-                                        <li class="list-group-item"><input type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1"></li>
-                                        <li class="list-group-item"><a href="#"><button class="btn btn-success" type="button" id="botonRegistro">Entrar</button></a></li>
-                                        <li class="list-group-item"><a href="#">Registrarse</a></li>
-                                    </ul>
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item"><input type="text" class="form-control" placeholder="Nombre de Usuario" aria-describedby="basic-addon1"></li>
+                                            <li class="list-group-item"><input type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1"></li>
+                                            <li class="list-group-item"><a href="user.html"><button class="btn btn-success" type="button" id="botonRegistro">Entrar</button></a></li>
+                                            <li class="list-group-item"><a href="#modalSignup" class="portfolio-link" data-toggle="modal">Nueva Cuenta</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -493,6 +495,125 @@
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
+    <!-- Registro -->
+    <div class="portfolio-modal modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Servicios Telematicos</h2>
+                            <p class="item-intro text-muted">Registro de nuevo usuario</p>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Email:</label>
+                                        <div class="col-xs-9">
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Password:</label>
+                                        <div class="col-xs-9">
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Confirmar Password:</label>
+                                        <div class="col-xs-9">
+                                            <input type="password" class="form-control" placeholder="Confirmar Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Nombre:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Apellido:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3" >Telefono:</label>
+                                        <div class="col-xs-9">
+                                            <input type="tel" class="form-control" placeholder="Telefono">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">F. Nacimiento:</label>
+                                        <div class="col-xs-3">
+                                            <select class="form-control">
+                                                <option>Dia</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <select class="form-control">
+                                                <option>Mes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <select class="form-control">
+                                                <option>Año</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Dirección:</label>
+                                        <div class="col-xs-9">
+                                            <textarea rows="3" class="form-control" placeholder="Dirección"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Genero:</label>
+                                        <div class="col-xs-2">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="genderRadios" value="male"> Maculino
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="genderRadios" value="female"> Femenino
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="news"> Enviar noticias.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="agree">  Accepto <a href="#">Terminos y condiciones</a>.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <input type="submit" class="btn btn-primary" value="Enviar">
+                                            <input type="reset" class="btn btn-default" value="Limpiar">
+                                        </div>
+                                    </div>
+                                </form>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">

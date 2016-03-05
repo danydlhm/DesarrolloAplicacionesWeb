@@ -8,7 +8,7 @@ p{font-size:14px;line-height:1.75}
 
 p.large{font-size:16px}
 
-a,a:hover,a:focus,a:active,a.active{outline:0}
+a,a:hover,a:focus,a:active,a.active{outline:0;text-decoration:none}
 
 a{color:#0001E8}
 
@@ -52,11 +52,11 @@ h1,h2,h3,h4,h5,h6{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-s
 
 .navbar-default .navbar-toggle{background-color:#0001E8;border-color:#0001E8}
 
-.navbar-default .navbar-toggle .icon-bar{background-color:#fff}
+.navbar-default .navbar-toggle .icon-bar{background-color:#0001E8}
 
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#0001E8}
 
-.navbar-default .nav li a{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:400;letter-spacing:1px;color:#fff}
+.navbar-default .nav li a{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppercase;font-weight:400;letter-spacing:1px;color:coral}
 
 .navbar-default .nav li a:hover,.navbar-default .nav li a:focus{color:#0001E8;outline:0}
 
@@ -296,4 +296,107 @@ body{
   border: 1px round #000;
   font-size: .9em;
   text-align: center;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; /* Este es para Internet Explorer ¬¬, que de lo contrario no lo centrará (en los navegadores antiguos) */
+}
+
+#tabs{
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+#tabs li{
+  float: left;
+  margin: 0 .5em 0 0;
+}
+ 
+#tabs a{
+  position: relative;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  padding: .7em 3.5em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  border-radius: 5px 0 0 0;
+  box-shadow: 0 2px 2px rgba(0,0,0,.4);
+}
+ 
+#tabs a:hover,#tabs a:hover::after,#tabs a:focus,#tabs a:focus::after{
+  background: #fff;
+}
+ 
+#tabs a:focus{
+  outline: 0;
+}
+ 
+#tabs a::after{
+  content:'';
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  right: -.5em;
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  transform: skew(10deg);
+  border-radius: 0 5px 0 0;
+}
+ 
+#tabs #current a,#tabs #current a::after{
+  background: #fff;
+  z-index: 3;
+}
+ 
+#content{
+    background: #fff;
+    padding: 2em;
+    height: 220px;
+    position: relative;
+    z-index: 2;
+    border-radius: 0 5px 5px 5px;
+    box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+}
+
+.panel-faq{
+    border-color: #dddddd;
+}
+
+.panel-faq .panel-heading {
+    color: #333333;
+    background:#f5f5f5 url('/assets/img/faq-question.png') no-repeat 10px center;
+    padding-left: 45px;
+    border-color: #dddddd;
+}
+
+.panel-default > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #dddddd;
+}
+
+.panel-default > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #dddddd;
+}
+
+.panel-faq .panel-body {
+    background: #dddddd no-repeat 40px 20px;
+    padding-left: 75px;
+}
+
+.panel-faq .accordion-toggle, .panel-faq a.accordion-toggle:hover{
+    color:#428bca;
+    text-decoration:none;
+}
+
+.panel-faq .accordion-toggle.collapsed {
+    color:#333333;
 }
