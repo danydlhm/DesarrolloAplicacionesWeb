@@ -1,5 +1,26 @@
-
 #imagenLoggin {
     height: 25px;
     width: 20px;
+}
+
+#botones{
+    float: right;
+    bottom: 0.5em;
+}
+
+#logoMAD{
+    float: left;
+    bottom: 0.5em;
+}
+
+#colapso{
+    text-align: center;
+}
+
+a:link{   
+    text-decoration:none;   
+}
+
+.navbar-default .nav li a{
+    color: red;
 }
