@@ -32,6 +32,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="js/carrusel.js"></script>
 
 </head>
 
@@ -48,7 +50,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div id="logoMAD" class="col-xs-5 col-sm-3 col-md-2 col-lg-3"><a class="navbar-brand page-scroll" href="#page-top"><img class="img-responsive" src="img/Logo%20Web%20Madrid%20Naranja.png"></a></div>
+                    <div id="logoMAD" class="col-xs-5 col-sm-3 col-md-2 col-lg-3"><a class="navbar-brand page-scroll" href="#page-top"><img class="img-responsive" src="img/Logo%20Web%20Madrid%20Naranja.png" alt="logo de la pagina"></a></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,27 +76,10 @@
                         <a class="page-scroll" href="#contact">Contactanos</a>
                     </li>
                     <li>
-                        <div id="colapso" class="panel-group">
-                            <div class="panel panel-default">
-                                <a data-toggle="collapse" href="#collapse1">
-                                   <div class="panel-heading">
-                                    <h9 class="panel-title">
-                                        <img id="imagenLoggin" src="http://images.eldiario.es/hojaderouter/Imagen-aparece-Facebook-usuario-perfil_EDIIMA20140628_0051_5.jpg" alt="sombra de profesor" class="img-circle"> Registrarse
-                                    </h9>
-                                    </div>
-                                </a>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item"><input type="text" class="form-control" placeholder="Nombre de Usuario" aria-describedby="basic-addon1"></li>
-                                            <li class="list-group-item"><input type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1"></li>
-                                            <li class="list-group-item"><a href="user.html"><button class="btn btn-success" type="button" id="botonRegistro">Entrar</button></a></li>
-                                            <li class="list-group-item"><a href="#modalSignup" class="portfolio-link" data-toggle="modal">Nueva Cuenta</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a class="page-scroll portfolio-link" href="#modalSignup" data-toggle="modal">Registrarse</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll portfolio-link" href="#modalEntrar" data-toggle="modal">Entrar</a>
                     </li>
                 </ul>
             </div>
@@ -162,7 +147,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
+    <!-- Seccion de Noticias -->
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -173,92 +158,93 @@
             </div>
             <div class="row">
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <a href="#noticia1" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                            <img src="img/Noticias/CambioClimatico.jpg" class="img-responsive center-block" alt="europa iluminada">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Round Icons</h4>
-                            <p class="text-muted">Graphic Design</p>
+                            <h4>A oscuras por el cambio climático</h4>
+                            <p class="text-muted">El Ayuntamiento se suma a la Hora del Planeta de mañana sábado 19 de marzo que este año lleva por lema: “Ahora es el momento. Cambia por el clima”</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <a href="#noticia2" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                            <img src="img/Noticias/EMT.jpg" class="img-responsive center-block" alt="cocheras de la EMT">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Startup Framework</h4>
-                            <p class="text-muted">Website Design</p>
+                            <h4>La EMT recupera 20 millones y consigue cerrar 2015 sin pérdidas</h4>
+                            <p class="text-muted">La EMT presenta un balance positivo de 10 millones de euros, el mejor resultado de la última década</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <a href="#noticia3" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                            <img src="img/Noticias/Expomanga2016.jpg" class="img-responsive center-block" alt="cartel del Expomanga 2016">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Treehouse</h4>
-                            <p class="text-muted">Website Design</p>
+                            <h4>Expomanga 2016</h4>
+                            <p class="text-muted">Salón del Manga y de la Cultura Oriental de Madrid</p>
                         </div>
                     </div>
             </div>
             <div class="row">
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <a href="#noticia4" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                            <img src="img/Noticias/ExpoFiligranas.png" class="img-responsive center-block" alt="cartel de la exposicion">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Treehouse</h4>
-                            <p class="text-muted">Website Design</p>
+                            <h4>Exposición: Filigranas</h4>
+                            <p class="text-muted">Las huellas del agua</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <a href="#noticia5" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                            <img src="img/Noticias/ExpoJuliaMargaret.bmp" class="img-responsive center-block" alt="cartel de la exposicion">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Golden</h4>
-                            <p class="text-muted">Website Design</p>
+                            <h4>Exposición: Julia Margaret Cameron</h4>
+                            <p class="text-muted">Sin duda uno de los nombres más importantes e innovadores dentro de la fotografía del siglo XIX</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <a href="#noticia6" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                            <img src="img/Noticias/MadridOpen.jpg" class="img-responsive center-block" alt="cartel del Mutua Madrid Open">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Treehouse</h4>
-                            <p class="text-muted">Website Design</p>
+                            <h4>Torneo de Tenis</h4>
+                            <p class="text-muted">Mutua Madrid Open 2016</p>
                         </div>
                     </div>
             </div>
+            <hr>
             <div class="row text-center">
                 <script type='text/javascript' src='http://www.aemet.es/es/eltiempo/prediccion/municipios/launchwidget/madrid-id28079?w=g4p01110001ohmffffffw890z190x4f86d9t95b6e9r1s8n2'></script><noscript><a target='_blank' style='font-weight: bold;font-size: 1.20em;' href='http://www.aemet.es/es/eltiempo/prediccion/municipios/madrid-id28079'>El Tiempo de Madrid</a></noscript>
             </div>
@@ -271,77 +257,116 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Turismo</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Conoce tu Ciudad</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                    <li data-target="#carousel" data-slide-to="3"></li>
+                    <li data-target="#carousel" data-slide-to="4"></li>
+                    <li data-target="#carousel" data-slide-to="5"></li>
+                    <li data-target="#carousel" data-slide-to="6"></li>
+                    <li data-target="#carousel" data-slide-to="7"></li>
+                    <li data-target="#carousel" data-slide-to="8"></li>
+                    <li data-target="#carousel" data-slide-to="9"></li>
+                    <li data-target="#carousel" data-slide-to="10"></li>
+                    <li data-target="#carousel" data-slide-to="11"></li>
+                    <li data-target="#carousel" data-slide-to="12"></li>
+                  </ol>
+                <!-- Wrapper for slides -->
+                   <div class="carousel-inner" role="listbox">
+                     <div class="item active">
+                       <img class="img-thumbnail" src="img/Turismo/Atocha.jpg" alt="Foto de la estacion de Atocha en Madrid">
+                       <div class="carousel-caption">
+                          <h3>Atocha</h3>
+                       </div>
+                    </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/GranVia.jpg" alt="Foto de la Gran Via de Madrid">
+                       <div class="carousel-caption">
+                          <h3>Gran Via</h3>
+                       </div>
+                    </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/PalacioReal.jpg" alt="Foto del Palacio Real de Madrid">
+                       <div class="carousel-caption">
+                          <h3>Palacio Real</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/PlazaDeEspa%C3%B1a.jpg" alt="Foto de la Plaza de España en Madrid">
+                       <div class="carousel-caption">
+                          <h3>Plaza De España</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/PlazaMayor.jpg" alt="Foto de la Plaza Mayor de Madrid">
+                       <div class="carousel-caption">
+                          <h3>Plaza Mayor</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/PuertaDelSol.jpg" alt="Foto de la Puerta del Sol de Madrid">
+                       <div class="carousel-caption">
+                          <h3>Puerta Del Sol</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/TemploDeDebod.JPG" alt="Foto del Templo de Debod en Madrid">
+                       <div class="carousel-caption">
+                          <h3>Templo De Debod</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/ElPrado.jpg" alt="Foto del Museo del Prado de Madrid">
+                       <div class="carousel-caption">
+                          <h3>El Prado</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/ElRetiro.jpg" alt="Foto del Parque del Retiro en Madrid">
+                       <div class="carousel-caption">
+                          <h3>El Retiro</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/LasVentas.jpg" alt="Foto de la Plaza de Toros de las Ventas en Madrid">
+                       <div class="carousel-caption">
+                          <h3>Las Ventas</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/PalacioCristal.jpg" alt="Foto del Palacio de Cristal en el Parque del Retiro en Madrid">
+                       <div class="carousel-caption">
+                          <h3>Palacio de Cristal</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/PuertaAlcala.jpg" alt="Foto de la Puerta de Alcala de Madrid">
+                       <div class="carousel-caption">
+                          <h3>Puerta de Alcala</h3>
+                       </div>
+                     </div>
+                    <div class="item">
+                       <img class="img-thumbnail" src="img/Turismo/TorresQuio.jpg" alt="Foto de las Torres Quio en Madrid">
+                       <div class="carousel-caption">
+                          <h3>Torres Quio</h3>
+                       </div>
+                     </div>
+                   </div>
+                <!-- Controls -->
+                 <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                   <span class="glyphicon glyphicon-chevron-left"></span>
+                 </a>
+                 <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                   <span class="glyphicon glyphicon-chevron-right"></span>
+                 </a>
+             </div><!-- Carousel -->    
             </div>
         </div>
     </section>
@@ -459,7 +484,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Ayto. Madriz 2016</span>
+                    <a href="http://www.w3.org/WAI/WCAG1AAA-Conformance" title="Explicación del Nivel Triple-A de Conformidad">
+                    <img height="32" width="88" src="http://www.w3.org/WAI/wcag1AAA" alt="Icono de conformidad con el Nivel Triple-A, de las Directrices de Accesibilidad para el Contenido Web 1.0 del W3C-WAI"></a>
+                </div>
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Ayuntamiento de Madrid 2016</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -481,8 +510,8 @@
         </div>
     </footer>
 
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
+    <!-- Noticias Modals -->
+    <!-- Use the modals below to showcase details about your Noticias sections! -->
 
     <!-- Registro -->
     <div class="portfolio-modal modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-hidden="true">
@@ -565,12 +594,12 @@
                                         <label class="control-label col-xs-3">Genero:</label>
                                         <div class="col-xs-2">
                                             <label class="radio-inline">
-                                                <input type="radio" name="genderRadios" value="male"> Maculino
+                                                <input type="radio" name="genderRadios" value="male"> M
                                             </label>
                                         </div>
                                         <div class="col-xs-2">
                                             <label class="radio-inline">
-                                                <input type="radio" name="genderRadios" value="female"> Femenino
+                                                <input type="radio" name="genderRadios" value="female"> F
                                             </label>
                                         </div>
                                     </div>
@@ -596,15 +625,58 @@
                                         </div>
                                     </div>
                                 </form>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Cerrar</button>
+                            <hr>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    
+    <!-- Entrar -->
+    <div class="portfolio-modal modal fade" id="modalEntrar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Entrar Details Go Here -->
+                            <h2>Entrar</h2>
+                            <p class="item-intro text-muted">Introduce tu nombre de usuario y contraseña</p>
+                            <p class="item-intro text-muted">Para entrar al servicio</p>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Usuario</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Nombre de Usuario">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">Contraseña</label>
+                                        <div class="col-xs-9">
+                                            <input type="password" class="form-control" placeholder="Contraseña">
+                                        </div>
+                                    </div>
+                                    <a href="user.html" class="btn btn-primary" role="button" id="botonRegistro">Entrar</a>
+                                </form>
+                            <hr>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Noticia Modal 1 -->
+    <div class="portfolio-modal modal fade" id="noticia1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -617,18 +689,31 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                            <h2>A oscuras por el cambio climático</h2>
+                            
+                            <p class="item-intro text-muted">El Ayuntamiento se suma a la Hora del Planeta de mañana sábado 19 de marzo que este año lleva por lema: “Ahora es el momento. Cambia por el clima”</p>
+                            
+                            <img class="img-responsive img-centered" src="img/Noticias/CambioClimatico.jpg" alt="imagen de Europa iluminada">
+                            
+                            <p>El Ayuntamiento de Madrid se suma a la Hora del Planeta apagando la iluminación de la fuente de Cibeles, la fachada del Palacio de Cibeles, la Puerta de Alcalá y el alumbrado público de la plaza de Oriente. El acto tendrá lugar mañana sábado 19 de marzo de 20:30 a 21:30 horas.</p>
+
+                            <p>Para la alcaldesa Carmena, este gesto es un paso para mostrar “la necesidad de dar prioridad y abordar de manera decidida los problemas ambientales de la ciudad, e incluso de aquellos que trascienden el ámbito del municipio, como es el caso del Cambio Climático”. Este año el lema de la campaña será “Ahora es el momento. Cambia por el clima”.</p>
+
+                            <p>La Hora del Planeta es una campaña mundial de la ONG ambiental WWF que este año celebra la acción con un gran evento en la plaza de Oriente. A partir de las 18 horas habrá diferentes actividades como la entrega de camisetas, juegos, bailes, talleres de “pintacaras” y un espectáculo lumínico de androides LED.</p>
+
+                            <p>Este año la campaña se centrará en promover acciones climáticas que la sociedad pueda adoptar como una transición a las energías renovables, la promoción de la alimentación y la agricultura sostenible, la adopción de legislación climática o la sensibilización sobre cuestiones climáticas en los colegios.</p>
+
+                            <p>En relación a esta última acción, “el Ayuntamiento de Madrid asume su parte y trabaja en el impulso de acciones dirigidas a reducir las emisiones de la ciudad y entre estas medidas se consideran de especial relevancia aquellas educativas y de concienciación, en sintonía con esta iniciativa”, comenta Manuela Carmena.</p>
+
+                            <p>Además del apagado de edificios emblemáticos, WWF solicita al Ayuntamiento de Madrid y al resto de las administraciones locales, que difundan la campaña entre la ciudadanía y empleados públicos, que apuesten por la reducción de emisiones, que los plenos aprueben mociones contra el cambio climático, la incorporación de criterios de eficiencia energética en la compra pública de equipos y la creación de carriles bici para fomentar el transporte público.</p>
+
+                            <p>En este evento también participarán algunos de los monumentos más emblemáticos del planeta como el Empire State Building, la Torre Eiffel o la Ópera de Sidney. El año 2015 participaron en la campaña más de 10 400 edificios del mundo, 250 ciudades españolas y 7 000 ciudades de 172 países.</p>
+                            
                             <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
+                                <li>Fecha: Sabado 19 de Marzo de 2016, de 20:30 a 21:30 horas</li>
                             </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -636,8 +721,8 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Noticia Modal 2 -->
+    <div class="portfolio-modal modal fade" id="noticia2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -649,12 +734,27 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2>La EMT recupera 20 millones de euros del céntimo sanitario y consigue cerrar 2015 sin pérdidas</h2>
+                            
+                            <p class="item-intro text-muted">La EMT presenta un balance positivo de 10 millones de euros, el mejor resultado de la última década</p>
+                            
+                            <img class="img-responsive img-centered" src="img/Noticias/EMT.jpg" alt="cochera de la EMT">
+                            
+                            <p>El balance de la EMT de 2015 recoge un resultado positivo de 10 millones de euros, cifra que supone el mejor resultado de la última década. Además es el segundo año consecutivo en el que la EMT obtiene beneficios rompiendo así un ciclo –de 2006 a 2013– en el que los resultados han sido negativos o de exiguas ganancias. El Consejo de Administración de la Empresa Municipal de Transportes de Madrid aprobó ayer (jueves, 17 de marzo) la cuenta de resultados de la entidad correspondiente al ejercicio 2015.</p>
+
+                            <p>Los balances positivos son consecuencia de tres razones fundamentales: contención del gasto de personal; reducción del gasto de carburante y de los gastos de financiación de la deuda, y, finalmente, obtención de ingresos extra por la devolución a la EMT de las cantidades abonadas desde 2005 a 2012 en concepto del Impuesto a las Ventas Minoristas sobre Determinados Hidrocarburos (IVMDH), el popularmente conocido como ‘céntimo sanitario’, que fue declarado ilegal por el Tribunal de Justicia de la Unión Europea en 2014.</p>
+
+                            <p>La sala de lo Contencioso-Administrativo del Tribunal Supremo resolvió en enero de este año 2016 aceptar las relaciones de responsabilidad patrimonial del Estado por este impuesto. La correcta gestión jurídica y administrativa que la EMT ha realizado desde entonces para reclamar las cantidades adeudadas por este concepto, ha supuesto un ingreso superior a los 20 millones de euros.</p>
+
+                            <h5>Cuenta de resultados</h5>
+                            
+                            <p>La cuenta de resultados del ejercicio 2015 ofrece un balance positivo de más de 10 millones de euros lo que representa una mejora del 284 por ciento respecto a los resultados de 2014. Los ingresos han aumentado en 6,5 millones mientras que los gastos se han reducido en un millón.</p>
+
+                            <p>Por partidas, los gastos de personal se mantienen estables; los gastos en carburantes descienden un 17 por ciento; y los gastos financieros se reducen casi un 25 por ciento (en los últimos cinco años, el endeudamiento a largo plazo de la EMT bajó un 44,6 por ciento). En cuanto a los ingresos, se produce un notable aumento de los ingresos extraordinarios (producto de la mencionada devolución del ‘céntimo sanitario’), de los ingresos por publicidad y de los ingresos por gestión de aparcamientos.</p>
+
+                            <p>El balance final de las cuentas de la EMT en 2015 supone la recuperación del equilibrio financiero de la empresa municipal lo que garantiza su sostenibilidad económica y su continuidad como empresa pública.</p>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -662,62 +762,8 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Noticia Modal 3 -->
+    <div class="portfolio-modal modal fade" id="noticia3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -730,12 +776,28 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2>Expomanga 2016</h2>
+                            
+                            <p class="item-intro text-muted">Salón del Manga y de la Cultura Oriental de Madrid</p>
+                            
+                            <img class="img-responsive img-centered" src="img/Noticias/Expomanga2016.jpg" alt="cartel del ExpoManga">
+                            
+                            <p>Además de su traslado a IFEMA, Feria de Madrid, la principal novedad del evento será su inclusión en el Circuito Europeo de Cultura Pop de Easyfairs, que aglutina a un total de nueve salones del sector del cómic en Países Bajos, Bélgica, Dinamarca y Suecia, además de los eventos madrileños Expomanga y Expocómic.</p>
+
+                            <p>Los eventos programados para este año 2016 reunirán a más de 1000 expositores. Contará con invitados internacionales como Twin Cosplay, la pareja formada por los mexicanos Shema Arroyo y Juan Carlos Tolento, que visitará España por primera vez como vigentes campeones del World Cosplay Summit 2015. En la feria, entre otras actividades, habrá un espacio dedicado exclusivamente a la cultura japonesa, talleres, área de restauración, una zona de juegos al estilo de Takeshi´s Castle, conciertos, concursos y zona infantil.</p>
+
+                            <p>Además, contará con una exposición dedicada a un autor japonés, otra que homenajeará las series de dibujos clásicas niponas de los 80 con materiales originales traídos de Japón, y una fuerte presencia de jóvenes talentos españoles.</p>
+
+                            <p>El madrileño Vito Sicilia, es el autor del cartel de Expomanga 2016: A New Flight.</p>
+
+                            <p>Para más información y venta de entradas, visita : <a href="http://www.expomanga.net/">ExpoManga.net</a></p>
+                            
+                            <ul class="list-inline">
+                                <li>Fecha: Del viernes 6 de mayo de 2016 al domingo 8 de mayo de 2016 de 10:00 a 21:00 horas</li>
+                                <li>Lugar: IFEMA, Avenida Partenon, 5 28042 Madrid <a href="http://www.ifema.es">Web</a></li>
+                            </ul>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -743,8 +805,8 @@
         </div>
     </div>
 
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Noticia Modal 4 -->
+    <div class="portfolio-modal modal fade" id="noticia4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -757,12 +819,98 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2>Exposición: Filigranas</h2>
+                            
+                            <p class="item-intro text-muted">Las huellas del agua</p>
+                            
+                            <img class="img-responsive img-centered" src="img/Noticias/ExpoFiligranas.png" alt="cartel de la exposicion">
+                            
+                            <p>La exposición quiere acercar al público uno de los productos más tradicionales la Fábrica Nacional de Moneda y Timbre-Real Casa de la Moneda, el papel, y  una de sus características más destacadas, la filigrana o marca de agua.</p>
+
+                            <p>A través de papeles, modelados, moldes y objetos históricos, la muestra recorre la historia del papel, de su proceso de fabricación, de las marcas de agua, del papel de seguridad en España, de la Fábrica de Papel de Burgos y de los artistas grabadores de marcas de agua.</p>
+                            
+                            <ul class="list-inline">
+                                <li>Fecha: Del jueves 17 de marzo de 2016 al domingo 15 de mayo de 2016</li>
+                                <li>Lugar: Museo Casa de la Moneda, Calle Doctor Esquerdo, 36 28028 Madrid <a href="http://www.museocasadelamoneda.org/">Web</a></li>
+                            </ul>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noticia Modal 5 -->
+    <div class="portfolio-modal modal fade" id="noticia5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Exposición: Julia Margaret Cameron</h2>
+                            
+                            <p class="item-intro text-muted">Sin duda uno de los nombres más importantes e innovadores dentro de la fotografía del siglo XIX</p>
+                            
+                            <img class="img-responsive img-centered" src="img/Noticias/ExpoJuliaMargaret.bmp" alt="cartel de la exposicion">
+                            
+                            <p>Julia Margaret Cameron (Calcuta, 1815 - Ceilán, 1879) fue sin duda uno de los nombres más importantes e innovadores dentro de la fotografía del siglo XIX.</p>
+
+                            <p>Conocida por la intensidad de sus retratos, hizo posar como modelos a sus familiares, sirvientes y amigos, entre los que se encontraban los más importantes poetas, escritores y artistas británicos de su tiempo. Sus fotografías rompían con las reglas establecidas: estaban deliberadamente desenfocadas y a menudo incluían imperfecciones, arañazos, manchas y otros rastros del proceso creativo. A lo largo de su vida, Cameron recibió críticas de sus contemporáneos por sus técnicas poco convencionales, pero también fue alabada por la belleza de sus composiciones y por su concepción de la fotografía como forma artística.</p>
+
+                            <p>Organizada por el Victoria and Albert Museum, Londres, con la colaboración de Fundación Mapfre, la exposición ha sido comisariada por Marta Weiss, conservadora de fotografía del Victoria and Albert Museum, Londres. La exposición está formada por más de 100 fotografías que permitirán adentrarse en la mirada de la fotógrafa inglesa y que ofrecen una visión completa de su obra.</p>
+                            
+                            <ul class="list-inline">
+                                <li>Fecha: Del jueves 17 de marzo de 2016 al domingo 15 de mayo de 2016</li>
+                                <li>Lugar: Sala de exposiciones Bárbara de Braganza. Fundación Mapfre Instituto de Cultura, Calle Barbara de Braganza, 13 28004 Madrid <a href="http://www.fundacionmapfre.org/">Web</a></li>
+                            </ul>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noticia Modal 6 -->
+    <div class="portfolio-modal modal fade" id="noticia6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Torneo de Tenis</h2>
+                            
+                            <p class="item-intro text-muted">Mutua Madrid Open 2016</p>
+                            
+                            <img class="img-responsive img-centered" src="img/Noticias/MadridOpen.jpg" alt="cartel del evento">
+                            
+                            <p>Un año más, los mejores jugadores del mundo volverán a deleitar a las más de 200.000 personas que volverán a darse cita en la Caja Mágica. </p>
+                            
+                            <p>Para más información y venta de entradas, visita : <a href="http://www.entradas.com/Entradas-mutua-madrid-open.html?affiliate=ADE&doc=artistPages%2Ftickets&fun=artist&action=tickets&kuid=514210&xtor=SEC-8-GOO-Deportes-Madrid-Mutua-Madrid-Open&gclid=CLSb7deDjssCFSoEwwodtTMF5w">Mutua Madrid Open</a></p>
+                            
+                            <ul class="list-inline">
+                                <li>Fecha: Del viernes 29 de abril de 2016 a las 10 horas al domingo 8 de mayo de 2016</li>
+                                <li>Lugar: Madrid Caja Mágica, Camino  Perales, 23 28041 Madrid <a href="http://www.madrid-destino.es/es/espacios-y-eventos/instalaciones/madrid-caja-magica.html">Web</a></li>
+                            </ul>
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
