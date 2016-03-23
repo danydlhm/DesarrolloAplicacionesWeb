@@ -199,7 +199,12 @@
 			<p>ATENCION: Lea atentamente la información que se le ha presentado y verifique que no hay ningún error antes de continuar.<p>
             <div class="form-group">
                 <div class="col-xs-offset-3 col-xs-9">
-                    <input type="submit" class="btn btn-primary" value="Enviar">
+					<input id="launch" type="submit" class="btn btn-primary" value="Enviar">
+					<!--Código que hace saltar el dialogo-->
+				    <dialog id="dialog">
+					<p>La petición ha sido enviada correctamente<p>
+					<button id="close">Cerrar</button>
+					</dialog>					
                 </div>
             </div>	
         </div>
@@ -254,6 +259,7 @@
     
     <!-- Custom JavaScript -->
     <script src="js/user.js"></script>
+	<script src="js/dialog.js"></script>
 
 </body>
 
