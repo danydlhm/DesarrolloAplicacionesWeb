@@ -13,8 +13,21 @@
     height: auto;
 }
 
+/* CSS del Buscador */
+#buscador{
+    border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    border: 0px solid #000000;
+    background-color: rgba(240,171,20,0.2);
+    height: auto;
+    width: 350px;
+    margin: 0 auto 0 auto;
+}
+
 /* CSS del Chat */
-#cchat{
+.colorchat{
+    color: #11B2A6;
 }
 
 .popup-box {

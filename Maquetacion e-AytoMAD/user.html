@@ -43,42 +43,32 @@
             <div class="row">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <div id="logoMAD" class="col-xs-5 col-sm-5 col-md-3 col-lg-3"><a class="navbar-brand page-scroll" href="#page-top"><img class="img-responsive" src="img/Logo%20Web%20Madrid%20Naranja.png" alt="logo de la pagina"></a></div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <div id="logoMAD" class="col-xs-5 col-sm-3 col-md-2 col-lg-3"><a class="navbar-brand page-scroll" href="#page-top"><img class="img-responsive" src="img/Logo%20Web%20Madrid%20Naranja.png" alt="logo de la pagina"></a></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div id="botones" class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <div id="botones" class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <div class="col-md-5 col-md-offset-5">
-                            <input id="txtSummoner" class="form-control" placeholder="Texto" type="text">
-                        </div>
-                        <div class="col-md-1">
-                          <button id="btnSearch" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </div>
+                    <li class="hidden">
+                        <a href="#page-top"></a>
                     </li>
                     <li>
-                        <div id="colapso" class="panel-group">
-                            <div class="panel panel-default">
-                                <a data-toggle="collapse" href="#collapse1"><div class="panel-heading">
-                                        <img id="imagenLoggin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Manuela_Carmena_Ahora_Madrid_2015_-_20_%28cropped%29.jpg/220px-Manuela_Carmena_Ahora_Madrid_2015_-_20_%28cropped%29.jpg" alt="Imagen de Manuela Carmena" class="img-circle"> Manuela Carmena
-                                </div></a>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item"><a class="page-scroll" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mi Perfil</a></li>
-                                            <li class="list-group-item"><a class="page-scroll" href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Ajustes / Configuracion</a></li>
-                                            <li class="list-group-item"><a class="page-scroll" href="index.html"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Cerrar Sesion</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a class="page-scroll" href="#"><img id="imagenLoggin" src="img/team/Manuela%20c%C3%ADrculo.png" alt="Imagen del perfil de usuario de Manuela Carmena" class="img-circle"> Manuela Carmena</a>
                     </li>
+                    <li><a class="page-scroll" href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Ajustes</a></li>
+                    <li><a class="page-scroll" href="index.html"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Cerrar Sesion</a></li>
                 </ul>
             </div>
             </div>
             <!-- /.navbar-collapse -->
+        </div>
         </div>
         <!-- /.container-fluid -->
     </nav>
@@ -92,17 +82,18 @@
         </div>
     </header>
     
-    <ul id="tabs" class="nav nav-tabs">
-        <li class="active"><a href="#tab-0" id="tab-0">Consumo y Comercio</a></li>
-        <li><a href="#tab-1" id="tab-1">Cultura, Ocio y Deporte</a></li>
-        <li><a href="#tab-2" id="tab-2">Educacion, Formación y Empleo</a></li>
-        <li><a href="#tab-3" id="tab-3">Otros</a></li>
-        <div class="round hollow text-right" id="cchat">
-            <a href="#" id="addClass"><span class="glyphicon glyphicon-comment"></span></a>
-        </div>
+    <section id="servicios">
+            <div class="input-group col-xs-6 col-sm-6 col-md-6 col-lg-6" align="center" id="buscador">
+                <input id="buscador" type="text" class="form-control" name="termino" value="" placeholder="...">
+                <span class="input-group-addon btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+            <div class="round hollow text-center" id="cchat">
+                <a class="page-scroll" href="#servicios" id="addClass"><span class="glyphicon glyphicon-comment colorchat"></span> Chat'0</a>
+            </div>
+        <!-- Codigo del pop-up del Chat -->
         <div class="popup-box chat-popup" id="qnimate">
     		  <div class="popup-head">
-				<div class="popup-head-left pull-left"><img src="img/team/Rita%20c%C3%ADrculo.png" alt="iamgurdeeposahan">Rita Maestre</div>
+				<div class="popup-head-left pull-left"><img src="img/team/Rita%20c%C3%ADrculo.png" alt="imagen de la persona con quien tienes la conversacion">Rita Maestre</div>
 					  <div class="popup-head-right pull-right">
 						<div class="btn-group">
     								  <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
@@ -223,8 +214,15 @@
 			</div>
 			</div>
 	  </div>
+    </section>
+    
+    <ul id="tabs" class="nav nav-tabs">
+        <li class="active"><a href="#tab-0" id="tab-0">Consumo y Comercio</a></li>
+        <li><a href="#tab-1" id="tab-1">Cultura, Ocio y Deporte</a></li>
+        <li><a href="#tab-2" id="tab-2">Educacion, Formación y Empleo</a></li>
+        <li><a href="#tab-3" id="tab-3">Iniciativa ciudadana</a></li>
+		<li><a href="#tab-4" id="tab-4">Padrón Municipal</a></li>
     </ul>
-
 
     <div id="content"> 
         <div id="tab1">
@@ -240,12 +238,7 @@
             
         </div>
         <div id="tab4">
-        <a class="page-scroll portfolio-link" href="#modalPadron" data-toggle="modal">Padron Municipal</a><br>
-        <a class="page-scroll portfolio-link" href="#modalIniciativa" data-toggle="modal">Iniciativa ciudadana</a>
-			
-        </div>
-        <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalPadron">
-            <div class="modal-content">
+			<div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">
 					<div class="lr">
 						<div class="rl">
@@ -257,105 +250,7 @@
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body">
 								<!-- Project Details Go Here -->
-                                <h2>Volante de Inscipicion Padronal</h2>								
-                                <form class="form-horizontal">								    
-									<div class="form-group">
-                                        <label class="control-label col-xs-3">Distrito:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" id="inputTitulo" placeholder="Distrito">
-                                        </div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-3">Barrio:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Barrio">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-										<label class="control-label col-xs-3">Nombre:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Nombre">
-                                        </div>
-                                    </div>	
-                                    <div class="form-group">
-										<label class="control-label col-xs-3">Apellidos:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Apellidos">
-                                        </div>
-                                    </div>	
-                                    <div class="form-group">
-										<label class="control-label col-xs-3">Dirección:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Dirección">
-                                        </div>
-                                    </div>	
-                                    <div class="form-group">
-										<label class="control-label col-xs-3">DNI:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="DNI">
-                                        </div>
-                                    </div>	
-                                    <div class="form-group">
-                                        <label for="sel1">Sexo:</label>
-                                          <select class="form-control" id="sel1">
-                                           <option>-</option>
-                                           <option>F</option>
-                                           <option>M</option>
-                                          </select>
-                                    </div>	
-                                    <div class="form-group">
-										<label class="control-label col-xs-3">Nacionalidad:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Nacionalidad">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-										<label class="control-label col-xs-3">Lugar de nacimiento:</label>
-                                        <div class="col-xs-9">
-                                            <input type="text" class="form-control" placeholder="Lugar Nacimiento">
-                                        </div>
-                                    </div>														
-									<div class="form-group">
-                                        <label class="control-label col-xs-3">F. de Nacimiento:</label>
-                                        <div class="input-group date" data-provide="datepicker">
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-addon">
-                                                <span class="glyphicon glyphicon-th"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>ATENCION: Lea atentamente la información que se le ha presentado y verifique que no hay ningún error antes de continuar.<p>		                                                                                 
-                                    <br>
-                                    <div class="form-group">
-                                        <div class="col-xs-offset-3 col-xs-9">
-                                            <input type="submit" class="btn btn-primary" value="Enviar">
-                                            <input type="reset" class="btn btn-default" value="Limpiar">
-                                        </div>
-                                    </div>
-                                </form>
-                                <hr>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalIniciativa">
-            <div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="modal-body">
-								<!-- Project Details Go Here -->
-                                <h2>Registro iniciativa ciudadana</h2>								
+                                <h2>Formulario de registro</h2>								
                                 <form class="form-horizontal">								    
 									<div class="form-group">
                                         <label class="control-label col-xs-3">Titulo:</label>
@@ -370,12 +265,21 @@
                                         </div>
                                     </div>															
 									<div class="form-group">
-                                        <label class="control-label col-xs-3">F. de Nacimiento:</label>
-                                        <div class="input-group date" data-provide="datepicker">
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-addon">
-                                                <span class="glyphicon glyphicon-th"></span>
-                                            </div>
+                                        <label class="control-label col-xs-3">F. de Registro:</label>
+                                        <div class="col-xs-3">
+                                            <select class="form-control">
+                                                <option>Dia</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <select class="form-control">
+                                                <option>Mes</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <select class="form-control">
+                                                <option>Año</option>
+                                            </select>
                                         </div>
                                     </div>			                                                                                 
                                     <br>
@@ -393,6 +297,47 @@
                     </div>
                 </div>
             </div>
+        </div>
+		<div id="tab5">
+            <h4>PADRÓN MUNICIPAL DE HABITANTES</h4>
+			<h4>VOLANTE DE INSCRIPCIÓN PADRONAL</h4>
+			<div class="form-group">
+				<label class="control-label col-xs-12">Distrito:</label>
+			</div>
+		    <h5>1.DATOS DEL PADRÓN MUNICIPAL</h5>
+			<div class="form-group">
+				<label class="control-label col-xs-6">Distrito:</label>
+				<label class="control-label col-xs-6">Barrio:</label>
+			</div>
+			<h5>2.DATOS DEL/ DE LA CIUDADANO/A</h5>
+			<div class="form-group">
+                <label class="control-label col-xs-6">Nombre:</label>
+				<label class="control-label col-xs-6">Apellidos:</label>                    
+            </div>
+			<div class="form-group">
+				<label class="control-label col-xs-12">Dirección:</label>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-4">DNI:</label>
+				<label class="control-label col-xs-4">Sexo:</label>
+				<label class="control-label col-xs-4">País de Nacionalidad:</label>
+			</div>
+			<div class="form-group">				
+				<label class="control-label col-xs-6">F. Nacimiento:</label>
+                <label class="control-label col-xs-6">Lugar de Nacimiento:</label>
+			</div>
+			<br>
+			<p>ATENCION: Lea atentamente la información que se le ha presentado y verifique que no hay ningún error antes de continuar.<p>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+					<input id="launch" type="submit" class="btn btn-primary" value="Enviar">
+					<!--Código que hace saltar el dialogo-->
+				    <dialog id="dialog">
+					<p>La petición ha sido enviada correctamente<p>
+					<button id="close">Cerrar</button>
+					</dialog>					
+                </div>
+            </div>	
         </div>
     </div>
     
@@ -433,7 +378,6 @@
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 
@@ -448,7 +392,6 @@
     <script src="js/user.js"></script>
 	<script src="js/dialog.js"></script>
 	<script src="js/chat.js"></script>
-
 </body>
 
 </html>
