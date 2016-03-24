@@ -96,8 +96,7 @@
         <li class="active"><a href="#tab-0" id="tab-0">Consumo y Comercio</a></li>
         <li><a href="#tab-1" id="tab-1">Cultura, Ocio y Deporte</a></li>
         <li><a href="#tab-2" id="tab-2">Educacion, Formación y Empleo</a></li>
-        <li><a href="#tab-3" id="tab-3">Iniciativa ciudadana</a></li>
-		<li><a href="#tab-4" id="tab-4">Padrón Municipal</a></li>
+        <li><a href="#tab-3" id="tab-3">Otros</a></li>
         <div class="round hollow text-right" id="cchat">
             <a href="#" id="addClass"><span class="glyphicon glyphicon-comment"></span></a>
         </div>
@@ -241,7 +240,12 @@
             
         </div>
         <div id="tab4">
-			<div class="modal-content">
+        <a class="page-scroll portfolio-link" href="#modalPadron" data-toggle="modal">Padron Municipal</a><br>
+        <a class="page-scroll portfolio-link" href="#modalIniciativa" data-toggle="modal">Iniciativa ciudadana</a>
+			
+        </div>
+        <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalPadron">
+            <div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">
 					<div class="lr">
 						<div class="rl">
@@ -253,7 +257,105 @@
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body">
 								<!-- Project Details Go Here -->
-                                <h2>Formulario de registro</h2>								
+                                <h2>Volante de Inscipicion Padronal</h2>								
+                                <form class="form-horizontal">								    
+									<div class="form-group">
+                                        <label class="control-label col-xs-3">Distrito:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" id="inputTitulo" placeholder="Distrito">
+                                        </div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-3">Barrio:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Barrio">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+										<label class="control-label col-xs-3">Nombre:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Nombre">
+                                        </div>
+                                    </div>	
+                                    <div class="form-group">
+										<label class="control-label col-xs-3">Apellidos:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Apellidos">
+                                        </div>
+                                    </div>	
+                                    <div class="form-group">
+										<label class="control-label col-xs-3">Dirección:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Dirección">
+                                        </div>
+                                    </div>	
+                                    <div class="form-group">
+										<label class="control-label col-xs-3">DNI:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="DNI">
+                                        </div>
+                                    </div>	
+                                    <div class="form-group">
+                                        <label for="sel1">Sexo:</label>
+                                          <select class="form-control" id="sel1">
+                                           <option>-</option>
+                                           <option>F</option>
+                                           <option>M</option>
+                                          </select>
+                                    </div>	
+                                    <div class="form-group">
+										<label class="control-label col-xs-3">Nacionalidad:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Nacionalidad">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+										<label class="control-label col-xs-3">Lugar de nacimiento:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" placeholder="Lugar Nacimiento">
+                                        </div>
+                                    </div>														
+									<div class="form-group">
+                                        <label class="control-label col-xs-3">F. de Nacimiento:</label>
+                                        <div class="input-group date" data-provide="datepicker">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>ATENCION: Lea atentamente la información que se le ha presentado y verifique que no hay ningún error antes de continuar.<p>		                                                                                 
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <input type="submit" class="btn btn-primary" value="Enviar">
+                                            <input type="reset" class="btn btn-default" value="Limpiar">
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalIniciativa">
+            <div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							<div class="modal-body">
+								<!-- Project Details Go Here -->
+                                <h2>Registro iniciativa ciudadana</h2>								
                                 <form class="form-horizontal">								    
 									<div class="form-group">
                                         <label class="control-label col-xs-3">Titulo:</label>
@@ -268,21 +370,12 @@
                                         </div>
                                     </div>															
 									<div class="form-group">
-                                        <label class="control-label col-xs-3">F. de Registro:</label>
-                                        <div class="col-xs-3">
-                                            <select class="form-control">
-                                                <option>Dia</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <select class="form-control">
-                                                <option>Mes</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <select class="form-control">
-                                                <option>Año</option>
-                                            </select>
+                                        <label class="control-label col-xs-3">F. de Nacimiento:</label>
+                                        <div class="input-group date" data-provide="datepicker">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </div>
                                         </div>
                                     </div>			                                                                                 
                                     <br>
@@ -300,47 +393,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-		<div id="tab5">
-            <h4>PADRÓN MUNICIPAL DE HABITANTES</h4>
-			<h4>VOLANTE DE INSCRIPCIÓN PADRONAL</h4>
-			<div class="form-group">
-				<label class="control-label col-xs-12">Distrito:</label>
-			</div>
-		    <h5>1.DATOS DEL PADRÓN MUNICIPAL</h5>
-			<div class="form-group">
-				<label class="control-label col-xs-6">Distrito:</label>
-				<label class="control-label col-xs-6">Barrio:</label>
-			</div>
-			<h5>2.DATOS DEL/ DE LA CIUDADANO/A</h5>
-			<div class="form-group">
-                <label class="control-label col-xs-6">Nombre:</label>
-				<label class="control-label col-xs-6">Apellidos:</label>                    
-            </div>
-			<div class="form-group">
-				<label class="control-label col-xs-12">Dirección:</label>
-			</div>
-			<div class="form-group">
-				<label class="control-label col-xs-4">DNI:</label>
-				<label class="control-label col-xs-4">Sexo:</label>
-				<label class="control-label col-xs-4">País de Nacionalidad:</label>
-			</div>
-			<div class="form-group">				
-				<label class="control-label col-xs-6">F. Nacimiento:</label>
-                <label class="control-label col-xs-6">Lugar de Nacimiento:</label>
-			</div>
-			<br>
-			<p>ATENCION: Lea atentamente la información que se le ha presentado y verifique que no hay ningún error antes de continuar.<p>
-            <div class="form-group">
-                <div class="col-xs-offset-3 col-xs-9">
-					<input id="launch" type="submit" class="btn btn-primary" value="Enviar">
-					<!--Código que hace saltar el dialogo-->
-				    <dialog id="dialog">
-					<p>La petición ha sido enviada correctamente<p>
-					<button id="close">Cerrar</button>
-					</dialog>					
-                </div>
-            </div>	
         </div>
     </div>
     
@@ -381,6 +433,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 
