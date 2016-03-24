@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/madrid.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,13 +43,20 @@
             <div class="row">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <div id="logoMAD" class="col-xs-4 col-sm-4 col-md-3 col-lg-3"><a class="navbar-brand page-scroll" href="#page-top"><img class="img-responsive" src="img/Logo%20Web%20Madrid%20Naranja.png" alt="logo de la pagina"></a></div>
+                <div id="logoMAD" class="col-xs-5 col-sm-5 col-md-3 col-lg-3"><a class="navbar-brand page-scroll" href="#page-top"><img class="img-responsive" src="img/Logo%20Web%20Madrid%20Naranja.png" alt="logo de la pagina"></a></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div id="botones" class="col-xs-6 col-sm-7 col-md-8 col-lg-10">
+            <div id="botones" class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Meter posible buscador, enlace: http://www.comocreartuweb.com/consultas/showthread.php/28915-Insertar-un-Buscador-Interno-PROFESIONAL-TUTORIAL --> 
+                    <li>
+                        <div class="col-md-5 col-md-offset-5">
+                            <input id="txtSummoner" class="form-control" placeholder="Texto" type="text">
+                        </div>
+                        <div class="col-md-1">
+                          <button id="btnSearch" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </div>
+                    </li>
                     <li>
                         <div id="colapso" class="panel-group">
                             <div class="panel panel-default">
@@ -90,6 +98,132 @@
         <li><a href="#tab-2" id="tab-2">Educacion, Formación y Empleo</a></li>
         <li><a href="#tab-3" id="tab-3">Iniciativa ciudadana</a></li>
 		<li><a href="#tab-4" id="tab-4">Padrón Municipal</a></li>
+        <div class="round hollow text-right" id="cchat">
+            <a href="#" id="addClass"><span class="glyphicon glyphicon-comment"></span></a>
+        </div>
+        <div class="popup-box chat-popup" id="qnimate">
+    		  <div class="popup-head">
+				<div class="popup-head-left pull-left"><img src="img/team/Rita%20c%C3%ADrculo.png" alt="iamgurdeeposahan">Rita Maestre</div>
+					  <div class="popup-head-right pull-right">
+						<div class="btn-group">
+    								  <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
+									   <i class="glyphicon glyphicon-cog"></i> </button>
+									  <ul role="menu" class="dropdown-menu pull-right">
+										<li><a href="#">Media</a></li>
+										<li><a href="#">Block</a></li>
+										<li><a href="#">Clear Chat</a></li>
+										<li><a href="#">Email Chat</a></li>
+									  </ul>
+						</div>
+						
+						<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
+                      </div>
+			  </div>
+			<div class="popup-messages">
+    		
+			
+			
+			
+			<div class="direct-chat-messages">
+                    
+					
+					<div class="chat-box-single-line">
+								<abbr class="timestamp">20 de Marzo de 2016</abbr>
+					</div>
+					
+					
+					<!-- Message. Default to the left -->
+                    <div class="direct-chat-msg doted-border">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Rita</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img alt="message user image" src="img/team/Rita%20c%C3%ADrculo.png" class="direct-chat-img"><!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Oye Carmena, no tendras 4000 euros??
+                      </div>
+					  <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-timestamp pull-right">3.36 PM</span>
+                      </div>
+						<div class="direct-chat-info clearfix">
+						<span class="direct-chat-img-reply-small pull-left">
+							
+						</span>
+						<span class="direct-chat-reply-name">Singh</span>
+						</div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+					
+					
+					<div class="chat-box-single-line">
+						<abbr class="timestamp">20 de Marzo de 2016</abbr>
+					</div>
+			
+					
+					
+					<!-- Message. Default to the right -->
+                    <div class="direct-chat-msg doted-border">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Carmena</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img alt="message user image" src="img/team/Manuela%20c%C3%ADrculo.png" class="direct-chat-img"><!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Que va loca... ¿Preguntale a Pablo?
+                      </div>
+					  <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-timestamp pull-right">4.36 PM</span>
+                      </div>
+						<div class="direct-chat-info clearfix">
+						<span class="direct-chat-img-reply-small pull-left">
+							
+						</span>
+						<span class="direct-chat-reply-name">Singh</span>
+						</div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+                
+                    <div class="chat-box-single-line">
+				        <abbr class="timestamp">20 de Marzo de 2016</abbr>
+					</div>
+					
+					
+					<!-- Message. Default to the left -->
+                    <div class="direct-chat-msg doted-border">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Rita</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img alt="message user image" src="img/team/Rita%20c%C3%ADrculo.png" class="direct-chat-img"><!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        &#128557;&#x1f616; No pasa na...
+                      </div>
+					  <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-timestamp pull-right">5.36 PM</span>
+                      </div>
+						<div class="direct-chat-info clearfix">
+						<span class="direct-chat-img-reply-small pull-left">
+							
+						</span>
+						<span class="direct-chat-reply-name">Singh</span>
+						</div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+                  </div>
+			</div>
+			<div class="popup-messages-footer">
+			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
+			<div class="btn-footer">
+			<button class="bg_none"><i class="glyphicon glyphicon-film"></i> </button>
+			<button class="bg_none"><i class="glyphicon glyphicon-camera"></i> </button>
+            <button class="bg_none"><i class="glyphicon glyphicon-paperclip"></i> </button>
+			<button class="bg_none pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> </button>
+			</div>
+			</div>
+	  </div>
     </ul>
 
 
@@ -260,6 +394,7 @@
     <!-- Custom JavaScript -->
     <script src="js/user.js"></script>
 	<script src="js/dialog.js"></script>
+	<script src="js/chat.js"></script>
 
 </body>
 
