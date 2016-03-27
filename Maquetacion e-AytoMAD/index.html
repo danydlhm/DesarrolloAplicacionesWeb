@@ -25,6 +25,7 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -156,7 +157,7 @@
                     <div class="col-lg-12 text-center">
                         <h3 class="section-heading">Ayuntamiento a un click</h3>
                         <h4 class="section-subheading text-muted">Revisa todo lo que tus representantes municipales deciden en el pleno</h4>
-                        <a href="#modalEntrar" data-toggle="modal" class="btn btn-primary portfolio-link" role="button">Pleno</a>
+                        <a href="#modalPlenos" data-toggle="modal" class="btn btn-primary portfolio-link" role="button">Pleno</a>
                     </div>
             </div>
         </div>
@@ -692,6 +693,38 @@
         </div>
     </div>
     
+    <!-- Plenos -->
+    <div class="portfolio-modal modal fade" id="modalPlenos" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Entrar Details Go Here -->
+                            <h2>Plenos</h2>
+                            <p class="item-intro text-muted">Todos los plenos a un click</p>
+                                <ol class="form-horizontal">
+                                   <li><a href="#">Pleno del Lunes 14 de Marzo de 2016</a></li>
+                                   <li><a href="#">Pleno del Lunes 7 de Marzo de 2016</a></li>
+                                   <li><a href="#">Pleno del Lunes 29 de Febrero de 2016</a></li>
+                                   <li><a href="#">Pleno del Lunes 16 de Marzo de 2015</a></li>
+                                   <li><a href="#">Pleno del Lunes 09 de Marzo de 2015</a></li>
+                                </ol>
+                            <hr>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Noticia Modal 1 -->
     <div class="portfolio-modal modal fade" id="noticia1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -943,6 +976,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
 

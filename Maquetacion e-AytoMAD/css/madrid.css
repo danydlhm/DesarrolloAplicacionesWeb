@@ -102,3 +102,11 @@ ul.social-buttons li a:hover,ul.social-buttons li a:focus,ul.social-buttons li a
 .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{color:#fff;background-color:#FF6519}
 
 .text-primary{color:#11B2A6}
+
+#modalPlenos li {
+    list-style-type: none;
+}
+
+#turismo {
+    height: 1250px;
+}
