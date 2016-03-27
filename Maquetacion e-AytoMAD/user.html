@@ -230,8 +230,8 @@
            <a>Solicitud de análisis de composición y calidad de alimentos, bebidas y otros productos</a> 
         </div>
         <div id="tab2">
-            <a>Centros deportivos. Reserva, pago de servicios y consulta plazas en actividades dirigidas</a><br>
-            <a>Reserva de Instalaciones Deportivas Municipales para el desarrollo de sus Programas de Deporte Adaptado dirigidos a Personas con Discapacidad</a>
+            <a class="page-scroll portfolio-link" href="#modalCentroDeportivo" data-toggle="modal">Centros deportivos. Reserva, pago de servicios y consulta plazas en actividades dirigidas</a><br>
+			<a>Reserva de Instalaciones Deportivas Municipales para el desarrollo de sus Programas de Deporte Adaptado dirigidos a Personas con Discapacidad</a>
         </div>
         <div id="tab3">
             
@@ -397,8 +397,71 @@
             </div>
         </div>
     </div>
-    
-    
+    <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalCentroDeportivo">
+		<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							<div class="modal-body">
+								<!-- Project Details Go Here -->
+								<h2>Centro deportivo municipal</h2>
+								<form class="form-horizontal" name="formularioDeportivo">								    
+									<div class="form-group">
+                                        <label class="control-label col-xs-3">Distrito:</label>
+                                        <div class="col-xs-9">
+                                            <select class="form-control" name="Distrito" OnChange="Cambiar()">
+												<option value="centro">Centro</option>
+												<option value="arganzuela" selected>Arganzuela</option>
+												<option value="retiro">Retiro</option>
+												<option value="salamanca">Salamanca</option>
+												<option value="chamartin">Chamartín</option>
+												<option value="tetuan">Tetuán</option>
+												<option value="chamberi">Chamberí</option>
+												<option value="fuencarral-elPardo">Fuencarral - El Pardo</option>
+												<option value="moncloa-aravaca">Moncloa - Aravaca</option>
+												<option value="latina">Latina</option>
+												<option value="carabanchel">Carabanchel</option>
+												<option value="usera">Usera</option>
+												<option value="puenteDeVallecas">Puente de Vallecas</option>
+												<option value="moratalaz">Moratalaz</option>
+												<option value="ciudadLineal">Ciudad Lineal</option>
+												<option value="hortaleza">Hortaleza</option>
+												<option value="villaverde">Villaverde</option>
+												<option value="villaDeVallecas">Villa de Vallecas</option>
+												<option value="vicalvaro">Vicálvaro</option>
+												<option value="sanBlas-canillejas">San Blás - Canillejas</option>
+												<option value="barajas">Barajas</option>
+											</select>
+                                        </div>
+										<label class="control-label col-xs-3">Centro Deportivo:</label>
+                                        <div class="col-xs-9">
+                                            <select class="form-control" name="CentroDeportivo">
+												<option selected>Centro Deportivo</option>												
+											</select>
+                                        </div>
+									</div>
+									<div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <input type="submit" class="btn btn-primary" value="Enviar">
+                                            <input type="reset" class="btn btn-default" value="Limpiar">
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="container">
             <div class="row">
@@ -449,8 +512,8 @@
     
     <!-- Custom JavaScript -->
     <script src="js/user.js"></script>
-	<script src="js/dialog.js"></script>
 	<script src="js/chat.js"></script>
+	
 </body>
 
 </html>
