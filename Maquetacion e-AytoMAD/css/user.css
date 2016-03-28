@@ -21,7 +21,16 @@
     border: 0px solid #000000;
     background-color: rgba(240,171,20,0.2);
     height: auto;
-    width: 350px;
+    width: 300px;
+    margin: 0 auto 0 auto;
+}
+
+#icobus{
+    border-radius: 0px 10px 10px 0px;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border: 0px solid #11B2A6;
+    height: auto;
     margin: 0 auto 0 auto;
 }
 
@@ -55,10 +64,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 .round.hollow a:hover {
-    border: 2px solid #000;
+    border: 2px solid #00FFEB;
     border-radius: 35px;
     color: red;
-    color: #000;
+    color: #00FFEB;
     font-size: 23px;
     padding: 10px 21px;
     text-decoration: none;
