@@ -2,11 +2,11 @@ import {Component}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 
 @Component({
-    selector: 'contact-section',
+    selector: 'chat-section',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/contactTemplate.html',
+    templateUrl: 'app/usuarios/chatTemplate.html',
 })
 
-export class ContactComponent{
+export class ChatComponent{
 
 }

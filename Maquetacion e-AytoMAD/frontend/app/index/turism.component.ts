@@ -2,11 +2,11 @@ import {Component}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 
 @Component({
-    selector: 'services-section',
+    selector: 'turism-section',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/servicesTemplate.html',
+    templateUrl: 'app/index/turismTemplate.html',
 })
 
-export class ServicesComponent{
+export class TurismComponent{
 
 }

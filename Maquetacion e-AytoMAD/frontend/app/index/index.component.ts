@@ -10,7 +10,7 @@ import {NavigationComponent} from './navigation.component';
 
 @Component({
     directives: [ROUTER_DIRECTIVES, ServicesComponent, NewsComponent, TurismComponent, ContactComponent, TeamComponent,NavigationComponent],
-    templateUrl: 'app/indexTemplate.html'
+    templateUrl: 'app/index/indexTemplate.html'
 })
 
 export class IndexComponent{

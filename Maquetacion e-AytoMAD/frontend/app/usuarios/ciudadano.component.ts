@@ -1,12 +1,12 @@
 import {Component}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
+import {ChatComponent} from './chat.component';
 
 @Component({
-    selector: 'load-div',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/spinnerTemplate.html',
+    templateUrl: 'app/usuarios/ciudadanoTemplate.html',
 })
 
-export class SpinnerComponent{
+export class CiudadanoComponent{
 
 }
