@@ -2,10 +2,11 @@ import {Component}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 
 @Component({
+    selector: 'load-div',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/logginTemplate.html',
+    templateUrl: 'app/spinnerTemplate.html',
 })
 
-export class LogginComponent{
+export class FooterComponent{
 
 }
