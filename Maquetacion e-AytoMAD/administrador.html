@@ -219,15 +219,29 @@
     </section>
     
     <ul id="tabs" class="nav nav-tabs">
-        <li class="active"><a href="#tab-0" id="tab-0">Modificar logo del ayuntamiento</a></li>
-        <li><a href="#tab-1" id="tab-1">Modificar noticia del ayuntamiento</a></li>
+        <li class="active"><a href="#tab-0" id="tab-0">Logos e imagenes</a></li>
+        <li><a href="#tab-1" id="tab-1">Anuncios y noticias</a></li>
         <li><a href="#tab-2" id="tab-2"></a></li>
         <li><a href="#tab-3" id="tab-3"></a></li>
     </ul>
 
     <div id="content"> 
         <div id="tab1">			
-            <div class="modal-content">
+            <a class="page-scroll portfolio-link" href="#InsercionImagen" data-toggle="modal">Modificar el logo del ayuntamiento</a><br>
+			
+        </div>
+        <div id="tab2">
+            <a class="page-scroll portfolio-link" href="#CambiarNoticia" data-toggle="modal">Modificar noticia del ayuntamiento</a><br>
+        </div>
+        <div id="tab3">
+            
+        </div>
+        <div id="tab4">
+		
+        </div>
+		
+		<div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="InsercionImagen">
+			<div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">
 					<div class="lr">
 						<div class="rl">
@@ -244,13 +258,13 @@
 									<div class="form-group">
                                         <label class="control-label col-xs-3">Enlace a archivo:</label>
                                         <div class="col-xs-9">
-                                            <input type="text" class="form-control" id="inputEnlaceArchivo" placeholder="EnlaceArchivo">
+                                            <input type="text" class="form-control" id="inputEnlaceArchivo" placeholder="Enlace al archivo">
                                         </div>
 									</div>
 									<div class="form-group">
 										<label class="control-label col-xs-3">Enlace a web:</label>
                                         <div class="col-xs-9">
-                                            <input type="text" class="form-control" id="inputEnlaceWeb" placeholder="EnlaceWeb">
+                                            <input type="text" class="form-control" id="inputEnlaceWeb" placeholder="Enlace a la web">
                                         </div>
                                     </div>                                                                                                   	                                   	                                    	                                   	                                                                       																					
                                     <p>ATENCION: Va a modificar el logo del ayuntamiento.<p>		                                                                                 
@@ -269,19 +283,59 @@
                     </div>
                 </div>
             </div>
-			
-        </div>
-        <div id="tab2">
-            
-        </div>
-        <div id="tab3">
-            
-        </div>
-        <div id="tab4">
-        <a class="page-scroll portfolio-link" href="#modalPadron" data-toggle="modal">Padron Municipal</a><br>
-        <a class="page-scroll portfolio-link" href="#modalIniciativa" data-toggle="modal">Iniciativa ciudadana</a>
-			
-        </div>
+		</div>
+		
+		<div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="CambiarNoticia">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							<div class="modal-body">
+								<!-- Project Details Go Here -->
+                                <h2>Inserción de una noticia</h2>								
+                                <form class="form-horizontal">								    
+									<div class="form-group">
+                                        <label class="control-label col-xs-3">Título de la noticia:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" id="inputTituloNoticia" placeholder="Titulo de la noticia">
+                                        </div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-3">Imagen de la noticia</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" id="inputImagenNoticia" placeholder="Imagen de la noticia">
+                                        </div>
+                                    </div>
+									<div class="form-group">
+										<label class="control-label col-xs-3">Texto de la noticia:</label>
+                                        <div class="col-xs-9">
+                                            <textarea rows="3" class="form-control" id="inputTextoNoticia" placeholder="Texto de la noticia"></textarea>
+                                        </div>
+                                    </div>	
+                                    <p>ATENCION: Va a insertar una nueva noticia. Recuerde que el resto de noticias se desplazarán una posición.<p>		                                                                                 
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <input type="submit" class="btn btn-primary" value="Enviar">
+                                            <input type="reset" class="btn btn-default" value="Limpiar">
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		
         <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalPadron">
             <div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">
