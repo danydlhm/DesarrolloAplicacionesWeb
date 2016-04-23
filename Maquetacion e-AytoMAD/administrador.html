@@ -227,7 +227,8 @@
 
     <div id="content"> 
         <div id="tab1">			
-            <a class="page-scroll portfolio-link" href="#InsercionImagen" data-toggle="modal">Modificar el logo del ayuntamiento</a><br>
+            <a class="page-scroll portfolio-link" href="#InsercionLogo" data-toggle="modal">Modificar el logo del ayuntamiento</a><br>
+			<a class="page-scroll portfolio-link" href="#ModificacionFondo" data-toggle="modal">Modificar imagen de fondo del ayuntamiento</a><br>
 			
         </div>
         <div id="tab2">
@@ -240,7 +241,7 @@
 		
         </div>
 		
-		<div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="InsercionImagen">
+		<div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="InsercionLogo">
 			<div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">
 					<div class="lr">
@@ -253,7 +254,7 @@
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body">
 								<!-- Project Details Go Here -->
-                                <h2>Inserción de la imagen</h2>								
+                                <h2>Inserción del logo</h2>								
                                 <form class="form-horizontal">								    
 									<div class="form-group">
                                         <label class="control-label col-xs-3">Enlace a archivo:</label>
@@ -268,6 +269,51 @@
                                         </div>
                                     </div>                                                                                                   	                                   	                                    	                                   	                                                                       																					
                                     <p>ATENCION: Va a modificar el logo del ayuntamiento.<p>		                                                                                 
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="col-xs-offset-3 col-xs-9">
+                                            <input type="submit" class="btn btn-primary" value="Enviar">
+                                            <input type="reset" class="btn btn-default" value="Limpiar">
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		
+		<div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="ModificacionFondo">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							<div class="modal-body">
+								<!-- Project Details Go Here -->
+                                <h2>Modificación de la imagen</h2>								
+                                <form class="form-horizontal">								    
+									<div class="form-group">
+                                        <label class="control-label col-xs-3">Enlace a archivo:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" id="inputEnlaceArchivo" placeholder="Enlace al archivo">
+                                        </div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-3">Enlace a web:</label>
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control" id="inputEnlaceWeb" placeholder="Enlace a la web">
+                                        </div>
+                                    </div>                                                                                                   	                                   	                                    	                                   	                                                                       																					
+                                    <p>ATENCION: Va a modificar la imagen de fondo del ayuntamiento.<p>		                                                                                 
                                     <br>
                                     <div class="form-group">
                                         <div class="col-xs-offset-3 col-xs-9">
