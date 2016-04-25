@@ -4,8 +4,11 @@ import {Noticia, NoticiaService}   from './noticia.service';
 
 @Component({
     template: `
+<div class="col-lg-12 text-center">
   <h2>Noticia "{{noticia.title}}"</h2>
   <h4>Noticia "{{noticia.subtitle}}"</h4>
+  <img src="{{noticia.url}}" alt="Imagen asociada a la noticia" style="width:150px;height:250px;">
+  <hr>
   <div>
     <p>{{noticia.abstract}}</p>
   </div>
@@ -14,7 +17,9 @@ import {Noticia, NoticiaService}   from './noticia.service';
     <button (click)="editNoticia()">Edit</button>
     <br>
     <button (click)="gotoNoticias()">All Noticias</button>
-  </p>`
+  </p>
+</div>
+  `
 })
 export class NoticiaDetailComponent {
 

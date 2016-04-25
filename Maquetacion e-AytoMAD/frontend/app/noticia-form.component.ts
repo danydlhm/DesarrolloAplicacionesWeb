@@ -20,6 +20,11 @@ import {Noticia, NoticiaService}   from './noticia.service';
     <label>Abstract: </label>
     <textarea [(ngModel)]="noticia.abstract" placeholder="abstract"></textarea>
   </div>
+  <div>
+    <label>Imagen: </label>
+    <input type="image" src="img_submit.gif" alt="Submit"> 
+    <textarea [(ngModel)]="noticia.url" placeholder="abstract"></textarea>
+  </div>
   <p>
     <button (click)="cancel()">Cancel</button>
     <button (click)="save()">Save</button>
@@ -43,7 +48,7 @@ export class NoticiaFormComponent {
         );
         this.newNoticia = false;
       } else {
-        this.noticia = new Noticia(undefined,'','');
+        this.noticia = new Noticia(undefined,'','','','');
         this.newNoticia = true;
       }
   }
