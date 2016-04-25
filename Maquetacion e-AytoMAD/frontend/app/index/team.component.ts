@@ -20,7 +20,4 @@ export class TeamComponent implements OnInit{
         error => console.log(error)
       );
     }
-
-    
-
 }

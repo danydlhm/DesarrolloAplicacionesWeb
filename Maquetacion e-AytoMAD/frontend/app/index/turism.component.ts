@@ -6,7 +6,7 @@ import {Imagen, CarrouselService} from './carrousel.service';
 @Component({
     selector: 'turism-section',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/index/turismTemplate1.html',
+    templateUrl: 'app/index/turismTemplate.html',
 })
 
 export class TurismComponent implements OnInit{

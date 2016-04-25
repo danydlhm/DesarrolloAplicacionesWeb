@@ -13,6 +13,5 @@ import {NavigationComponent} from './navigation.component';
     templateUrl: 'app/index/indexTemplate.html'
 })
 
-export class IndexComponent{
 
-}
+export class IndexComponent{}
