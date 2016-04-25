@@ -36,7 +36,7 @@ export class NoticiaService {
 
   getNoticia(id: number | string) {
     let noticia = this.noticias.filter(h => h.id === +id)[0]
-    return withObserver(new Noticia(noticia.id, noticia.title, notica.subtitle, noticia.abstract, noticia.url));
+    return withObserver(new Noticia(noticia.id, noticia.title, noticia.subtitle, noticia.abstract, noticia.url));
   }
 
   removeNoticia(noticia: Noticia){

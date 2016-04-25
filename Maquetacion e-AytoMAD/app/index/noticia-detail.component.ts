@@ -16,7 +16,7 @@ import {Noticia, NoticiaService}   from './noticia.service';
     <button (click)="removeNoticia()">Remove</button>
     <button (click)="editNoticia()">Edit</button>
     <br>
-    <button (click)="gotoNoticias()">All Noticias</button>
+    <button (click)="gotoIndex()">Atrás</button>
   </p>
 </div>
   `
@@ -47,7 +47,7 @@ export class NoticiaDetailComponent {
         this.router.navigate(['NoticiaEdit', { id: this.noticia.id }]);
     }
 
-    gotoNoticias() {
-        this.router.navigate(['Noticias']);
+    gotoIndex() {
+        this.router.navigate(['Index']);
     }
 }

@@ -5,8 +5,8 @@
             <h3 class="section-subheading text-muted">Conoce todo lo que sucede cerca de ti</h3>
         </div>
     </div>
-    <div *ngFor="#noticia of noticias" class="row">
-        <div class="col-md-4 col-sm-6 portfolio-item">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 portfolio-item" *ngFor="#noticia of noticias">
             <a [routerLink]="['NoticiaDetail', {id: noticia.id}]" class="portfolio-link">
                 <div class="portfolio-hover">
                     <div class="portfolio-hover-content">

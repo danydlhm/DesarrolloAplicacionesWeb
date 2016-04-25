@@ -11,7 +11,7 @@ import {Acta, ActaService}   from './acta.service';
         <a [routerLink]="['ActaDetail', {id: acta.id}]">Pleno del {{acta.diaSemana}} dia {{acta.dia}} del mes {{acta.mes}} del año {{acta.year}}</a>
       </li>
     </ul>
-    <button (click)="newActa()">New acta</button>
+    <button (click)="gotoIndex()">Atrás</button>
   `
 })
 export class ActaListComponent implements OnInit {
@@ -27,7 +27,7 @@ export class ActaListComponent implements OnInit {
       );
     }
 
-    newActa() {
-      this.router.navigate(['ActaNew']);
+    gotoIndex() {
+      this.router.navigate(['Index']);
     }
 }
