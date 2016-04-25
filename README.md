@@ -42,7 +42,7 @@ Accesibilidad
 Para la visualización de la página web necesitamos tener instalado en el ordenador un **navegador** (Chrome)
 
 
-## Diagramas ##
+## Fase 2 ##
 ---------------
 Este es un diagrama de la movilidad entre las páginas y los apartados que se han ido desarrollando
 ![Diagrama](Diagrama.png "Diagrama")
@@ -58,5 +58,10 @@ En la parte privada podemos visualizar direfentes partes como:
 ![Padrón Municipal](ImagenesAplicacion/PadronMunicipal.png "Padrón Municipal")
 ![Area Acciones](ImagenesAplicacion/AreaDeAcciones.png "Area Acciones")
 
+
+## Fase 3 ##
+---------------
+Este es un diagrama de clases del código TypeScript del cliente. 
+![DiagramaTS](DiagramaTS.png "DiagramaTS")
 
 
