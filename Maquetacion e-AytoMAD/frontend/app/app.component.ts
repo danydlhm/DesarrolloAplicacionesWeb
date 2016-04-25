@@ -6,10 +6,13 @@ import {LogginComponent} from './index/loggin.component';
 import {SignUpComponent} from './index/signUp.component';
 import {CiudadanoComponent} from './usuarios/ciudadano.component';
 import {SpinnerComponent} from './spinner.component';
+import {ConcejalService} from './index/concejal.service';
+import {CarrouselService} from './index/carrousel.service';
 
 @Component({
   selector: 'app',
   templateUrl: 'app/appTemplate.html',
+  providers:  [ConcejalService,CarrouselService],
   directives: [ROUTER_DIRECTIVES, FooterComponent, SpinnerComponent]
 })
 @RouteConfig([

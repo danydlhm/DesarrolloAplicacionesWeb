@@ -7,46 +7,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-4" *ngFor="#concejal of concejales">
                     <div class="team-member">
-                        <img src="img/team/Marta%20c%C3%ADrculo.png" class="img-responsive img-circle" alt="Foto de Marta Higueras">
-                        <h4>Marta Higueras</h4>
-                        <p class="text-muted">Primera Teniente de Alcalde</p>
+                        <img src={{concejal.getUrl()}} class="img-responsive img-circle" alt="Foto de Marta Higueras">
+                        <h4>{{concejal.getName()}}</h4>
+                        <p class="text-muted">{{concejal.getDesc()}}</p>
                         <ul class="list-inline social-buttons">
-                            <li><a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/El-Pleno/Composicion/Corporacion-actual/Grupo-Municipal-Ahora-Madrid/Marta-Maria-Higueras-Garrobo?vgnextfmt=default&vgnextoid=1ddd0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=fe69d1cebc98d410VgnVCM1000000b205a0aRCRD"><i class="fa fa-at"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/Manuela%20c%C3%ADrculo.png" class="img-responsive img-circle" alt="Foto de Manuela Carmena">
-                        <h4>Manuela Carmena</h4>
-                        <p class="text-muted">Alcaldesa</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="https://twitter.com/@ManuelaCarmena"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="https://www.facebook.com/Manuela.Carmena.Castrillo"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="https://es.linkedin.com/in/manuela-carmena-9060b212?trk=pub-pbmap"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li><a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Grupos-politicos/Grupo-Municipal-Ahora-Madrid/Manuela-Carmena-Castrillo?vgnextfmt=default&vgnextoid=806c0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=22da2569d1b13310VgnVCM2000000c205a0aRCRD"><i class="fa fa-at"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/Rita%20c%C3%ADrculo.png" class="img-responsive img-circle" alt="Foto de Rita Maestre">
-                        <h4>Rita Maestre</h4>
-                        <p class="text-muted">Portavoz</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="https://twitter.com/rita_maestre?lang=es"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=a06d0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=97f1ae2418a57310VgnVCM1000000b205a0aRCRD&vgnextfmt=default"><i class="fa fa-at"></i></a>
-                            </li>
-                            <li><a href="https://www.instagram.com/ritamaestref/"><i class="fa fa-instagram"></i></a>
-                            </li>
+                            <li *ngFor="#link of concejal.getContactos()"><a href={{link}}><i class="fa fa-at"></i></a></li>
                         </ul>
                     </div>
                 </div>
