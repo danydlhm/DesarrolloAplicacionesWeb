@@ -21,6 +21,9 @@ export class TurismComponent implements OnInit{
         imagenes => this.imagenes = imagenes,
         error => console.log(error)
       );
+      for(let i=0; i<this.imagenes.length; i++){
+        this.imagenes[i].setActive(false);
+      }
       if(this.imagenes.length > 0){
         this.imagenes[0].setActive(true);
         this.activo = 0;

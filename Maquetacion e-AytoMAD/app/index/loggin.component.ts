@@ -7,5 +7,16 @@ import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 })
 
 export class LogginComponent{
-
+    private user:string;
+    
+    constructor(private router:Router){}
+    
+    goto(){
+        if (this.user==='admin'){
+            this.router.navigate(['Administrador']);
+        }
+        if (this.user==='concejal'){
+            this.router.navigate(['Ciudadano']);
+        }
+    }
 }

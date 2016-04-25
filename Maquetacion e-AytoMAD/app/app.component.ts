@@ -5,6 +5,7 @@ import {IndexComponent} from './index/index.component';
 import {LogginComponent} from './index/loggin.component';
 import {SignUpComponent} from './index/signUp.component';
 import {CiudadanoComponent} from './usuarios/ciudadano.component';
+import {AdministradorComponent} from './usuarios/administrador.component';
 import {SpinnerComponent} from './spinner.component';
 import {ConcejalService} from './index/concejal.service';
 import {CarrouselService} from './index/carrousel.service';
@@ -23,6 +24,7 @@ import {NoticiaService} from './index/noticia.service';
 @RouteConfig([
   {path: '/index', name: 'Index', component: IndexComponent, useAsDefault: true},
   {path: '/usuario/concejal', name: 'Ciudadano', component: CiudadanoComponent},
+  {path: '/usuario/administrador', name: 'Administrador', component: AdministradorComponent},
   {path: '/loggin', name: 'Loggin', component: LogginComponent}, 
   {path: '/signup', name: 'SignUp', component: SignUpComponent},
   {path: '/index/noticia/:id', name: 'NoticiaDetail', component: NoticiaDetailComponent},

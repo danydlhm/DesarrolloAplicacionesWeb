@@ -11,7 +11,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Usuario</label>
                                     <div class="col-xs-9">
-                                        <input type="text" class="form-control" placeholder="Nombre de Usuario">
+                                        <input type="text" class="form-control" placeholder="Nombre de Usuario" [(ngModel)]="user">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -24,10 +24,10 @@
                                     <a href="#modalSignup" data-dismiss="modal" data-toggle="modal">Si no tienes usuario, registrate</a>
                                 </div>
                                 <hr>
-                                <a href="user.html" class="btn btn-primary" role="button" id="botonRegistro">Entrar</a>
+                                <a (click)="goto()"  class="btn btn-primary" role="button" id="botonRegistro">Entrar</a>
                             </form>
                         <hr>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                        <button type="button" class="btn btn-primary" [routerLink]="['Index']" ><i class="fa fa-times"></i> Cerrar</button>
                     </div>
                 </div>
             </div>
