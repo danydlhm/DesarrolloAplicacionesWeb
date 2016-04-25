@@ -27,96 +27,18 @@
                   </ol>
                 <!-- Wrapper for slides -->
                    <div class="carousel-inner" role="listbox">
-                     <div class="item active">
-                       <img class="img-thumbnail" src="img/Turismo/Atocha.jpg" alt="Foto de la estacion de Atocha en Madrid">
-                       <div class="carousel-caption">
-                          <h3>Atocha</h3>
-                       </div>
+                        <div class="item" [class.active]="img.active" *ngFor="#img of imagenes">
+                            <img class="img-thumbnail" src={{img.getUrl()}} alt="Foto de la estacion de Atocha en Madrid">
+                            <div class="carousel-caption">
+                                <h3>{{img.getName()}}</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/GranVia.jpg" alt="Foto de la Gran Via de Madrid">
-                       <div class="carousel-caption">
-                          <h3>Gran Via</h3>
-                       </div>
-                    </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/PalacioReal.jpg" alt="Foto del Palacio Real de Madrid">
-                       <div class="carousel-caption">
-                          <h3>Palacio Real</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/PlazaDeEspa%C3%B1a.jpg" alt="Foto de la Plaza de España en Madrid">
-                       <div class="carousel-caption">
-                          <h3>Plaza De España</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/PlazaMayor.jpg" alt="Foto de la Plaza Mayor de Madrid">
-                       <div class="carousel-caption">
-                          <h3>Plaza Mayor</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/PuertaDelSol.jpg" alt="Foto de la Puerta del Sol de Madrid">
-                       <div class="carousel-caption">
-                          <h3>Puerta Del Sol</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/TemploDeDebod.JPG" alt="Foto del Templo de Debod en Madrid">
-                       <div class="carousel-caption">
-                          <h3>Templo De Debod</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/ElPrado.jpg" alt="Foto del Museo del Prado de Madrid">
-                       <div class="carousel-caption">
-                          <h3>El Prado</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/ElRetiro.jpg" alt="Foto del Parque del Retiro en Madrid">
-                       <div class="carousel-caption">
-                          <h3>El Retiro</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/LasVentas.jpg" alt="Foto de la Plaza de Toros de las Ventas en Madrid">
-                       <div class="carousel-caption">
-                          <h3>Las Ventas</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/PalacioCristal.jpg" alt="Foto del Palacio de Cristal en el Parque del Retiro en Madrid">
-                       <div class="carousel-caption">
-                          <h3>Palacio de Cristal</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/PuertaAlcala.jpg" alt="Foto de la Puerta de Alcala de Madrid">
-                       <div class="carousel-caption">
-                          <h3>Puerta de Alcala</h3>
-                       </div>
-                     </div>
-                    <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/TorresQuio.jpg" alt="Foto de las Torres Quio en Madrid">
-                       <div class="carousel-caption">
-                          <h3>Torres Quio</h3>
-                       </div>
-                     </div>
-                     <div class="item">
-                       <img class="img-thumbnail" src="img/Turismo/CampodelMoro.jpg" alt="Foto del Campo del Moro">
-                       <div class="carousel-caption">
-                          <h3>Campo del moro</h3>
-                       </div>
-                     </div>
-                   </div>
                 <!-- Controls -->
-                 <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                 <a class="left carousel-control" href="#carousel" role="button" (click)="prev()">
                    <span class="glyphicon glyphicon-chevron-left"></span>
                  </a>
-                 <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                 <a class="right carousel-control" href="#carousel" role="button" (click)="next()">
                    <span class="glyphicon glyphicon-chevron-right"></span>
                  </a>
              </div><!-- Carousel -->    

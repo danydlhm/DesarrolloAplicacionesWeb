@@ -6,11 +6,13 @@ export class Imagen{
     private id:number;
     private name:string;
     private urlFoto:string;
+    private active:boolean;
     
     constructor (id:numbername:string,urlFoto:string){
         this.id = id;
         this.name = name;
         this.urlFoto = urlFoto;
+        this.active = false;
     }
     
     getName(){
@@ -20,11 +22,19 @@ export class Imagen{
     getUrl(){
         return this.urlFoto;
     }
+    
+    getActive(){
+        return this.active;
+    }
+    
+    setActive(active:boolean){
+        this.active = active;
+    }
 
 }
 
 @Injectable()
-export class CarruselService {
+export class CarrouselService {
 
   private imagenes = [
     new Imagen (1,'Atocha','img/Turismo/Atocha.jpg'),
