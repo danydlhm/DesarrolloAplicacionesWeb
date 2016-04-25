@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
-import {withObserver} from './utils';
+import {withObserver} from '../utils';
 
 export class Noticia {
 
