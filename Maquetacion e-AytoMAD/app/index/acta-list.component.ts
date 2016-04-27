@@ -5,13 +5,19 @@ import {Acta, ActaService}   from './acta.service';
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <h2>Actas</h2>
-    <ul class="items">
-      <li *ngFor="#acta of actas">
-        <a [routerLink]="['ActaDetail', {id: acta.id}]">Pleno del {{acta.diaSemana}} dia {{acta.dia}} del mes {{acta.mes}} del año {{acta.year}}</a>
-      </li>
-    </ul>
-    <button (click)="gotoIndex()">Atrás</button>
+    <div class="container modal-body">
+        <div class="col-lg-8 col-lg-offset-2 text-center ">
+            <h2>Actas</h2>
+            <ul class="items list-unstyled">
+              <li *ngFor="#acta of actas">
+                <a [routerLink]="['ActaDetail', {id: acta.id}]">Pleno del {{acta.diaSemana}} dia {{acta.dia}} del mes {{acta.mes}} del año {{acta.year}}</a>
+              </li>
+
+            </ul>
+            <div class="text-center">
+            <button class="btn btn-primary" (click)="gotoIndex()">Atrás</button>
+        </div>
+    </div>
   `
 })
 export class ActaListComponent implements OnInit {

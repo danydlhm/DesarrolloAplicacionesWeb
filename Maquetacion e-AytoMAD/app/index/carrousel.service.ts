@@ -8,7 +8,7 @@ export class Imagen{
     private urlFoto:string;
     private active:boolean;
     
-    constructor (id:numbername:string,urlFoto:string){
+    constructor (id:number,name:string,urlFoto:string){
         this.id = id;
         this.name = name;
         this.urlFoto = urlFoto;
