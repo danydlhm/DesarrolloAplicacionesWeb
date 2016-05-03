@@ -11,23 +11,22 @@
             </div>
         </div>
     </header>
-    
-    <chat-section><load-div></load-div></chat-section>
     <ul id="tabs" class="nav nav-tabs">
-        <li class="active"><a href="#tab-0" id="tab-0">Logos e imagenes</a></li>
-        <li><a href="#tab-1" id="tab-1">Anuncios y noticias</a></li>
+        <li class="active"><a (click)="setVisible(0)" id="tab-0">Logos e imagenes</a></li>
+        <li><a (click)="setVisible(1)" id="tab-1">Anuncios y noticias</a></li>
         <li><a href="#tab-2" id="tab-2"></a></li>
         <li><a href="#tab-3" id="tab-3"></a></li>
     </ul>
 
-    <div id="content"> 
-        <div id="tab1">			
+    <div id="content">
+        <router-outlet></router-outlet>
+        <div id="tab1" [class.hidden]="tabs[0]">			
             <a class="page-scroll portfolio-link" href="#InsercionLogo" data-toggle="modal">Modificar el logo del ayuntamiento</a><br>
 			<a class="page-scroll portfolio-link" href="#ModificacionFondo" data-toggle="modal">Modificar imagen de fondo del ayuntamiento</a><br>
 			
         </div>
-        <div id="tab2">
-            <a class="page-scroll portfolio-link" href="#CambiarNoticia" data-toggle="modal">Modificar noticia del ayuntamiento</a><br>
+        <div id="tab2" [class.hidden]="tabs[1]">
+            <a class="page-scroll portfolio-link" [routerLink]="['AdminNews']">Modificar noticia del ayuntamiento</a><br>
 			<a class="page-scroll portfolio-link" href="#ModificarTiempo" data-toggle="modal">Modificar el tiempo del ayuntamiento</a><br>
 			
         </div>

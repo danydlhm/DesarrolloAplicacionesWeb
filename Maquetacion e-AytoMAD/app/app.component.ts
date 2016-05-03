@@ -14,6 +14,7 @@ import {ActaDetailComponent} from './index/acta-detail.component';
 import {ActaService} from './index/acta.service';
 import {NoticiaDetailComponent} from './index/noticia-detail.component';
 import {NoticiaService} from './index/noticia.service';
+import {NoticiaListComponent} from './index/noticia-list.component';
 
 @Component({
   selector: 'app',
@@ -25,6 +26,7 @@ import {NoticiaService} from './index/noticia.service';
   {path: '/index', name: 'Index', component: IndexComponent, useAsDefault: true},
   {path: '/usuario/concejal', name: 'Ciudadano', component: CiudadanoComponent},
   {path: '/usuario/administrador', name: 'Administrador', component: AdministradorComponent},
+  {path: '/usuario/administrador/noticias', name: 'AdminNews', component: NoticiaListComponent},
   {path: '/loggin', name: 'Loggin', component: LogginComponent}, 
   {path: '/signup', name: 'SignUp', component: SignUpComponent},
   {path: '/index/noticia/:id', name: 'NoticiaDetail', component: NoticiaDetailComponent},
