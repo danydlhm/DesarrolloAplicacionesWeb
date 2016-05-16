@@ -13,8 +13,8 @@ import {Noticia, NoticiaService}   from './noticia.service';
     <p>{{noticia.abstract}}</p>
   </div>
   <p>
-    <button class="btn btn-primary" (click)="removeNoticia()">Remove</button>
-    <button class="btn btn-primary" (click)="editNoticia()">Edit</button>
+    <button class="btn btn-primary" (click)="removeNoticia()">Eliminar</button>
+    <button class="btn btn-primary" (click)="editNoticia()">Editar</button>
     <br>
     <button class="btn btn-primary" (click)="gotoIndex()">Atrás</button>
   </p>

@@ -5,7 +5,7 @@ import {Noticia, NoticiaService}   from './noticia.service';
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <div class="row">
+    <div class="row" margin : 1em;>
         <div class="col-md-4 col-sm-6 portfolio-item text-center" *ngFor="#noticia of noticias">
             <a [routerLink]="['NoticiaDetail', {id: noticia.id}]" class="portfolio-link">
                 <div class="portfolio-hover">
@@ -21,7 +21,7 @@ import {Noticia, NoticiaService}   from './noticia.service';
             </div>
         </div>
     </div>
-    <button (click)="newNoticia()">New noticia</button>
+    <button class="btn btn-primary" (click)="newNoticia()">Nueva noticia</button>
   `
 })
 export class NoticiaListComponent implements OnInit {

@@ -64,7 +64,7 @@ h1,h2,h3,h4,h5,h6{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-s
 .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{color:#fff;background-color:#fec503}
 
 @media (min-width:768px){
-    .navbar-default{background-color:transparent;padding:25px 0;-webkit-transition:padding .3s;-moz-transition:padding .3s;transition:padding .3s;border:0}
+    .navbar-default{background-color:#11B2A6;padding:25px 0;-webkit-transition:padding .3s;-moz-transition:padding .3s;transition:padding .3s;border:0} /*Esta linea ha sido tocada, el color del fondo era transparente*/
     
     .navbar-default .navbar-brand{font-size:2em;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}
     
@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5,h6{font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-s
     .navbar-default.navbar-shrink .navbar-brand{font-size:1.5em}
 }
 
-header{background-image:url(../img/Palacio_de_Comunicaciones_-_47.jpg);background-repeat:none;background-attachment:scroll;background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;text-align:center;color:#fff}
+header{background-image:url(../img/Palacio_de_Comunicaciones_-_47.jpg);background-repeat:none;background-attachment:scroll;background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;text-align:center;color:#fff;margin-top: 150px;}
 
 header .intro-text{padding-top:100px;padding-bottom:50px}
 

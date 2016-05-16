@@ -5,13 +5,18 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <h2>Propuestas</h2>
-    <ul class="items">
-      <li *ngFor="#propuesta of propuestas">
-        <a [routerLink]="['PropuestaDetail', {id: propuesta.id}]">{{propuesta.title}}</a>
-      </li>
-    </ul>
-    <button (click)="newPropuesta()">Nueva Propuesta</button>
+    <div class="container modal-body">
+        <div class="col-lg-8 col-lg-offset-2 text-center ">
+            <h2>Propuestas</h2>
+            <ul class="items list-unstyled">
+              <li *ngFor="#propuesta of propuestas">
+                <a [routerLink]="['PropuestaDetail', {id: propuesta.id}]">Propuesta nº{{propuesta.id}}: {{propuesta.titulo}}</a>
+              </li>
+            </ul>
+            <button class="btn btn-primary" (click)="newPropuesta()">Nueva Propuesta</button>
+            <button class="btn btn-primary" (click)="gotoIndex()">Atrás</button>
+        </div>
+    </div>
   `
 })
 export class PropuestaListComponent implements OnInit {
@@ -29,5 +34,9 @@ export class PropuestaListComponent implements OnInit {
 
     newPropuesta() {
       this.router.navigate(['PropuestaNew']);
+    }
+    
+    gotoIndex() {
+      this.router.navigate(['Index']);
     }
 }

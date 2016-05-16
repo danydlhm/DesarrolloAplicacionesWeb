@@ -26,8 +26,8 @@ import {Noticia, NoticiaService}   from './noticia.service';
     <textarea [(ngModel)]="noticia.url" placeholder="abstract"></textarea>
   </div>
   <p>
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
+    <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
+    <button class="btn btn-primary" (click)="save()">Salvar</button>
   </p>`
 })
 export class NoticiaFormComponent {

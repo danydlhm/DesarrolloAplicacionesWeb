@@ -4,32 +4,37 @@ import {Acta, ActaService}   from './acta.service';
 
 @Component({
   template: `
-  <div *ngIf="acta.id">
-    <label>Id: </label>{{acta.id}}</div>
-  <div>
-    <label>Dia de la Semana: </label>
-    <input [(ngModel)]="acta.diaSemana" placeholder="dia de la semana"/>
-  </div>
-  <div>
-    <label>Dia del Mes: </label>
-    <input [(ngModel)]="acta.dia" placeholder="dia del mes"/>
-  </div>
-  <div>
-    <label>Mes: </label>
-    <input [(ngModel)]="acta.mes" placeholder="mes"/>
-  </div>
-  <div>
-    <label>Año: </label>
-    <input [(ngModel)]="acta.year" placeholder="año"/>
-  </div>
-  <div>
-    <label>Contenido: </label>
-    <textarea [(ngModel)]="acta.contenido" placeholder="contenido"></textarea>
-  </div>
-  <p>
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
-  </p>`
+  <div class="container modal-body">
+        <div class="col-lg-8 col-lg-offset-2 text-center ">
+          <div *ngIf="acta.id">
+            <label>Id: </label>{{acta.id}}</div>
+          <div>
+            <label>Dia de la Semana: </label>
+            <input [(ngModel)]="acta.diaSemana" placeholder="dia de la semana"/>
+          </div>
+          <div>
+            <label>Dia del Mes: </label>
+            <input [(ngModel)]="acta.dia" placeholder="dia del mes"/>
+          </div>
+          <div>
+            <label>Mes: </label>
+            <input [(ngModel)]="acta.mes" placeholder="mes"/>
+          </div>
+          <div>
+            <label>Año: </label>
+            <input [(ngModel)]="acta.year" placeholder="año"/>
+          </div>
+          <div>
+            <label>Contenido: </label>
+            <textarea [(ngModel)]="acta.contenido" placeholder="contenido"></textarea>
+          </div>
+          <p>
+            <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+            <button class="btn btn-primary" (click)="save()">Save</button>
+          </p>
+        </div>
+    </div>
+  `
 })
 export class ActaFormComponent {
 

@@ -4,28 +4,33 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
 
 @Component({
   template: `
-  <h2>Nueva Propuesta "{{propuesta.titulo}}"</h2>
-  <div *ngIf="propuesta.id"><label>Id: </label>{{propuesta.id}}</div>
-  <div>
-    <label>Autor: </label>
-    <input [(ngModel)]="propuesta.creador" placeholder="autor"/>
-  </div>
-  <div>
-    <label>Titulo: </label>
-    <input [(ngModel)]="propuesta.title" placeholder="titulo"/>
-  </div>
-  <div>
-    <label>Contenido: </label>
-    <textarea [(ngModel)]="propuesta.contenido" placeholder="contenido"></textarea>
-  </div>
-  <div>
-    <label>Imagen: </label>
-    <input type="file" name="pic" accept="image/*">
-  </div>
-  <p>
-    <button (click)="cancel()">Cancelar</button>
-    <button (click)="save()">Guardar</button>
-  </p>`
+  <div class="container modal-body">
+        <div class="col-lg-8 col-lg-offset-2 text-center ">
+          <h2>Nueva Propuesta "{{propuesta.titulo}}"</h2>
+          <div *ngIf="propuesta.id"><label>Id: </label>{{propuesta.id}}</div>
+          <div>
+            <label>Autor: </label>
+            <input [(ngModel)]="propuesta.creador" placeholder="autor"/>
+          </div>
+          <div>
+            <label>Titulo: </label>
+            <input [(ngModel)]="propuesta.title" placeholder="titulo"/>
+          </div>
+          <div>
+            <label>Contenido: </label>
+            <textarea [(ngModel)]="propuesta.contenido" placeholder="contenido"></textarea>
+          </div>
+          <div>
+            <label>Imagen: </label>
+            <input type="file" name="pic" accept="image/*">
+          </div>
+          <p>
+            <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
+            <button class="btn btn-primary" (click)="save()">Guardar</button>
+          </p>
+        </div>
+    </div>
+  `
 })
 export class PropuestaFormComponent {
 

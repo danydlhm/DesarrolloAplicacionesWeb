@@ -4,18 +4,23 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
 
 @Component({
     template: `
-  <h2>Propuesta : "{{propuesta.titulo}}"</h2>
-  <img src="{{propuesta.imagen}}" alt="Imagen asociada a la propuesta" height="350" width="350"> 
-  <div>
-    <p>{{propuesta.contenido}}</p>
-  </div>
-  <h4> Creada por : "{{propuesta.creador}}"<h4>
-  <p>
-    <button (click)="removePropuesta()">Eliminar</button>
-    <button (click)="editPropuesta()">Editar</button>
-    <br>
-    <button (click)="gotoPropuestas()">Volver a Propuestas</button>
-  </p>`
+    <div class="container modal-body">
+        <div class="col-lg-8 col-lg-offset-2 text-center ">
+          <h2>Propuesta : "{{propuesta.titulo}}"</h2>
+          <img src="{{propuesta.imagen}}" alt="Imagen asociada a la propuesta" height="350" width="350"> 
+          <div>
+            <p>{{propuesta.contenido}}</p>
+          </div>
+          <h4> Creada por : "{{propuesta.creador}}"<h4>
+          <p>
+            <button class="btn btn-primary" (click)="removePropuesta()">Eliminar</button>
+            <button class="btn btn-primary" (click)="editPropuesta()">Editar</button>
+            <br>
+            <button class="btn btn-primary" (click)="gotoPropuestas()">Volver a Propuestas</button>
+          </p>
+        </div>
+    </div>
+  `
 })
 export class PropuestaDetailComponent {
 

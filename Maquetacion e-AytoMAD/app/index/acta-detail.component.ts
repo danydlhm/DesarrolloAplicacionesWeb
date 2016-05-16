@@ -4,16 +4,24 @@ import {Acta, ActaService}   from './acta.service';
 
 @Component({
     template: `
-  <h2>Acta del Pleno del "{{acta.diaSemana}}" dia "{{acta.dia}}" del mes "{{acta.mes}}" del año "{{acta.year}}"</h2>
-  <div>
-    <p>{{acta.contenido}}</p>
-  </div>
-  <p>
-    <button (click)="removeActa()">Remove</button>
-    <button (click)="editActa()">Edit</button>
-    <br>
-    <button (click)="gotoActas()">All Actas</button>
-  </p>`
+    <div class="container modal-body">
+        <div class="col-lg-8 col-lg-offset-2 text-center ">
+          <h2>Acta del Pleno del "{{acta.diaSemana}}" dia "{{acta.dia}}" del mes "{{acta.mes}}" del año "{{acta.year}}"</h2>
+          <div>
+            <p>{{acta.contenido}}</p>
+          </div>
+          <div>
+            <div class="col-lg-8 col-lg-offset-2 text-center ">
+                <button class="btn btn-primary" (click)="removeActa()">Eliminar</button>
+                <button class="btn btn-primary" (click)="editActa()">Editar</button>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center ">
+                <button class="btn btn-primary" (click)="gotoActas()">Volver a las Actas</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  `
 })
 export class ActaDetailComponent {
 

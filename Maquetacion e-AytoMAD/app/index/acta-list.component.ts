@@ -14,7 +14,6 @@ import {Acta, ActaService}   from './acta.service';
               </li>
 
             </ul>
-            <div class="text-center">
             <button class="btn btn-primary" (click)="gotoIndex()">Atrás</button>
         </div>
     </div>
