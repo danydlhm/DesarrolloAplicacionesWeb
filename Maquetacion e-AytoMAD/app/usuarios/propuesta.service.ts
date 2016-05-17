@@ -1,6 +1,6 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
-import {withObserver} from './utils';
+import {withObserver} from '../utils';
 
 export class Propuesta {
 
@@ -20,8 +20,8 @@ export class Propuesta {
 export class PropuestaService {
 
   private propuestas = [
-  	new Propuesta(1, 'Manolo el del Bombo', false, null, {'Guti','Pique','Casillas','Ramos'}, 'Quiero una Vuvuzela', 'Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo.', '/img'),
-  	new Propuesta(2, 'Rasputin', true, 'Manuela Carmena', {'Principe Felix Yusupov'}, 'Echar al Zar', 'Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina.', '/img')
+  	new Propuesta(1, 'Manolo el del Bombo', false, null, ['Guti','Pique','Casillas','Ramos'], 'Quiero una Vuvuzela', 'Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo.', '/img'),
+  	new Propuesta(2, 'Rasputin', true, 'Manuela Carmena', ['Principe Felix Yusupov'], 'Echar al Zar', 'Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina.', '/img')
   ];
 
   getPropuestas() {

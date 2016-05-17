@@ -6,7 +6,7 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
     directives: [ROUTER_DIRECTIVES],
     template: `
     <div class="container modal-body">
-        <div class="col-lg-8 col-lg-offset-2 text-center ">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
             <h2>Propuestas</h2>
             <ul class="items list-unstyled">
               <li *ngFor="#propuesta of propuestas">

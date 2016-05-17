@@ -1,5 +1,5 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Propuesta, PropuestaService}   from './propuesta.service';
 
 @Component({
@@ -11,13 +11,11 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
           <div>
             <p>{{propuesta.contenido}}</p>
           </div>
-          <h4> Creada por : "{{propuesta.creador}}"<h4>
-          <p>
+          <h4> Creada por : "{{propuesta.creador}}"</h4>
             <button class="btn btn-primary" (click)="removePropuesta()">Eliminar</button>
             <button class="btn btn-primary" (click)="editPropuesta()">Editar</button>
             <br>
             <button class="btn btn-primary" (click)="gotoPropuestas()">Volver a Propuestas</button>
-          </p>
         </div>
     </div>
   `
@@ -38,7 +36,7 @@ export class PropuestaDetailComponent {
         let okResponse = window.confirm("¿De verdad quieres eliminar esta propuesta?");
         if (okResponse) {
             this.service.removePropuesta(this.propuesta).subscribe(
-                _ => this.router.navigate(['Propuestas']),
+                _ => this.router.navigate(['PropuestaList']),
                 error => console.error(error)
             )
         }
@@ -49,6 +47,6 @@ export class PropuestaDetailComponent {
     }
 
     gotoPropuestas() {
-        this.router.navigate(['Propuestas']);
+        this.router.navigate(['PropuestaList']);
     }
 }

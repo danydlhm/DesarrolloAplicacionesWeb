@@ -14,7 +14,7 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
           </div>
           <div>
             <label>Titulo: </label>
-            <input [(ngModel)]="propuesta.title" placeholder="titulo"/>
+            <input [(ngModel)]="propuesta.titulo" placeholder="titulo"/>
           </div>
           <div>
             <label>Contenido: </label>

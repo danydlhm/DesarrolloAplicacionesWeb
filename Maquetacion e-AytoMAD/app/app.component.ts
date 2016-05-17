@@ -5,6 +5,7 @@ import {IndexComponent} from './index/index.component';
 import {LogginComponent} from './index/loggin.component';
 import {SignUpComponent} from './index/signUp.component';
 import {CiudadanoComponent} from './usuarios/ciudadano.component';
+import {PropuestaService} from './usuarios/propuesta.service';
 import {AdministradorComponent} from './usuarios/administrador.component';
 import {SpinnerComponent} from './spinner.component';
 import {ConcejalService} from './index/concejal.service';
@@ -15,19 +16,16 @@ import {ActaService} from './index/acta.service';
 import {NoticiaDetailComponent} from './index/noticia-detail.component';
 import {NoticiaService} from './index/noticia.service';
 import {NoticiaListComponent} from './index/noticia-list.component';
-import {PropuestaListComponent} from './usuarios/propuesta-list.component';
-import {PropuestaDetailComponent} from './usuario/propuesta-detail.component';
-import {PropuestaFormComponent} from './usuarios/propuesta-form.component';
 
 @Component({
   selector: 'app',
   templateUrl: 'app/appTemplate.html',
-  providers:  [ConcejalService,CarrouselService,ActaService, NoticiaService],
+  providers:  [ConcejalService,CarrouselService,ActaService, NoticiaService, PropuestaService],
   directives: [ROUTER_DIRECTIVES, FooterComponent, SpinnerComponent]
 })
 @RouteConfig([
   {path: '/index', name: 'Index', component: IndexComponent, useAsDefault: true},
-  {path: '/usuario/concejal', name: 'Ciudadano', component: CiudadanoComponent},
+  {path: '/usuario/concejal/...', name: 'Ciudadano', component: CiudadanoComponent},
   /**{path: '/usuario/concejal/propuesta/:id', name: 'PropuestaDetail', component: PropuestaDetailComponent},
   {path: '/usuario/concejal/propuestas/', name: 'PropuestaList', component: PropuestaListComponent},
   {path: '/usuario/concejal/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},*/
