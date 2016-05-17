@@ -7,7 +7,14 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
     <div class="container modal-body">
         <div class="col-lg-8 col-lg-offset-2 text-center ">
           <h2>Propuesta : "{{propuesta.titulo}}"</h2>
-          <img src="{{propuesta.imagen}}" alt="Imagen asociada a la propuesta" height="350" width="350"> 
+          <img src="{{propuesta.imagen}}" alt="Imagen asociada a la propuesta" height="350" width="350">
+            <div *ngIf="propuesta.aprobada">
+                <h3> Propuesta "Aprobada" por el Concejal : {{propuesta.concejal}}</h3>
+            </div>
+            <div *ngIf!="propuesta.aprobada">
+                <h3> Propuesta "Sin Aprobar", faltan firmas</h3>
+                <button class="btn btn-primary" (click)="addP()">Unete</button>
+            </div>
           <div>
             <p>{{propuesta.contenido}}</p>
           </div>
@@ -48,5 +55,9 @@ export class PropuestaDetailComponent {
 
     gotoPropuestas() {
         this.router.navigate(['PropuestaList']);
+    }
+    
+    addP() {
+        this.propuesta.firmantes[this.propuesta.firmantes.length +1] = "Usuario Anonimo";
     }
 }
