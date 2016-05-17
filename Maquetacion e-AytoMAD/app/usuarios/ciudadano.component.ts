@@ -21,5 +21,4 @@ import {ConcejalIndexComponent} from './index.component';
 export class CiudadanoComponent{
     private user:string;
     
-    
 }

@@ -1,0 +1,34 @@
+<div class="container" id="modalEntrar" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Entrar Details Go Here -->
+                        <h2>Entrar</h2>
+                        <p class="item-intro text-muted">Para entrar al servicio. Introduce tu nombre de usuario y contraseña</p>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">Usuario</label>
+                                    <div class="col-xs-9">
+                                        <input type="text" class="form-control" placeholder="Nombre de Usuario" [(ngModel)]="user">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-xs-3">Contraseña</label>
+                                    <div class="col-xs-9">
+                                        <input type="password" class="form-control" placeholder="Contraseña">
+                                    </div>
+                                </div>
+                                <div>
+                                    <a (click)="goSup()" data-dismiss="modal" data-toggle="modal">Si no tienes usuario, registrate</a>
+                                </div>
+                                <hr>
+                                <a (click)="goto()"  class="btn btn-primary" role="button" id="botonRegistro">Entrar</a>
+                            </form>
+                        <hr>
+                        <button type="button" class="btn btn-primary" [routerLink]="['Index']" ><i class="fa fa-times"></i> Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
