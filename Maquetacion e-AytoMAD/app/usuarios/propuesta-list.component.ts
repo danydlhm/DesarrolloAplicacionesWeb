@@ -37,6 +37,6 @@ export class PropuestaListComponent implements OnInit {
     }
     
     gotoIndex() {
-      this.router.navigate(['Index']);
+      this.router.navigate(['ConcejalIndex']);
     }
 }

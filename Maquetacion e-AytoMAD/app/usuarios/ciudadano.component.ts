@@ -4,6 +4,7 @@ import {NavComponent} from './nav.component';
 import {PropuestaListComponent} from './propuesta-list.component';
 import {PropuestaDetailComponent} from './propuesta-detail.component';
 import {PropuestaFormComponent} from './propuesta-form.component';
+import {ConcejalIndexComponent} from './index.component';
 
 @Component({
     directives: [ROUTER_DIRECTIVES, NavComponent],
@@ -11,17 +12,14 @@ import {PropuestaFormComponent} from './propuesta-form.component';
 })
 
 @RouteConfig([
+    {path: '/index', name: 'ConcejalIndex', component: ConcejalIndexComponent, useAsDefault: true},
     {path: '/propuesta/:id', name: 'PropuestaDetail', component: PropuestaDetailComponent},
-    {path: '/propuestas/', name: 'PropuestaList', component: PropuestaListComponent, useAsDefault: true},
+    {path: '/propuestas/', name: 'PropuestaList', component: PropuestaListComponent},
     {path: '/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},
 ])
 
 export class CiudadanoComponent{
     private user:string;
     
-    constructor(private router:Router){}
     
-    gotoPropuestas(){
-        this.router.navigate(['PropuestaList']);
-    }
 }
