@@ -19,4 +19,8 @@ export class LogginComponent{
             this.router.navigate(['Ciudadano']);
         }
     }
+    
+    goSup(){
+        this.router.navigate(['SignUp']);
+    }
 }

@@ -15,6 +15,9 @@ import {ActaService} from './index/acta.service';
 import {NoticiaDetailComponent} from './index/noticia-detail.component';
 import {NoticiaService} from './index/noticia.service';
 import {NoticiaListComponent} from './index/noticia-list.component';
+import {PropuestaListComponent} from './usuarios/propuesta-list.component';
+import {PropuestaDetailComponent} from './usuario/propuesta-detail.component';
+import {PropuestaFormComponent} from './usuarios/propuesta-form.component';
 
 @Component({
   selector: 'app',
@@ -25,12 +28,15 @@ import {NoticiaListComponent} from './index/noticia-list.component';
 @RouteConfig([
   {path: '/index', name: 'Index', component: IndexComponent, useAsDefault: true},
   {path: '/usuario/concejal', name: 'Ciudadano', component: CiudadanoComponent},
+  /**{path: '/usuario/concejal/propuesta/:id', name: 'PropuestaDetail', component: PropuestaDetailComponent},
+  {path: '/usuario/concejal/propuestas/', name: 'PropuestaList', component: PropuestaListComponent},
+  {path: '/usuario/concejal/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},*/
   {path: '/usuario/administrador', name: 'Administrador', component: AdministradorComponent},
   {path: '/usuario/administrador/noticias', name: 'AdminNews', component: NoticiaListComponent},
   {path: '/loggin', name: 'Loggin', component: LogginComponent}, 
   {path: '/signup', name: 'SignUp', component: SignUpComponent},
   {path: '/index/noticia/:id', name: 'NoticiaDetail', component: NoticiaDetailComponent},
   {path: '/index/acta/:id', name: 'ActaDetail', component: ActaDetailComponent},
-  {path: '/index/acta/', name: 'ActaList', component: ActaListComponent},
+  {path: '/index/actas/', name: 'ActaList', component: ActaListComponent},
 ])
 export class AppComponent { }

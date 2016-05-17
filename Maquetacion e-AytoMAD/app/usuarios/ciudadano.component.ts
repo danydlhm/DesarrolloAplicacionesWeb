@@ -8,5 +8,11 @@ import {NavComponent} from './nav.component';
 })
 
 export class CiudadanoComponent{
-
+    private user:string;
+    
+    constructor(private router:Router){}
+    
+    gotoPropuestas(){
+        this.router.navigate(['PropuestaList']);
+    }
 }

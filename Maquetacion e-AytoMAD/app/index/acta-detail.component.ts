@@ -46,10 +46,10 @@ export class ActaDetailComponent {
     }
 
     editActa() {
-        this.router.navigate(['ActaEdit', { id: this.acta.id }]);
+        this.router.navigate(['ActaForm', { id: this.acta.id }]);
     }
 
     gotoActas() {
-        this.router.navigate(['Actas']);
+        this.router.navigate(['ActaList']);
     }
 }

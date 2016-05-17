@@ -1,12 +1,11 @@
 <div class="container" id="modalEntrar" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
                         <!-- Entrar Details Go Here -->
                         <h2>Entrar</h2>
-                        <p class="item-intro text-muted">Introduce tu nombre de usuario y contraseña</p>
-                        <p class="item-intro text-muted">Para entrar al servicio</p>
+                        <p class="item-intro text-muted">Para entrar al servicio. Introduce tu nombre de usuario y contraseña</p>
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Usuario</label>
@@ -21,7 +20,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <a href="#modalSignup" data-dismiss="modal" data-toggle="modal">Si no tienes usuario, registrate</a>
+                                    <a (click)="goSup()" data-dismiss="modal" data-toggle="modal">Si no tienes usuario, registrate</a>
                                 </div>
                                 <hr>
                                 <a (click)="goto()"  class="btn btn-primary" role="button" id="botonRegistro">Entrar</a>
