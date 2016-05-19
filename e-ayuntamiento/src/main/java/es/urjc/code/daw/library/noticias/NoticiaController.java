@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.img;
+package es.urjc.code.daw.library.noticias;
 
 import java.util.Collection;
 
@@ -15,27 +15,27 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/carrousel")
-public class CarrouselController {
+@RequestMapping("/noticias")
+public class NoticiaController {
 
-	private static final Logger log = LoggerFactory.getLogger(CarrouselController.class);
+	private static final Logger log = LoggerFactory.getLogger(NoticiaController.class);
 
 	@Autowired
-	private CarrouselRepository repository;
+	private NoticiaRepository repository;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Carrousel> getImagenes() {
+	public Collection<Noticia> getNoticias() {
 		return repository.findAll();
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Carrousel> getImagen(@PathVariable long id) {
+	public ResponseEntity<Noticia> getNoticia(@PathVariable long id) {
 
-		log.info("Get imagen {}", id);
+		log.info("Get noticia {}", id);
 
-		Carrousel persona = repository.findOne(id);
-		if (persona != null) {
-			return new ResponseEntity<>(persona, HttpStatus.OK);
+		Noticia noticia = repository.findOne(id);
+		if (noticia != null) {
+			return new ResponseEntity<>(noticia, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -43,30 +43,30 @@ public class CarrouselController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Carrousel nuevaImagen(@RequestBody Carrousel persona) {
+	public Noticia nuevaNoticia(@RequestBody Noticia noticia) {
 
-		repository.save(persona);
+		repository.save(noticia);
 
-		return persona;
+		return noticia;
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Carrousel> actulizaImagen(@PathVariable long id, @RequestBody Carrousel updatedConcejal) {
+	public ResponseEntity<Noticia> actulizaNoticia(@PathVariable long id, @RequestBody Noticia updatedNoticia) {
 
-		Carrousel persona = repository.findOne(id);
-		if (persona != null) {
+		Noticia noticia = repository.findOne(id);
+		if (noticia != null) {
 
-			updatedConcejal.setId(id);
-			repository.save(updatedConcejal);
+			updatedNoticia.setId(id);
+			repository.save(updatedNoticia);
 
-			return new ResponseEntity<>(updatedConcejal, HttpStatus.OK);
+			return new ResponseEntity<>(updatedNoticia, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Carrousel> borraImagen(@PathVariable long id) {
+	public ResponseEntity<Noticia> borraNoticia(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);

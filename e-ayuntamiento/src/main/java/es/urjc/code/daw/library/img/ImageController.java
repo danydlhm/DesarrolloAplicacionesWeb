@@ -23,7 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class ImagesController {
+public class ImageController {
 	
 
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
