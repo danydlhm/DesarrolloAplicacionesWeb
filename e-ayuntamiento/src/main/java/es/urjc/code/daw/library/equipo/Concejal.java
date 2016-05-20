@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import es.urjc.code.daw.library.propuesta.Propuesta;
 
 @Entity
 public class Concejal {
@@ -21,6 +25,10 @@ public class Concejal {
 	private String cargo;
 	private String foto;
 	
+	@OneToMany(mappedBy="concejal")
+	private List<Propuesta> propuestasAprobadas;
+	
+	@Column(length = 512)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> contacto;
 
@@ -32,6 +40,7 @@ public class Concejal {
 		this.cargo = cargo;
 		this.foto = foto;
 		this.contacto = new ArrayList<>(Arrays.asList(contacto));
+		this.propuestasAprobadas = new ArrayList<>();
 	}
 
 	public long getId() {
@@ -72,6 +81,16 @@ public class Concejal {
 
 	public void setContacto(List<String> contacto) {
 		this.contacto = contacto;
+	}
+	
+	
+
+	public List<Propuesta> getPropuestasAprobadas() {
+		return propuestasAprobadas;
+	}
+
+	public void setPropuestasAprobadas(List<Propuesta> propuestasAprobadas) {
+		this.propuestasAprobadas = propuestasAprobadas;
 	}
 
 	@Override

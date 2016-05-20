@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Concejales")
+@RequestMapping("/concejales")
 public class ConcejalController {
 
 	private static final Logger log = LoggerFactory.getLogger(ConcejalController.class);

@@ -84,17 +84,22 @@ public class DatabaseInitializer implements CommandLineRunner {
 		plenoRepository.save(new Pleno("Sabado","The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.","Junio",20,2004));
 		plenoRepository.save(new Pleno("Domingo","Hodor, hodor. Hodor. Hodor, hodor hodor hodor - hodor... Hodor hodor hodor; hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor hodor! Hodor hodor - hodor hodor hodor... Hodor hodor hodor hodor hodor, hodor. Hodor hodor?! Hodor hodor HODOR! Hodor hodor HODOR hodor, hodor hodor hodor hodor, hodor, hodor hodor. Hodor, hodor hodor HODOR hodor, hodor hodor hodor hodor hodor hodor. Hodor. Hodor hodor; hodor hodor hodor, hodor. Hodor hodor. Hodor! Hodor hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.","Julio",21,2005));
 		
-
-		// Sample propuestas
-		
-		propuestaRepository.save(new Propuesta("Manolo el del Bombo","Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo.","Quiero una Vuvuzela","../img/Propuestas/manolo-bombo.jpg"));
-		propuestaRepository.save(new Propuesta("Rasputin","Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina.", "Echar al Zar", "../img/Propuestas/Rasputin.jpg"));
-
-
 		// Sample users
 
 		userRepository.save(new User("user", "pass", "ROLE_USER"));
+		userRepository.save(new User("manoloBombo", "1234", "ROLE_USER"));
+		userRepository.save(new User("rasputin", "1234", "ROLE_USER"));
 		userRepository.save(new User("admin", "pass", "ROLE_USER", "ROLE_ADMIN"));
+		
+		// Sample propuestas
+		
+		User us = userRepository.findByName("manoloBombo");
+		propuestaRepository.save(new Propuesta(us,"Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo.","Quiero una Vuvuzela","../img/Propuestas/manolo-bombo.jpg"));
+		us = userRepository.findByName("rasputin");
+		propuestaRepository.save(new Propuesta(us,"Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina.", "Echar al Zar", "../img/Propuestas/Rasputin.jpg"));
+
+
+		
 	}
 
 }

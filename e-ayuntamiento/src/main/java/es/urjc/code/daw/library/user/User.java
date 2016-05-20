@@ -10,10 +10,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import es.urjc.code.daw.library.propuesta.Propuesta;
 
 /**
  * This is the entity to store in database user information. It contains the
@@ -42,6 +46,12 @@ public class User {
 	private Long id;
 
 	private String name;
+	
+	@ManyToMany
+	private List<Propuesta> propuestasFirmadas;
+	
+	@OneToMany(mappedBy="creador")
+	private List<Propuesta> propuestasCreadas;
 
 	@JsonIgnore
 	private String passwordHash;

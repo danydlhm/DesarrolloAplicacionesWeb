@@ -1,12 +1,18 @@
 package es.urjc.code.daw.library.propuesta;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import es.urjc.code.daw.library.equipo.Concejal;
+import es.urjc.code.daw.library.user.User;
 
 @Entity
 public class Propuesta {
@@ -14,35 +20,40 @@ public class Propuesta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
-	private String creador;
 	private String titulo;
 	private boolean aprobada;
-	private String concejal;
-	private ArrayList<String> firmantes;
 	private String imagen;
+	
+	@ManyToOne
+	private User creador;
+	
+	@ManyToOne
+	private Concejal concejal;
+	
+	@ManyToMany(mappedBy="propuestasFirmadas")
+	private List<User> firmantes;
 	
 	@Column(length = 50000)
 	private String contenido;
 
 	public Propuesta() {}
 
-	public Propuesta(String nombre, String description, String title, String url) {
+	public Propuesta(User nombre, String description, String title, String url) {
 		super();
 		this.titulo = title;
 		this.creador = nombre;
 		this.contenido = description;
 		this.aprobada = false;
-		this.concejal = null;
-		this.firmantes = new ArrayList<String>();
+		this.firmantes = new ArrayList<User>();
 		this.firmantes.add(this.creador);
 		this.imagen = url;
 	}
 	
-	public String getCreador() {
+	public User getCreador() {
 		return creador;
 	}
 
-	public void setCreador(String creador) {
+	public void setCreador(User creador) {
 		this.creador = creador;
 	}
 
@@ -62,19 +73,19 @@ public class Propuesta {
 		this.aprobada = aprobada;
 	}
 
-	public String getConcejal() {
+	public Concejal getConcejal() {
 		return concejal;
 	}
 
-	public void setConcejal(String concejal) {
+	public void setConcejal(Concejal concejal) {
 		this.concejal = concejal;
 	}
 
-	public ArrayList<String> getFirmantes() {
+	public List<User> getFirmantes() {
 		return firmantes;
 	}
 
-	public void setFirmantes(ArrayList<String> firmantes) {
+	public void setFirmantes(List<User> firmantes) {
 		this.firmantes = firmantes;
 	}
 
@@ -104,6 +115,10 @@ public class Propuesta {
 
 	@Override
 	public String toString() {
-		return "Propuesta [id=" + this.id + ", titulo =" + this.titulo + ", descripcion =" + this.contenido + "] Creada por " + this.creador;
+		return "Propuesta [id=" + id + ", titulo=" + titulo + ", aprobada=" + aprobada + ", imagen=" + imagen
+				+ ", creador=" + creador + ", concejal=" + concejal + ", firmantes=" + firmantes + ", contenido="
+				+ contenido + "]";
 	}
+
+	
 }
