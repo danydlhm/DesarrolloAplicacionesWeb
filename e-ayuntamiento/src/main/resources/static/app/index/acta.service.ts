@@ -1,6 +1,8 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from '../utils';
+import {Http, Response} from 'angular2/http';
+import 'rxjs/Rx';
 
 export class Acta {
 
@@ -16,24 +18,21 @@ export class Acta {
 
 @Injectable()
 export class ActaService {
-
-  private actas = [
-  	new Acta(1, 'Lunes', 15, 'Enero', 1998, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon'),
-  	new Acta(2, 'Martes', 16, 'Febrero', 1999, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon'),
-  	new Acta(3, 'Miercoles', 17, 'Marzo', 2000, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon'),
-  	new Acta(4, 'Jueves', 18, 'Abril', 2001, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon'),
-  	new Acta(5, 'Viernes', 19, 'Mayo', 2002, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon'),
-  	new Acta(6, 'Sabado', 20, 'Junio', 2003, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon'),
-  	new Acta(7, 'Domingo', 21, 'Julio', 2004, 'Esperanza se comio un moco, Carmena se durmio cual abuelita y Maestre enseño un pezon')
-  ];
+    
+    constructor(private http: Http) { }
 
   getActas() {
-    return withObserver(this.actas);
+    let url = 'https://localhost:8443/actas/';
+    return this.http.get(url).map(
+        response => response.json(),
+    )
   }
 
   getActa(id: number | string) {
-    let acta = this.actas.filter(h => h.id === +id)[0]
-    return withObserver(new Acta(acta.id, acta.diaSemana, acta.dia, acta.mes, acta.year, acta.contenido,));
+    let url = 'https://localhost:8443/actas/1/';
+    return this.http.get(url).map(
+        response => response.json(),
+    );
   }
 
   removeActa(acta: Acta){

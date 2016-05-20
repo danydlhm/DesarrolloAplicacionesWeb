@@ -6,7 +6,7 @@ import {Acta, ActaService}   from './acta.service';
     template: `
     <div class="container modal-body">
         <div class="col-lg-8 col-lg-offset-2 text-center ">
-          <h2>Acta del Pleno del "{{acta.diaSemana}}" dia "{{acta.dia}}" del mes "{{acta.mes}}" del año "{{acta.year}}"</h2>
+        <h2>Acta del Pleno del "{{acta.diaSemana}}" dia "{{acta.dia}}" del mes "{{acta.mes}}" del año {{acta.year}}</h2>
           <div>
             <p>{{acta.contenido}}</p>
           </div>
@@ -30,7 +30,7 @@ export class ActaDetailComponent {
     constructor(private router: Router, routeParams: RouteParams, private service: ActaService) {
         let id = routeParams.get('id');
         service.getActa(id).subscribe(
-            acta => this.acta = acta,
+            acta => this.acta = new Acta().fromJSON(acta),
             error => console.error(error)
         );
     }

@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FooterComponent} from './footer.component';
 import {IndexComponent} from './index/index.component';
@@ -20,7 +21,7 @@ import {NoticiaListComponent} from './index/noticia-list.component';
 @Component({
   selector: 'app',
   templateUrl: 'app/appTemplate.html',
-  providers:  [ConcejalService,CarrouselService,ActaService, NoticiaService, PropuestaService],
+  providers:  [HTTP_PROVIDERS,ConcejalService,CarrouselService,ActaService, NoticiaService, PropuestaService],
   directives: [ROUTER_DIRECTIVES, FooterComponent, SpinnerComponent]
 })
 @RouteConfig([
