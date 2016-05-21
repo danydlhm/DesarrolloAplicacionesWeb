@@ -59,31 +59,21 @@ public class Concejal {
 		this.name = name;
 	}
 
-	public String getCargo() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setCargo(String cargo) {
-		this.descripcion = cargo;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
-	public String getFoto() {
+	public String getUrlFoto() {
 		return urlFoto;
 	}
 
-	public void setFoto(String foto) {
-		this.urlFoto = foto;
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
 	}
-
-	public List<String> getContacto() {
-		return contactos;
-	}
-
-	public void setContacto(List<String> contacto) {
-		this.contactos = contacto;
-	}
-	
-	
 
 	public List<Propuesta> getPropuestasAprobadas() {
 		return propuestasAprobadas;
@@ -93,9 +83,19 @@ public class Concejal {
 		this.propuestasAprobadas = propuestasAprobadas;
 	}
 
+	public List<String> getContactos() {
+		return contactos;
+	}
+
+	public void setContactos(List<String> contactos) {
+		this.contactos = contactos;
+	}
+
 	@Override
 	public String toString() {
 		return "Concejal [id=" + id + ", name=" + name + ", descripcion=" + descripcion + ", urlFoto=" + urlFoto
 				+ ", propuestasAprobadas=" + propuestasAprobadas + ", contactos=" + contactos + "]";
 	}
+
+
 }

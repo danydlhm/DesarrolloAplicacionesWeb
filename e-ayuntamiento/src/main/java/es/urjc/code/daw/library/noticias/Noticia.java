@@ -31,6 +31,9 @@ public class Noticia {
 	}
 
 
+
+
+
 	public long getId() {
 		return id;
 	}
@@ -41,33 +44,33 @@ public class Noticia {
 	}
 
 
-	public String getTitulo() {
+	public String getTitle() {
 		return title;
 	}
 
 
-	public void setTitulo(String titulo) {
-		this.title = titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 
-	public String getSubTitulo() {
+	public String getSubtitle() {
 		return subtitle;
 	}
 
 
-	public void setSubTitulo(String subTitulo) {
-		this.subtitle = subTitulo;
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
 
 
-	public String getImagen() {
+	public String getUrl() {
 		return url;
 	}
 
 
-	public void setImagen(String imagen) {
-		this.url = imagen;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 
@@ -83,7 +86,10 @@ public class Noticia {
 
 	@Override
 	public String toString() {
-		return "Noticia [id=" + id + ", title=" + title + ", subtitle=" + subtitle + ", url=" + url
-				+ ", cuerpo=" + cuerpo + "]";
+		return "Noticia [id=" + id + ", title=" + title + ", subtitle=" + subtitle + ", url=" + url + ", cuerpo="
+				+ cuerpo + "]";
 	}
+
+
+
 }
