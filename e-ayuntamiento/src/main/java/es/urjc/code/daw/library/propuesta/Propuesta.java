@@ -11,28 +11,44 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import es.urjc.code.daw.library.equipo.Concejal;
 import es.urjc.code.daw.library.user.User;
 
 @Entity
 public class Propuesta {
-
+	
+	public interface Basico {}
+	interface Detalle {}
+	
+	@JsonView(Basico.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
+	
+	@JsonView(Basico.class)
 	private String titulo;
+	
+	@JsonView(Basico.class)
 	private boolean aprobada;
+	
+	@JsonView(Basico.class)
 	private String imagen;
 	
+	@JsonView(Detalle.class)
 	@ManyToOne
 	private User creador;
 	
+	@JsonView(Detalle.class)
 	@ManyToOne
 	private Concejal concejal;
 	
+	@JsonView(Detalle.class)
 	@ManyToMany(mappedBy="propuestasFirmadas")
 	private List<User> firmantes;
 	
+	@JsonView(Basico.class)
 	@Column(length = 50000)
 	private String contenido;
 

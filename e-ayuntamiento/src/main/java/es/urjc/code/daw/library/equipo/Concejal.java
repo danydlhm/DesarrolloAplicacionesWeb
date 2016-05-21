@@ -13,21 +13,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import es.urjc.code.daw.library.propuesta.Propuesta;
 
 @Entity
 public class Concejal {
+	
+	public interface Basico{}
+	interface Detalle{}
 
+	@JsonView(Basico.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
+	
+	@JsonView(Basico.class)
 	private String name;
+	
+	@JsonView(Basico.class)
 	private String descripcion;
+	
+	@JsonView(Basico.class)
 	private String urlFoto;
 	
+	@JsonView(Detalle.class)
 	@OneToMany(mappedBy="concejal")
 	private List<Propuesta> propuestasAprobadas;
 	
+	@JsonView(Basico.class)
 	@Column(length = 512)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> contactos;

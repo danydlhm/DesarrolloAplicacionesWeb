@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import es.urjc.code.daw.library.user.User;
 import es.urjc.code.daw.library.user.UserComponent;
+import es.urjc.code.daw.library.propuesta.Propuesta;
 
 /**
  * This class is used to provide REST endpoints to logIn and logOut to the
@@ -22,6 +23,8 @@ import es.urjc.code.daw.library.user.UserComponent;
 @RestController
 public class LoginController {
 
+	interface UserDetalle extends User.Basico, User.Detalle, Propuesta.Basico{}
+	
 	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
 	@Autowired

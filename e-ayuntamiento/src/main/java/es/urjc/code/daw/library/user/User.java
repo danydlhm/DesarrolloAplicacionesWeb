@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.library.propuesta.Propuesta;
 
@@ -40,22 +41,30 @@ import es.urjc.code.daw.library.propuesta.Propuesta;
 
 @Entity
 public class User {
+	
+	public interface Basico{}
+	public interface Detalle{}
 
+	@JsonView(Basico.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@JsonView(Basico.class)
 	private String name;
 	
+	@JsonView(Detalle.class)
 	@ManyToMany
 	private List<Propuesta> propuestasFirmadas;
 	
+	@JsonView(Detalle.class)
 	@OneToMany(mappedBy="creador")
 	private List<Propuesta> propuestasCreadas;
 
 	@JsonIgnore
 	private String passwordHash;
 
+	@JsonView(Basico.class)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 
