@@ -4,13 +4,12 @@ import {withObserver} from '../utils';
 import {Http, Response} from 'angular2/http';
 import 'rxjs/Rx';
 
-export interface Noticia {
-    id?: number,
-    title: string,
-    subtitle: string,
-    abstract: string,
-    url: string
-
+export class Noticia {
+    id?: number;
+    title: string;
+    subtitle: string;
+    cuerpo: string;
+    url: string;
 }
 
 const URL = 'noticias/';

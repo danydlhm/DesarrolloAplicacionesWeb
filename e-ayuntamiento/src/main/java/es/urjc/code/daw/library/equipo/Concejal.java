@@ -22,7 +22,7 @@ public class Concejal {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	private String name;
-	private String cargo;
+	private String descripcion;
 	private String urlFoto;
 	
 	@OneToMany(mappedBy="concejal")
@@ -30,16 +30,16 @@ public class Concejal {
 	
 	@Column(length = 512)
 	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> contacto;
+	private List<String> contactos;
 
 	public Concejal() {}
 
 	public Concejal(String name, String cargo, String foto, String... contacto) {
 		super();
 		this.name = name;
-		this.cargo = cargo;
+		this.descripcion = cargo;
 		this.urlFoto = foto;
-		this.contacto = new ArrayList<>(Arrays.asList(contacto));
+		this.contactos = new ArrayList<>(Arrays.asList(contacto));
 		this.propuestasAprobadas = new ArrayList<>();
 	}
 
@@ -60,11 +60,11 @@ public class Concejal {
 	}
 
 	public String getCargo() {
-		return cargo;
+		return descripcion;
 	}
 
 	public void setCargo(String cargo) {
-		this.cargo = cargo;
+		this.descripcion = cargo;
 	}
 
 	public String getFoto() {
@@ -76,11 +76,11 @@ public class Concejal {
 	}
 
 	public List<String> getContacto() {
-		return contacto;
+		return contactos;
 	}
 
 	public void setContacto(List<String> contacto) {
-		this.contacto = contacto;
+		this.contactos = contacto;
 	}
 	
 	
@@ -95,10 +95,7 @@ public class Concejal {
 
 	@Override
 	public String toString() {
-		return "Concejal [id=" + id + ", name=" + name + ", cargo=" + cargo + ", urlFoto=" + urlFoto + ", contacto="
-				+ contacto + "]";
+		return "Concejal [id=" + id + ", name=" + name + ", descripcion=" + descripcion + ", urlFoto=" + urlFoto
+				+ ", propuestasAprobadas=" + propuestasAprobadas + ", contactos=" + contactos + "]";
 	}
-	
-	
-
 }

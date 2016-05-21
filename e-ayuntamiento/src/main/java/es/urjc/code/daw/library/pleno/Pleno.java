@@ -81,6 +81,7 @@ public class Pleno {
 
 	@Override
 	public String toString() {
-		return "Pleno nº "+ this.id + " del "+this.diaSemana+" "+this.dia+" del Mes "+this.mes+" del Año "+this.year+". El contenido del Acta referido a aquel dia es el siguiente :"+this.contenido;
+		return "Pleno [id=" + id + ", diaSemana=" + diaSemana + ", dia=" + dia + ", mes=" + mes + ", year=" + year
+				+ ", contenido=" + contenido + "]";
 	}
 }

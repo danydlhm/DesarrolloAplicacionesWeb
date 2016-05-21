@@ -119,6 +119,5 @@ public class Propuesta {
 				+ ", creador=" + creador + ", concejal=" + concejal + ", firmantes=" + firmantes + ", contenido="
 				+ contenido + "]";
 	}
-
 	
 }

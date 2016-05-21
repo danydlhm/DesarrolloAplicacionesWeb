@@ -4,11 +4,13 @@ import {withObserver} from '../utils';
 import {Http, Response} from 'angular2/http';
 import 'rxjs/Rx';
 
-export interface Concejal{
+export class Concejal{
     id?:number;
     name:string;
     urlFoto:string;
     descripcion:string;
+    propuestasAprobadas:string[];
+    contactos:string[];
 }
 
 const URL = 'concejales/';

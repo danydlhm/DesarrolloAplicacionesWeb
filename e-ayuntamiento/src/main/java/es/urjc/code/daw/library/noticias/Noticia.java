@@ -12,9 +12,9 @@ public class Noticia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
-	private String titulo;
-	private String subTitulo;
-	private String imagen;
+	private String title;
+	private String subtitle;
+	private String url;
 	
 	@Column(length = 50000)
 	private String cuerpo;
@@ -24,9 +24,9 @@ public class Noticia {
 
 	public Noticia(String titulo, String subTitulo, String imagen, String cuerpo) {
 		super();
-		this.titulo = titulo;
-		this.subTitulo = subTitulo;
-		this.imagen = imagen;
+		this.title = titulo;
+		this.subtitle = subTitulo;
+		this.url = imagen;
 		this.cuerpo = cuerpo;
 	}
 
@@ -42,32 +42,32 @@ public class Noticia {
 
 
 	public String getTitulo() {
-		return titulo;
+		return title;
 	}
 
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this.title = titulo;
 	}
 
 
 	public String getSubTitulo() {
-		return subTitulo;
+		return subtitle;
 	}
 
 
 	public void setSubTitulo(String subTitulo) {
-		this.subTitulo = subTitulo;
+		this.subtitle = subTitulo;
 	}
 
 
 	public String getImagen() {
-		return imagen;
+		return url;
 	}
 
 
 	public void setImagen(String imagen) {
-		this.imagen = imagen;
+		this.url = imagen;
 	}
 
 
@@ -83,9 +83,7 @@ public class Noticia {
 
 	@Override
 	public String toString() {
-		return "Noticia [id=" + id + ", titulo=" + titulo + ", subTitulo=" + subTitulo + ", imagen=" + imagen
+		return "Noticia [id=" + id + ", title=" + title + ", subtitle=" + subtitle + ", url=" + url
 				+ ", cuerpo=" + cuerpo + "]";
 	}
-
-
 }

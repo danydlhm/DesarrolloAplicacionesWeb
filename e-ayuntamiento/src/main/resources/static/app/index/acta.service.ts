@@ -4,7 +4,7 @@ import {withObserver} from '../utils';
 import {Http, Response} from 'angular2/http';
 import 'rxjs/Rx';
 
-export interface Acta {
+export class Acta {
     id?: number;
     diaSemana: string;
     dia: number;

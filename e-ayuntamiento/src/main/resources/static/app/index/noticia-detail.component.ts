@@ -10,7 +10,7 @@ import {Noticia, NoticiaService}   from './noticia.service';
   <img src="{{noticia.url}}" alt="Imagen asociada a la noticia" style="width:150px;height:250px;">
   <hr>
   <div>
-    <p>{{noticia.abstract}}</p>
+    <p>{{noticia.cuerpo}}</p>
   </div>
   <p>
     <button class="btn btn-primary" (click)="removeNoticia()">Eliminar</button>

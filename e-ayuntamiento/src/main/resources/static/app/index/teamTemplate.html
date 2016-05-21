@@ -9,9 +9,9 @@
             <div class="row" *ngIf="concejales">
                 <div class="col-sm-4" *ngFor="#concejal of concejales">
                     <div class="team-member">
-                        <img src={{concejal.getUrl()}} class="img-responsive img-circle" alt="Foto de Marta Higueras">
-                        <h4>{{concejal.getName()}}</h4>
-                        <p class="text-muted">{{concejal.getDesc()}}</p>
+                        <img src={{concejal.urlFoto}} class="img-responsive img-circle" alt="Foto de Marta Higueras">
+                        <h4>{{concejal.name}}</h4>
+                        <p class="text-muted">{{concejal.descripcion}}</p>
                         <ul class="list-inline social-buttons">
                             <li *ngFor="#link of concejal.contactos"><a href={{link}}><i class="fa fa-at"></i></a></li>
                         </ul>

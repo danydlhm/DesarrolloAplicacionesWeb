@@ -18,7 +18,7 @@ import {Noticia, NoticiaService}   from './noticia.service';
   </div>
   <div>
     <label>Abstract: </label>
-    <textarea [(ngModel)]="noticia.abstract" placeholder="abstract"></textarea>
+    <textarea [(ngModel)]="noticia.cuerpo" placeholder="cuerpo"></textarea>
   </div>
   <div>
     <label>Imagen: </label>
