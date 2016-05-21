@@ -24,31 +24,31 @@ export class TurismComponent implements OnInit{
     }
     
     next(){
-        this.imagenes[this.activo].setActive(false);
+        this.imagenes[this.activo].active = false;
         this.activo = ((this.activo + 1) % (this.imagenes.length));
-        this.imagenes[this.activo].setActive(true);
+        this.imagenes[this.activo].active = true;
     }
     
     prev(){
-        this.imagenes[this.activo].setActive(false);
+        this.imagenes[this.activo].active = false;
         this.activo = ((this.activo + this.imagenes.length - 1) % (this.imagenes.length));
         console.log(this.activo);
-        this.imagenes[this.activo].setActive(true);
+        this.imagenes[this.activo].active = true;
     }
     
     gotoImg(i:number){
-        this.imagenes[this.activo].setActive(false);
+        this.imagenes[this.activo].active = false;
         this.activo = i;
-        this.imagenes[this.activo].setActive(true);
+        this.imagenes[this.activo].active = true;
     }
     
     inicializarImagenes(img: Imagen[]){
         this.imagenes = img;
         for(let i=0; i<this.imagenes.length; i++){
-        this.imagenes[i].setActive(false);
-      }
+            this.imagenes[i].active = false;
+        }
       if(this.imagenes.length > 0){
-        this.imagenes[0].setActive(true);
+        this.imagenes[0].active = true;
         this.activo = 0;
       }
     }

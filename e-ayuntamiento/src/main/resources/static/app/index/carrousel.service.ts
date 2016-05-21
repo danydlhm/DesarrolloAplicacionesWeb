@@ -7,7 +7,8 @@ import 'rxjs/Rx';
 export class Imagen{
     id?:number;
     name:string;
-    urlFoto:string;
+    foto:string;
+    active:boolean = false;
 }
 
 const URL = 'carrousel/';

@@ -14,6 +14,7 @@ public class Carrousel {
 	private long id = -1;
 	private String name;
 	private String foto;
+	private boolean active;
 	
 
 	public Carrousel() {}
@@ -22,6 +23,7 @@ public class Carrousel {
 		super();
 		this.name = name;
 		this.foto = foto;
+		this.active = false;
 	}
 
 	public long getId() {
@@ -49,13 +51,19 @@ public class Carrousel {
 		this.foto = foto;
 	}
 
-	@Override
-	public String toString() {
-		return "Carrousel [id=" + id + ", name=" + name + ", foto=" + foto + "]";
+	
+	
+	public boolean isActive() {
+		return active;
 	}
 
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 
-	
-	
+	@Override
+	public String toString() {
+		return "Carrousel [id=" + id + ", name=" + name + ", foto=" + foto + ", active=" + active + "]";
+	}	
 
 }

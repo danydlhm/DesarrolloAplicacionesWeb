@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="row">
-            <div id="carousel" class="carousel slide img-responsive" data-ride="carousel">
+            <div id="carousel" class="carousel slide img-responsive" data-ride="carousel" *ngIf="imagenes">
                 <!-- Indicators -->
                   <ol class="carousel-indicators">
                     <li [class.active]="img.active" *ngFor="#img of imagenes; #i = index" (click)="gotoImg(i)"></li>
@@ -15,9 +15,9 @@
                 <!-- Wrapper for slides -->
                    <div class="carousel-inner" role="listbox">
                         <div class="item" [class.active]="img.active" *ngFor="#img of imagenes">
-                            <img class="img-thumbnail" src={{img.getUrl()}} alt="Foto {{img.getName()}}">
+                            <img class="img-thumbnail" src="{{img.foto}}" alt="Foto {{img.name}}">
                             <div class="carousel-caption">
-                                <h3>{{img.getName()}}</h3>
+                                <h3>{{img.name}}</h3>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ public class Concejal {
 	private long id = -1;
 	private String name;
 	private String cargo;
-	private String foto;
+	private String urlFoto;
 	
 	@OneToMany(mappedBy="concejal")
 	private List<Propuesta> propuestasAprobadas;
@@ -38,7 +38,7 @@ public class Concejal {
 		super();
 		this.name = name;
 		this.cargo = cargo;
-		this.foto = foto;
+		this.urlFoto = foto;
 		this.contacto = new ArrayList<>(Arrays.asList(contacto));
 		this.propuestasAprobadas = new ArrayList<>();
 	}
@@ -68,11 +68,11 @@ public class Concejal {
 	}
 
 	public String getFoto() {
-		return foto;
+		return urlFoto;
 	}
 
 	public void setFoto(String foto) {
-		this.foto = foto;
+		this.urlFoto = foto;
 	}
 
 	public List<String> getContacto() {
@@ -95,7 +95,7 @@ public class Concejal {
 
 	@Override
 	public String toString() {
-		return "Concejal [id=" + id + ", name=" + name + ", cargo=" + cargo + ", foto=" + foto + ", contacto="
+		return "Concejal [id=" + id + ", name=" + name + ", cargo=" + cargo + ", urlFoto=" + urlFoto + ", contacto="
 				+ contacto + "]";
 	}
 	
