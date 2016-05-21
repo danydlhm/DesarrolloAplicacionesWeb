@@ -18,16 +18,9 @@ export class TurismComponent implements OnInit{
 
     ngOnInit(){
       this.service.getImagenes().subscribe(
-        imagenes => this.imagenes = imagenes,
+        imagenes => this.inicializarImagenes(imagenes),
         error => console.log(error)
       );
-      for(let i=0; i<this.imagenes.length; i++){
-        this.imagenes[i].setActive(false);
-      }
-      if(this.imagenes.length > 0){
-        this.imagenes[0].setActive(true);
-        this.activo = 0;
-      }
     }
     
     next(){
@@ -48,5 +41,15 @@ export class TurismComponent implements OnInit{
         this.activo = i;
         this.imagenes[this.activo].setActive(true);
     }
-
+    
+    inicializarImagenes(img: Imagen[]){
+        this.imagenes = img;
+        for(let i=0; i<this.imagenes.length; i++){
+        this.imagenes[i].setActive(false);
+      }
+      if(this.imagenes.length > 0){
+        this.imagenes[0].setActive(true);
+        this.activo = 0;
+      }
+    }
 }

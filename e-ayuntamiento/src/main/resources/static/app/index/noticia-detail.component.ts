@@ -4,7 +4,7 @@ import {Noticia, NoticiaService}   from './noticia.service';
 
 @Component({
     template: `
-<div class="col-lg-12 text-center">
+<div class="col-lg-12 text-center" *ngIf="noticia">
   <h2>Noticia "{{noticia.title}}"</h2>
   <h4>Noticia "{{noticia.subtitle}}"</h4>
   <img src="{{noticia.url}}" alt="Imagen asociada a la noticia" style="width:150px;height:250px;">

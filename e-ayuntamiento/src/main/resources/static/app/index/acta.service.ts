@@ -42,7 +42,6 @@ export class ActaService {
       .map(response => undefined)
       .catch(error => this.handleError(error));
   }
-  }
 
   saveActa(acta: Acta){
     let body = JSON.stringify(acta);
