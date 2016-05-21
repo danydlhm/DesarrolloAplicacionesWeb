@@ -4,17 +4,16 @@ import {withObserver} from '../utils';
 import {Http, Response} from 'angular2/http';
 import 'rxjs/Rx';
 
-export class Acta {
-
-  constructor(
-    public id: number,
-    public diaSemana: string,
-    public dia: number,
-    public mes: string,
-    public year: number,
-    public contenido: string) {}
-
+export interface Acta {
+    id?: number;
+    diaSemana: string;
+    dia: number;
+    mes: string;
+    year: number;
+    contenido: string;
 }
+
+const URL = 'actas/';
 
 @Injectable()
 export class ActaService {
@@ -22,41 +21,58 @@ export class ActaService {
     constructor(private http: Http) { }
 
   getActas() {
-    let url = 'https://localhost:8443/actas/';
-    return this.http.get(url).map(
+    return this.http.get(URL).map(
         response => response.json(),
     )
   }
 
   getActa(id: number | string) {
-    let url = 'https://localhost:8443/actas/1/';
-    return this.http.get(url).map(
-        response => response.json(),
-    );
+    return this.http.get(URL+id)
+        .map(response => response.json())
+	       .catch(error => this.handleError(error));
   }
 
   removeActa(acta: Acta){
-    for(let i=0; i<this.actas.length; i++){
-        if(this.actas[i].id === acta.id){
-          this.actas.splice(i,1);
-          break;
-        }
-    }
-    return withObserver(undefined);
+    let headers = new Headers({
+	   'X-Requested-With': 'XMLHttpRequest'
+	});
+	let options = new RequestOptions({ headers });  
+	  
+    return this.http.delete(URL + acta.id, options)
+      .map(response => undefined)
+      .catch(error => this.handleError(error));
+  }
   }
 
   saveActa(acta: Acta){
-    if(book.id){
-      let oldActa = this.actas.filter(h => h.id === acta.id)[0];
-      oldActa.diaSemana = acta.diaSemana;
-      oldActa.dia = acta.dia;
-      oldActa.mes = acta.mes;
-      oldActa.year = acta.year;
-      oldActa.contenido = acta.contenido;
-    } else {
-      acta.id = this.actas.length+1;
-      this.actas.push(acta);
-    }
-    return withObserver(acta);
+    let body = JSON.stringify(acta);
+    let headers = new Headers({
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+    });
+    let options = new RequestOptions({ headers });
+
+    return this.http.post(URL, body, options)
+      .map(response => response.json())
+      .catch(error => this.handleError(error));
   }
+  
+  updateActa(acta: Acta) {
+
+    let body = JSON.stringify(acta);
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    });
+    let options = new RequestOptions({ headers });
+
+    return this.http.put(URL + acta.id, body, options)
+      .map(response => response.json())
+      .catch(error => this.handleError(error));
+    }
+
+    private handleError(error: any){
+      console.error(error);
+      return Observable.throw("Server error (" + error.status + "): " + error.text())
+    }
 }
