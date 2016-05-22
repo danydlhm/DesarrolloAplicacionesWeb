@@ -4,7 +4,7 @@ import {withObserver} from '../utils';
 import {Http, Response, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
 
-export class Noticia {
+export interface Noticia {
     id?: number;
     title: string;
     subtitle: string;
