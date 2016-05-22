@@ -5,7 +5,12 @@ import 'rxjs/Rx';
 export interface User {  
     id?: number;
     name: string;
+    nombre:string;
+    foto:string;
     roles: string[];
+    propuestasAprobadas: Propuestas[];
+    propuestasCreadas: Propuestas[];
+    propuestasFirmadas: Propuestas[];
 }
 
 @Injectable()
@@ -13,6 +18,7 @@ export class LoginService {
 	
 	isLogged = false;
 	isAdmin = false;
+	isConcejal = false;
 	user: User;
 	
 	constructor(private http: Http){
@@ -42,6 +48,7 @@ export class LoginService {
 		this.isLogged = true;
 		this.user = response.json();
 		this.isAdmin = this.user.roles.indexOf("ROLE_ADMIN") !== -1;
+		this.isAdmin = this.user.roles.indexOf("ROLE_CONCEJAL") !== -1;
 	}
 	
 	logIn(user: string, pass: string) {

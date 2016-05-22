@@ -48,7 +48,7 @@ export class NoticiaFormComponent {
         );
         this.newNoticia = false;
       } else {
-        this.noticia = new Noticia(undefined,'','','','');
+        this.noticia = {title: '', subtitle: '', cuerpo: '', url: ''};
         this.newNoticia = true;
       }
   }
@@ -58,7 +58,17 @@ export class NoticiaFormComponent {
   }
 
   save() {
-    this.service.saveNoticia(this.noticia);
+    if (this.newNoticia){
+        this.service.saveNoticia(this.acta).subscribe(
+    	   acta => {}, 
+    	   error => console.error('Error creating new noticia: '+error)
+        );
+    }else{
+        this.service.updateNoticia(this.noticia).subscribe(
+    	   acta => {}, 
+    	   error => console.error('Error updating noticia: '+error)
+        );
+    }
     window.history.back();
   }
 }

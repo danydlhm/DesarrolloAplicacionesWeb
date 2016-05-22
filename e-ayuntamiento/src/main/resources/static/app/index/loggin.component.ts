@@ -1,5 +1,6 @@
 import {Component}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
+import {LoginService} from './login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -7,17 +8,17 @@ import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 })
 
 export class LogginComponent{
-    private user:string;
     
-    constructor(private router:Router){}
+    constructor(private router:Router, private loginService: LoginService){}
     
-    goto(){
-        if (this.user==='admin'){
-            this.router.navigate(['Administrador']);
-        }
-        if (this.user==='concejal'){
-            this.router.navigate(['Ciudadano']);
-        }
+    logIn(event: any, user: string, pass: string){
+	  
+	  event.preventDefault();
+	  
+	  this.loginService.logIn(user, pass).subscribe(
+	      user => this.router.navigate(['Ciudadano']),
+	      error => alert("Invalid user or password")
+      );
     }
     
     goSup(){

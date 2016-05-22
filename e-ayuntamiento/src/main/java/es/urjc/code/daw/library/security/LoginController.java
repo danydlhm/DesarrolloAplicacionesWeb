@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import es.urjc.code.daw.library.user.User;
 import es.urjc.code.daw.library.user.UserComponent;
 import es.urjc.code.daw.library.propuesta.Propuesta;
@@ -31,8 +33,9 @@ public class LoginController {
 	private UserComponent userComponent;
 
 	@RequestMapping("/logIn")
+	@JsonView(User.Basico.class)
 	public ResponseEntity<User> logIn() {
-
+		
 		if (!userComponent.isLoggedUser()) {
 			log.info("Not user logged");
 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);

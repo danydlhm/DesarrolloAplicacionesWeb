@@ -26,7 +26,7 @@ public class Propuesta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
-	
+
 	@JsonView(Basico.class)
 	private String titulo;
 	

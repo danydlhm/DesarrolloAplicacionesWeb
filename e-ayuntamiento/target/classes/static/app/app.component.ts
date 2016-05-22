@@ -18,21 +18,17 @@ import {ActaService} from './index/acta.service';
 import {NoticiaDetailComponent} from './index/noticia-detail.component';
 import {NoticiaService} from './index/noticia.service';
 import {NoticiaListComponent} from './index/noticia-list.component';
+import {LoginService} from './index/login.service';
 
 @Component({
   selector: 'app',
   templateUrl: 'app/appTemplate.html',
-  providers:  [HTTP_PROVIDERS,ConcejalService,CarrouselService,ActaService, NoticiaService, PropuestaService],
+  providers:  [HTTP_PROVIDERS,ConcejalService,CarrouselService,ActaService, NoticiaService, PropuestaService, LoginService],
   directives: [ROUTER_DIRECTIVES, FooterComponent, SpinnerComponent]
 })
 @RouteConfig([
   {path: '/index', name: 'Index', component: IndexComponent, useAsDefault: true},
-  {path: '/usuario/concejal/...', name: 'Ciudadano', component: CiudadanoComponent},
-  /**{path: '/usuario/concejal/propuesta/:id', name: 'PropuestaDetail', component: PropuestaDetailComponent},
-  {path: '/usuario/concejal/propuestas/', name: 'PropuestaList', component: PropuestaListComponent},
-  {path: '/usuario/concejal/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},*/
-  {path: '/usuario/administrador', name: 'Administrador', component: AdministradorComponent},
-  {path: '/usuario/administrador/noticias', name: 'AdminNews', component: NoticiaListComponent},
+  {path: '/usuario/...', name: 'Ciudadano', component: CiudadanoComponent},
   {path: '/loggin', name: 'Loggin', component: LogginComponent}, 
   {path: '/signup', name: 'SignUp', component: SignUpComponent},
   {path: '/index/noticia/:id', name: 'NoticiaDetail', component: NoticiaDetailComponent},

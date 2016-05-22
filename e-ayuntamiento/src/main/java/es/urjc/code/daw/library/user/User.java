@@ -53,6 +53,12 @@ public class User {
 	@JsonView(Basico.class)
 	private String name;
 	
+	@JsonView(Basico.class)
+	private String nombre;
+	
+	@JsonView(Basico.class)
+	private String foto;
+	
 	@JsonView(Detalle.class)
 	@ManyToMany
 	private List<Propuesta> propuestasFirmadas;
@@ -75,6 +81,9 @@ public class User {
 		this.name = name;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
+		this.propuestasCreadas = new ArrayList<>();
+		this.propuestasFirmadas = new ArrayList<>();
+		this.foto = "";//foto deafult
 	}
 
 	public String getName() {
@@ -101,4 +110,35 @@ public class User {
 		this.roles = roles;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public List<Propuesta> getPropuestasFirmadas() {
+		return propuestasFirmadas;
+	}
+
+	public void setPropuestasFirmadas(List<Propuesta> propuestasFirmadas) {
+		this.propuestasFirmadas = propuestasFirmadas;
+	}
+
+	public List<Propuesta> getPropuestasCreadas() {
+		return propuestasCreadas;
+	}
+
+	public void setPropuestasCreadas(List<Propuesta> propuestasCreadas) {
+		this.propuestasCreadas = propuestasCreadas;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 }
