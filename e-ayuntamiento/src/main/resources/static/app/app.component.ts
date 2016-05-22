@@ -13,6 +13,7 @@ import {ConcejalService} from './index/concejal.service';
 import {CarrouselService} from './index/carrousel.service';
 import {ActaListComponent} from './index/acta-list.component';
 import {ActaDetailComponent} from './index/acta-detail.component';
+import {ActaFormComponent} from './index/acta-form.component';
 import {ActaService} from './index/acta.service';
 import {NoticiaDetailComponent} from './index/noticia-detail.component';
 import {NoticiaService} from './index/noticia.service';
@@ -36,6 +37,8 @@ import {NoticiaListComponent} from './index/noticia-list.component';
   {path: '/signup', name: 'SignUp', component: SignUpComponent},
   {path: '/index/noticia/:id', name: 'NoticiaDetail', component: NoticiaDetailComponent},
   {path: '/index/acta/:id', name: 'ActaDetail', component: ActaDetailComponent},
-  {path: '/index/actas/', name: 'ActaList', component: ActaListComponent},
+  {path: '/index/acta/edit/:id', name: 'ActaForm', component: ActaFormComponent},
+  {path: '/index/acta/', name: 'ActaList', component: ActaListComponent},
+  {path: '/index/acta/nueva', name: 'NewActa', component: ActaFormComponent},
 ])
 export class AppComponent { }

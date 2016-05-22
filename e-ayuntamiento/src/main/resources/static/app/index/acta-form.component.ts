@@ -5,7 +5,7 @@ import {Acta, ActaService}   from './acta.service';
 @Component({
   template: `
   <div class="container modal-body">
-        <div class="col-lg-8 col-lg-offset-2 text-center ">
+        <div class="col-lg-8 col-lg-offset-2 text-center " *ngIf="acta">
           <div *ngIf="acta.id">
             <label>Id: </label>{{acta.id}}</div>
           <div>
@@ -54,7 +54,7 @@ export class ActaFormComponent {
         );
         this.newActa = false;
       } else {
-        this.acta = new Acta(undefined,'',undefined,'',undefined,'');
+        this.acta = {diaSemana: '', dia: undefined, mes: '', year: undefined, contenido: ''};
         this.newActa = true;
       }
   }
@@ -64,7 +64,17 @@ export class ActaFormComponent {
   }
 
   save() {
-    this.service.saveActa(this.acta);
+    if (this.newActa){
+        this.service.saveActa(this.acta).subscribe(
+    	   acta => {}, 
+    	   error => console.error('Error creating new acta: '+error)
+        );
+    }else{
+        this.service.updateActa(this.acta).subscribe(
+    	   acta => {}, 
+    	   error => console.error('Error creating new acta: '+error)
+        );
+    }
     window.history.back();
   }
 }

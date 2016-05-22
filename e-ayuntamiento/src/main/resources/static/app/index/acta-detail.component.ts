@@ -1,8 +1,9 @@
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Acta, ActaService}   from './acta.service';
 
 @Component({
+    directives: [ROUTER_DIRECTIVES],
     template: `
     <div class="container modal-body">
         <div class="col-lg-8 col-lg-offset-2 text-center" *ngIf="acta">
@@ -39,7 +40,7 @@ export class ActaDetailComponent {
         let okResponse = window.confirm("Do you want to remove this acta?");
         if (okResponse) {
             this.service.removeActa(this.acta).subscribe(
-                _ => this.router.navigate(['Actas']),
+                _ => this.router.navigate(['ActaList']),
                 error => console.error(error)
             )
         }

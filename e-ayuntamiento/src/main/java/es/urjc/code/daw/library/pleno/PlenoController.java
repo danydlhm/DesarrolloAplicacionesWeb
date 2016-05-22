@@ -51,15 +51,15 @@ public class PlenoController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Pleno> actulizaAnuncio(@PathVariable long id, @RequestBody Pleno updatedBook) {
+	public ResponseEntity<Pleno> actulizaAnuncio(@PathVariable long id, @RequestBody Pleno updatedPleno) {
 
 		Pleno anuncio = repository.findOne(id);
 		if (anuncio != null) {
 
-			updatedBook.setId(id);
-			repository.save(updatedBook);
+			updatedPleno.setId(id);
+			repository.save(updatedPleno);
 
-			return new ResponseEntity<>(updatedBook, HttpStatus.OK);
+			return new ResponseEntity<>(updatedPleno, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

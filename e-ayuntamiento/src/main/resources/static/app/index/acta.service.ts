@@ -1,10 +1,10 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from '../utils';
-import {Http, Response} from 'angular2/http';
+import {Http, Response, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
 
-export class Acta {
+export interface Acta {
     id?: number;
     diaSemana: string;
     dia: number;
