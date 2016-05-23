@@ -5,6 +5,7 @@ import {PropuestaListComponent} from './propuesta-list.component';
 import {PropuestaDetailComponent} from './propuesta-detail.component';
 import {PropuestaFormComponent} from './propuesta-form.component';
 import {ConcejalIndexComponent} from './index.component';
+ import {LoginService} from '../index/login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES, NavComponent],
@@ -19,6 +20,7 @@ import {ConcejalIndexComponent} from './index.component';
 ])
 
 export class CiudadanoComponent{
-    private user:string;
+    
+    constructor(private loginService: LoginService){}
     
 }

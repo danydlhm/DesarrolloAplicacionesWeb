@@ -1,12 +1,19 @@
     
-    <ul id="tabs" class="nav nav-tabs">
+    <ul id="tabs" class="nav nav-tabs" *ngIf="!loginService.isAdmin">
         <li class="active"><a id="tab-0" (click)="setSelected(0)">Consumo y Comercio</a></li>
         <li><a href="#tab-1" id="tab-1" (click)="setSelected(1)">Cultura, Ocio y Deporte</a></li>
         <li><a href="#tab-2" id="tab-2" (click)="setSelected(2)">Educacion, Formación y Empleo</a></li>
         <li><a href="#tab-3" id="tab-3" (click)="setSelected(3)">Otros</a></li>
     </ul>
+    
+    <ul class="nav nav-tabs" *ngIf="loginService.isAdmin">
+        <li class="active"><a (click)="setVisible(0)" id="tab-0">Carrousel</a></li>
+        <li><a (click)="setVisible(1)" id="tab-1">Anuncios y noticias</a></li>
+        <li><a href="#tab-2" id="tab-2"></a>Permisos usuario</li>
+        <li><a href="#tab-3" id="tab-3"></a></li>
+    </ul>
 
-    <div id="content"> 
+    <div id="content" *ngIf="!loginService.isAdmin"> 
         <div id="tab1" *ngIf="selected == 0">
            <a>Solicitud de análisis de composición y calidad de alimentos, bebidas y otros productos</a><br>
            <a>Análisis de muestras de productos alimenticios en supuesto mal estado</a><br>
@@ -180,6 +187,32 @@
             </div>
         </div>
     </div>
+    
+    <div *ngIf="loginService.isAdmin">
+        <div id="tab1" [class.hidden]="tabs[0]">			
+            <a class="page-scroll portfolio-link" href="#InsercionLogo" data-toggle="modal">Modificar el logo del ayuntamiento</a><br>
+			<a class="page-scroll portfolio-link" href="#ModificacionFondo" data-toggle="modal">Modificar imagen de fondo del ayuntamiento</a><br>
+			
+        </div>
+        <div id="tab2" [class.hidden]="tabs[1]">
+            <a class="page-scroll portfolio-link" [routerLink]="['AdminNews']">Modificar noticia del ayuntamiento</a><br>
+			<a class="page-scroll portfolio-link" href="#ModificarTiempo" data-toggle="modal">Modificar el tiempo del ayuntamiento</a><br>
+			
+        </div>
+        <div id="tab3">
+            
+        </div>
+        <div id="tab4">
+		
+        </div>
+    </div>
+		
+    
+    
+    
+    
+    
+    
     <div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="modalCentroDeportivo">
 		<div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">

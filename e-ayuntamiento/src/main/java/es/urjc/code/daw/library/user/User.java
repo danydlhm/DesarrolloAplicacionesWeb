@@ -79,12 +79,14 @@ public class User {
 
 	public User(String name, String password, String... roles) {
 		this.name = name;
+		this.nombre = name;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.propuestasCreadas = new ArrayList<>();
 		this.propuestasFirmadas = new ArrayList<>();
-		this.foto = "";//foto deafult
+		this.foto = "img/default-user-image.png";//foto deafult
 	}
+	
 
 	public String getName() {
 		return name;

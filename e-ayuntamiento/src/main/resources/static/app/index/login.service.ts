@@ -48,7 +48,7 @@ export class LoginService {
 		this.isLogged = true;
 		this.user = response.json();
 		this.isAdmin = this.user.roles.indexOf("ROLE_ADMIN") !== -1;
-		this.isAdmin = this.user.roles.indexOf("ROLE_CONCEJAL") !== -1;
+		this.isConcejal = this.user.roles.indexOf("ROLE_CONCEJAL") !== -1;
 	}
 	
 	logIn(user: string, pass: string) {

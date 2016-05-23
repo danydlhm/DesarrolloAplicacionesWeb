@@ -6,7 +6,8 @@
     <header id="cabeceraUser">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Servicio Telematico del Ayto Madrid</div>
+                <div class="intro-lead-in" *ngIf="!loginService.isAdmin">Servicio Telematico del Ayto Madrid</div>
+                <div class="intro-lead-in" *ngIf="loginService.isAdmin">Servicio de mantenimiento de la web del Ayto Madrid</div>
                 <a href="#services" class="page-scroll btn btn-xl">Saber Mas</a>
             </div>
         </div>
