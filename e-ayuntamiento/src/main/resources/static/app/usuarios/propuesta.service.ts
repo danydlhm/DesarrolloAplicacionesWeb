@@ -10,7 +10,7 @@ export class Propuesta {
     creador: string;
     aprobada: boolean;
     concejal: string;
-    firmantes: string[];
+    firmantes: User[];
     titulo: string;
     contenido: string;
     imagen: string;

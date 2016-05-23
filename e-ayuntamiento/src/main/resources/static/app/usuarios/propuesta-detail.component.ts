@@ -58,6 +58,6 @@ export class PropuestaDetailComponent {
     }
     
     addP() {
-        this.propuesta.firmantes[this.propuesta.firmantes.length +1] = "Usuario Anonimo";
+        this.propuesta.firmantes[this.propuesta.firmantes.length +1] = this.http.get(URL+id).getUser;
     }
 }
