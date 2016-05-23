@@ -48,7 +48,7 @@ export class ActaFormComponent {
 
       let id = routeParams.get('id');
       if(id){
-        service.getActa(id).subscribe(
+        this.service.getActa(id).subscribe(
           acta => this.acta = acta,
           error => console.error(error)
         );

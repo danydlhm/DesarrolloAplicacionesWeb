@@ -9,7 +9,7 @@
     <ul class="nav nav-tabs" *ngIf="loginService.isAdmin">
         <li class="active"><a (click)="setVisible(0)" id="tab-0">Carrousel</a></li>
         <li><a (click)="setVisible(1)" id="tab-1">Anuncios y noticias</a></li>
-        <li><a href="#tab-2" id="tab-2"></a>Permisos usuario</li>
+        <li><a href="#tab-2" id="tab-2">Permisos usuario</a></li>
         <li><a href="#tab-3" id="tab-3"></a></li>
     </ul>
 
@@ -190,7 +190,7 @@
     
     <div *ngIf="loginService.isAdmin">
         <div id="tab1" [class.hidden]="tabs[0]">			
-            <a class="page-scroll portfolio-link" href="#InsercionLogo" data-toggle="modal">Modificar el logo del ayuntamiento</a><br>
+            <a class="page-scroll portfolio-link" [routerLink]="['CarrouselList']" data-toggle="modal">Modificar imagenes carrousel</a><br>
 			<a class="page-scroll portfolio-link" href="#ModificacionFondo" data-toggle="modal">Modificar imagen de fondo del ayuntamiento</a><br>
 			
         </div>

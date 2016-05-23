@@ -4,8 +4,11 @@ import {NavComponent} from './nav.component';
 import {PropuestaListComponent} from './propuesta-list.component';
 import {PropuestaDetailComponent} from './propuesta-detail.component';
 import {PropuestaFormComponent} from './propuesta-form.component';
+import {CarrouselListComponent} from './carrousel-list.component';
+import {CarrouselFormComponent} from './carrousel-form.component';
+import {NoticiaListComponent} from '../index/noticia-list.component';
 import {ConcejalIndexComponent} from './index.component';
- import {LoginService} from '../index/login.service';
+import {LoginService} from '../index/login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES, NavComponent],
@@ -16,7 +19,11 @@ import {ConcejalIndexComponent} from './index.component';
     {path: '/index', name: 'ConcejalIndex', component: ConcejalIndexComponent, useAsDefault: true},
     {path: '/propuesta/:id', name: 'PropuestaDetail', component: PropuestaDetailComponent},
     {path: '/propuestas/', name: 'PropuestaList', component: PropuestaListComponent},
+    {path: '/carrousel/', name: 'CarrouselList', component: CarrouselListComponent},
+    {path: '/carrousel/edit/:id', name: 'CarrouselEdit', component: CarrouselFormComponent},
+    {path: '/news/', name: 'AdminNews', component: NoticiaListComponent},
     {path: '/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},
+    {path: '/carrousel/nueva/', name: 'CarrouselNew', component: CarrouselFormComponent},
 ])
 
 export class CiudadanoComponent{

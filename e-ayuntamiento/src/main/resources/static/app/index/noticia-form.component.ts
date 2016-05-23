@@ -42,7 +42,7 @@ export class NoticiaFormComponent {
 
       let id = routeParams.get('id');
       if(id){
-        service.getNoticia(id).subscribe(
+        this.service.getNoticia(id).subscribe(
           noticia => this.noticia = noticia,
           error => console.error(error)
         );
