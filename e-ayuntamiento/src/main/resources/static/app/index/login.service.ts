@@ -100,6 +100,31 @@ export class LoginService {
           .catch(error => this.handleError(error)); 
     }
     
+    getUsers(){
+        return this.http.get("/users").map(
+            response => response.json(),
+        )
+    }
+    getUser(id: number | string) {
+    return this.http.get("/user/"+id)
+        .map(response => response.json())
+	       .catch(error => this.handleError(error));
+    }
+    
+    updateUser(user: User) {
+
+        let body = JSON.stringify(user);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this.http.put("/user/" + user.id, body, options)
+            .map(response => response.json())
+            .catch(error => this.handleError(error));
+    }
+    
     private handleError(error: any){
       console.error(error);
       return Observable.throw("Server error (" + error.status + "): " + error.text())

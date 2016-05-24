@@ -14,6 +14,9 @@ import {LoginService} from '../index/login.service';
 import {ActaListComponent} from './acta-list.component';
 import {ActaFormComponent} from './acta-form.component';
 import {ActaDetailComponent} from './acta-detail.component';
+import {ConcejalListComponent} from './concejal-list.component';
+import {ConcejalFormComponent} from './concejal-form.component';
+import {ConcejalDetailComponent} from './concejal-detail.component';
 
 
 @Component({
@@ -38,6 +41,8 @@ import {ActaDetailComponent} from './acta-detail.component';
     {path: '/actas/nueva/', name: 'AdminActaNew', component: ActaFormComponent},
     {path: '/acta/:id', name: 'AdminActaView', component: ActaDetailComponent},
     {path: '/acta/edit/:id', name: 'AdminActaEdit', component: ActaFormComponent},
+    {path: '/concejales/', name: 'AdminConcejal', component: ConcejalListComponent},
+    {path: '/concejal/:id', name: 'AdminConcejalView', component: ConcejalDetailComponent},
     
 ])
 

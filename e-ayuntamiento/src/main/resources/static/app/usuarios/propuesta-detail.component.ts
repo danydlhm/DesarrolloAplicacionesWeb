@@ -67,7 +67,7 @@ export class PropuestaDetailComponent {
     }
     
     addP() {
-        if(this.propuesta.firmantes.indexOf(this.loginService.user) === -1){
+        if(this.propuesta.firmantes.indexOf(this.loginService.user.id) === -1){
             this.propuesta.firmantes[this.propuesta.firmantes.length] = this.loginService.user;
             this.service.updatePropuesta(this.propuesta).subscribe(
                 propuestas => {},
@@ -77,7 +77,6 @@ export class PropuestaDetailComponent {
     }
     
     actualizarPropuesta(concejal: Concejal){
-        console.log(concejal)
         this.propuesta.aprobada = true;
         concejal.propuestasAprobadas[concejal.propuestasAprobadas.length] = this.propuesta;
         this.propuesta.concejal = concejal;

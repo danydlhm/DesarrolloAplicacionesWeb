@@ -32,7 +32,6 @@ export class TurismComponent implements OnInit{
     prev(){
         this.imagenes[this.activo].active = false;
         this.activo = ((this.activo + this.imagenes.length - 1) % (this.imagenes.length));
-        console.log(this.activo);
         this.imagenes[this.activo].active = true;
     }
     

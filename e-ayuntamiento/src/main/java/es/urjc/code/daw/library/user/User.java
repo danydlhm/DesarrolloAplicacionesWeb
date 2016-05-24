@@ -169,4 +169,20 @@ public class User {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Concejal getConcejal() {
+		return concejal;
+	}
+
+	public void setConcejal(Concejal concejal) {
+		this.concejal = concejal;
+	}
 }
