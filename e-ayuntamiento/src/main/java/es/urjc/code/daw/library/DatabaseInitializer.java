@@ -1,5 +1,7 @@
 package es.urjc.code.daw.library;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
@@ -94,9 +96,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 		// Sample propuestas
 		
 		User us = userRepository.findByName("manoloBombo");
-		propuestaRepository.save(new Propuesta(us,"Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo.","Quiero una Vuvuzela","../img/Propuestas/manolo-bombo.jpg"));
+		propuestaRepository.save(new Propuesta("Quiero una Vuvuzela",false,"../img/Propuestas/manolo-bombo.jpg",us,null,new ArrayList<User>(),"Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo."));
 		us = userRepository.findByName("rasputin");
-		propuestaRepository.save(new Propuesta(us,"Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina.", "Echar al Zar", "../img/Propuestas/Rasputin.jpg"));
+		propuestaRepository.save(new Propuesta( "Echar al Zar",false, "../img/Propuestas/Rasputin.jpg",us,null,new ArrayList<User>(),"Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina."));
 
 
 		

@@ -1,6 +1,5 @@
 package es.urjc.code.daw.library.propuesta;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -45,7 +44,7 @@ public class Propuesta {
 	private Concejal concejal;
 	
 	@JsonView(Detalle.class)
-	@ManyToMany(mappedBy="propuestasFirmadas")
+	@ManyToMany
 	private List<User> firmantes;
 	
 	@JsonView(Basico.class)
@@ -54,80 +53,117 @@ public class Propuesta {
 
 	public Propuesta() {}
 
-	public Propuesta(User nombre, String description, String title, String url) {
-		super();
-		this.titulo = title;
-		this.creador = nombre;
-		this.contenido = description;
-		this.aprobada = false;
-		this.firmantes = new ArrayList<User>();
-		this.firmantes.add(this.creador);
-		this.imagen = url;
-	}
 	
-	public User getCreador() {
-		return creador;
-	}
-
-	public void setCreador(User creador) {
-		this.creador = creador;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
+	
+	public Propuesta( String titulo, boolean aprobada, String imagen, User creador, Concejal concejal,
+			List<User> firmantes, String contenido) {
+		super();
 		this.titulo = titulo;
-	}
-
-	public boolean isAprobada() {
-		return aprobada;
-	}
-
-	public void setAprobada(boolean aprobada) {
 		this.aprobada = aprobada;
-	}
-
-	public Concejal getConcejal() {
-		return concejal;
-	}
-
-	public void setConcejal(Concejal concejal) {
-		this.concejal = concejal;
-	}
-
-	public List<User> getFirmantes() {
-		return firmantes;
-	}
-
-	public void setFirmantes(List<User> firmantes) {
-		this.firmantes = firmantes;
-	}
-
-	public String getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(String imagen) {
 		this.imagen = imagen;
-	}
-
-	public String getContenido() {
-		return contenido;
-	}
-
-	public void setContenido(String contenido) {
+		this.creador = creador;
+		this.concejal = concejal;
+		this.firmantes = firmantes;
 		this.contenido = contenido;
 	}
+
+
 
 	public long getId() {
 		return id;
 	}
 
+
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
+
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+
+	public boolean isAprobada() {
+		return aprobada;
+	}
+
+
+
+	public void setAprobada(boolean aprobada) {
+		this.aprobada = aprobada;
+	}
+
+
+
+	public String getImagen() {
+		return imagen;
+	}
+
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+
+	public User getCreador() {
+		return creador;
+	}
+
+
+
+	public void setCreador(User creador) {
+		this.creador = creador;
+	}
+
+
+
+	public Concejal getConcejal() {
+		return concejal;
+	}
+
+
+
+	public void setConcejal(Concejal concejal) {
+		this.concejal = concejal;
+	}
+
+
+
+	public List<User> getFirmantes() {
+		return firmantes;
+	}
+
+
+
+	public void setFirmantes(List<User> firmantes) {
+		this.firmantes = firmantes;
+	}
+
+
+
+	public String getContenido() {
+		return contenido;
+	}
+
+
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
+	}
+
+
 
 	@Override
 	public String toString() {

@@ -60,7 +60,7 @@ public class User {
 	private String foto;
 	
 	@JsonView(Detalle.class)
-	@ManyToMany
+	@ManyToMany(mappedBy="firmantes")
 	private List<Propuesta> propuestasFirmadas;
 	
 	@JsonView(Detalle.class)

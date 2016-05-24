@@ -22,6 +22,7 @@ import {LoginService} from '../index/login.service';
             <p>{{propuesta.contenido}}</p>
           </div>
           <h4> Creada por : "{{propuesta.creador.name}}"</h4>
+          <h4> Apoyada por : <span *ngFor="#per of propuesta.firmantes,#i=index">{{per.name}} ,</span></h4>
             <button class="btn btn-primary" *ngIf="loginService.user && loginService.isAdmin" (click)="removePropuesta()">Eliminar</button>
             <button class="btn btn-primary" *ngIf="loginService.user && loginService.isAdmin" (click)="editPropuesta()">Editar</button>
             <br>
@@ -57,10 +58,17 @@ export class PropuestaDetailComponent {
     }
 
     gotoPropuestas() {
-        this.router.navigate(['PropuestaList']);
+        this.service.updatePropuesta(this.propuesta).subscribe(
+        propuestas => this.router.navigate(['PropuestaList']),
+        error => console.log(error)
+      );
     }
     
     addP() {
-        this.propuesta.firmantes[this.propuesta.firmantes.length +1] = this.loginService.user;
+        this.propuesta.firmantes[this.propuesta.firmantes.length] = this.loginService.user;
+        this.service.updatePropuesta(this.propuesta).subscribe(
+        propuestas => {},
+        error => console.log(error)
+      );
     }
 }
