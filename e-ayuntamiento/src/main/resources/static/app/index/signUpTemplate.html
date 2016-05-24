@@ -29,6 +29,12 @@
                                     <label class="control-label col-xs-3">Confirmar Password:</label>
                                     <div class="col-xs-9">
                                         <input #pass2 type="password" class="form-control" placeholder="Confirmar Password">
+                                        <div *ngIf="pass.value == pass2.value">
+                                            <span class="glyphicon glyphicon-ok" style="color:#00ff83"></span>
+                                        </div>
+                                        <div *ngIf="pass.value != pass2.value">
+                                            <span class="glyphicon glyphicon-remove" style="color:#ff5a5f"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
