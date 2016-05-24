@@ -25,17 +25,16 @@ import {Noticia, NoticiaService}   from './noticia.service';
                 <label>Abstract: </label>
                 <textarea [(ngModel)]="noticia.cuerpo" placeholder="cuerpo"></textarea>
             </div>
+            <div>
+                <label>Imagen: </label>
+                <input type="image" src="{{noticia.url}}" alt="Submit"> 
+            </div>
             <div class="form-group">
                 <label for="InputFile">File input</label> 
                 <input  type="file" (change)="selectFile($event)">
                 <button class="btn btn-primary" (click)="upload()">Subir</button>
                 <h3 *ngIf="subido">Imagen subida</h3>
 		    </div>
-            <div>
-                <label>Imagen: </label>
-                <input type="image" src="{{noticia.url}}" alt="Submit"> 
-                <textarea [(ngModel)]="noticia.url" placeholder="abstract"></textarea>
-            </div>
             <p>
                 <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
                 <button class="btn btn-primary" (click)="save()">Salvar</button>
