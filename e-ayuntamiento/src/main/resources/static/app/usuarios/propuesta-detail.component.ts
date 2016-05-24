@@ -67,7 +67,7 @@ export class PropuestaDetailComponent {
     }
     
     addP() {
-        if(this.propuesta.firmantes.indexOf(this.loginService.user.id) === -1){
+        if(this.propuesta.firmantes.indexOf(this.loginService.user) === -1){
             this.propuesta.firmantes[this.propuesta.firmantes.length] = this.loginService.user;
             this.service.updatePropuesta(this.propuesta).subscribe(
                 propuestas => {},

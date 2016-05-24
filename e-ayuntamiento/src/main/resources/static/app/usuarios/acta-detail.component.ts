@@ -41,7 +41,7 @@ export class ActaDetailComponent {
         let okResponse = window.confirm("Do you want to remove this acta?");
         if (okResponse) {
             this.service.removeActa(this.acta).subscribe(
-                _ => this.router.navigate(['ActaList']),
+                _ => this.router.navigate(['AdminActas']),
                 error => console.error(error)
             )
         }

@@ -83,7 +83,7 @@ public class LoginController {
 
 		User user = userRepository.findOne(id);
 		if (user != null) {
-
+			updatedUser.setPasswordHash(user.getPasswordHash());
 			updatedUser.setId(id);
 			userRepository.save(updatedUser);
 
@@ -92,7 +92,7 @@ public class LoginController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	} 
-
+	
 	
 	@JsonView(UserDetalle.class)
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
