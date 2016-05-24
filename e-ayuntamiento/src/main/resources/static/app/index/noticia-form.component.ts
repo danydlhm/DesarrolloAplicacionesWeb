@@ -48,6 +48,8 @@ export class NoticiaFormComponent {
   subido:boolean;
   noticia: Noticia;
   
+  file: File
+  
   
 
   constructor(
@@ -77,12 +79,12 @@ export class NoticiaFormComponent {
   save() {
     if (this.newNoticia){
         this.service.saveNoticia(this.noticia).subscribe(
-    	   acta => {}, 
+    	   noticia => {}, 
     	   error => console.error('Error creating new noticia: '+error)
         );
     }else{
         this.service.updateNoticia(this.noticia).subscribe(
-    	   acta => {}, 
+    	   noticia => {}, 
     	   error => console.error('Error updating noticia: '+error)
         );
     }

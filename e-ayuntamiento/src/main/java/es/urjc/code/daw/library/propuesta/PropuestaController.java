@@ -52,7 +52,7 @@ public class PropuestaController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Propuesta nuevoAnuncio(@RequestBody Propuesta anuncio) {
+	public Propuesta nuevaPropuesta(@RequestBody Propuesta anuncio) {
 
 		repository.save(anuncio);
 
@@ -60,7 +60,7 @@ public class PropuestaController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Propuesta> actulizaAnuncio(@PathVariable long id, @RequestBody Propuesta updatedPropuesta) {
+	public ResponseEntity<Propuesta> actulizaPropuesta(@PathVariable long id, @RequestBody Propuesta updatedPropuesta) {
 
 		Propuesta anuncio = repository.findOne(id);
 		if (anuncio != null) {

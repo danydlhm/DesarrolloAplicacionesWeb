@@ -11,9 +11,9 @@ import {NoticiaListComponent} from './noticia-list.component';
 import {NoticiaDetailComponent} from '../index/noticia-detail.component';
 import {NoticiaFormComponent} from '../index/noticia-form.component';
 import {LoginService} from '../index/login.service';
-import {ActaListComponent} from '../index/acta-list.component';
-import {ActaFormComponent} from '../index/acta-form.component';
-import {ActaDetailComponent} from '../index/acta-detail.component';
+import {ActaListComponent} from './acta-list.component';
+import {ActaFormComponent} from './acta-form.component';
+import {ActaDetailComponent} from './acta-detail.component';
 
 
 @Component({

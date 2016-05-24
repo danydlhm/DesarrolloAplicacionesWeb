@@ -1,7 +1,7 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {Acta, ActaService}   from './acta.service';
-import {LoginService} from './login.service';
+import {Acta, ActaService}   from '../index/acta.service';
+import {LoginService} from '../index/login.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -48,10 +48,10 @@ export class ActaDetailComponent {
     }
 
     editActa() {
-        this.router.navigate(['ActaForm', { id: this.acta.id }]);
+        this.router.navigate(['AdminActaEdit', { id: this.acta.id }]);
     }
 
     gotoActas() {
-        this.router.navigate(['ActaList']);
+        this.router.navigate(['AdminActas']);
     }
 }

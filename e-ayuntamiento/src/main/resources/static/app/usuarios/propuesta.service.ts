@@ -1,12 +1,12 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from '../utils';
-import {Http, Response, RequestOptions} from 'angular2/http';
+import {Http, Response, RequestOptions, Headers} from 'angular2/http';
 import 'rxjs/Rx';
 import {User} from '../index/login.service';
-import {Concejal} from '../index/login.service';
+import {Concejal} from '../index/concejal.service';
 
-export class Propuesta {
+export interface Propuesta {
 
     id?: number;
     creador: User;
@@ -58,12 +58,12 @@ export class PropuestaService {
 
     return this.http.post(URL, body, options)
       .map(response => response.json())
-      .catch(error => this.handleError(error));
+      .catch(error => this.handleError(error)); 
   }
   
   updatePropuesta(propuesta: Propuesta) {
 
-    let body = JSON.stringify(acta);
+    let body = JSON.stringify(propuesta);
     let headers = new Headers({
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'

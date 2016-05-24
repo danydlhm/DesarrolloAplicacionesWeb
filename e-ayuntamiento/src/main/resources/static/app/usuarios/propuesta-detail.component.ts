@@ -1,11 +1,12 @@
 import {Component}  from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 import {Propuesta, PropuestaService}   from './propuesta.service';
+import {LoginService} from '../index/login.service';
 
 @Component({
     template: `
     <div class="container modal-body">
-        <div class="col-lg-8 col-lg-offset-2 text-center ">
+        <div class="col-lg-8 col-lg-offset-2 text-center " *ngIf="propuesta">
           <h2>Propuesta : "{{propuesta.titulo}}"</h2>
           <img src="{{propuesta.imagen}}" alt="Imagen asociada a la propuesta" height="350" width="350">
             <div *ngIf="propuesta.aprobada">
@@ -33,7 +34,7 @@ export class PropuestaDetailComponent {
 
     propuesta: Propuesta;
 
-    constructor(private router: Router, routeParams: RouteParams, private service: PropuestaService) {
+    constructor(private router: Router, routeParams: RouteParams, private service: PropuestaService, private loginService: LoginService) {
         let id = routeParams.get('id');
         service.getPropuesta(id).subscribe(
             propuesta => this.propuesta = propuesta,

@@ -21,8 +21,10 @@ import {Noticia, NoticiaService}   from '../index/noticia.service';
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" (click)="newNoticia()">Nueva noticia</button>
-  `
+    <p class="text-center">
+        <button class="btn btn-primary" (click)="newNoticia()">Nueva Noticia</button>
+        <button class="btn btn-primary" (click)="goBack()">Atrás</button>
+    </p>`
 })
 export class NoticiaListComponent implements OnInit {
 
@@ -39,5 +41,9 @@ export class NoticiaListComponent implements OnInit {
 
     newNoticia() {
       this.router.navigate(['NoticiaNew']);
+    }
+    
+    goBack(){
+        this.router.navigate(['ConcejalIndex']);
     }
 }

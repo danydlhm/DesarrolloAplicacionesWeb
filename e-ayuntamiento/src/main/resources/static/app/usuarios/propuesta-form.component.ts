@@ -1,18 +1,18 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
-import {MultipartItem} from "../multipart-upload/multipart-item";
-import {MultipartUploader} from "../multipart-upload/multipart-uploader";
+import {MultipartItem} from '../multipart-upload/multipart-item';
+import {MultipartUploader} from '../multipart-upload/multipart-uploader';
+import {LoginService} from '../index/login.service';
 import {Propuesta, PropuestaService}   from './propuesta.service';
 
 @Component({
   template: `
   <div class="container modal-body">
-        <div class="col-lg-8 col-lg-offset-2 text-center ">
+        <div class="col-lg-8 col-lg-offset-2 text-center" *ngIf="propuesta">
           <h2>Nueva Propuesta "{{propuesta.titulo}}"</h2>
           <div *ngIf="propuesta.id"><label>Id: </label>{{propuesta.id}}</div>
           <div>
-            <label>Autor: </label>
-            <input [(ngModel)]="propuesta.creador" placeholder="autor"/>
+            <label>Autor: </label>{{propuesta.creador.nombre}}
           </div>
           <div>
             <label>Titulo: </label>
@@ -42,12 +42,12 @@ export class PropuestaFormComponent {
   subido: boolean;
   propuesta: Propuesta;
   
-  private file: File;
 
   constructor(
     private _router:Router,
     routeParams:RouteParams,
-    private service: PropuestaService){
+    private service: PropuestaService,
+    private loginService: LoginService){
 
       this.subido = false;
       let id = routeParams.get('id');
@@ -58,7 +58,7 @@ export class PropuestaFormComponent {
         );
         this.newPropuesta = false;
       } else {
-        this.propuesta = new Propuesta(undefined,'',false,undefined,undefined,'','','');
+        this.propuesta = {creador: this.loginService.user,aprobada: false,concejal: undefined,firmantes: [this.loginService.user],titulo: '',contenido: '',imagen: ''};
         this.newPropuesta = true;
       }
   }
@@ -68,11 +68,18 @@ export class PropuestaFormComponent {
   }
 
   save() {
-    console.log(this.propuesta.imagen);
-    if (this.subido){
-        this.service.savePropuesta(this.propuesta);
-        window.history.back();
+    if (this.newPropuesta){
+        this.service.savePropuesta(this.propuesta).subscribe(
+    	   propuesta => {}, 
+    	   error => console.error('Error creating new propuesta: '+error)
+        );
+    }else{
+        this.service.updatePropuesta(this.propuesta).subscribe(
+    	   acta => {}, 
+    	   error => console.error('Error updating new propuesta: '+error)
+        );
     }
+    window.history.back();
   }
   
   	

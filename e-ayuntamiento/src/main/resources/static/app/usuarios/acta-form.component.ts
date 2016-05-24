@@ -1,6 +1,6 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
-import {Acta, ActaService}   from './acta.service';
+import {Acta, ActaService}   from '../index/acta.service';
 
 @Component({
   template: `
@@ -72,7 +72,7 @@ export class ActaFormComponent {
     }else{
         this.service.updateActa(this.acta).subscribe(
     	   acta => {}, 
-    	   error => console.error('Error updating new acta: '+error)
+    	   error => console.error('Error creating new acta: '+error)
         );
     }
     window.history.back();
