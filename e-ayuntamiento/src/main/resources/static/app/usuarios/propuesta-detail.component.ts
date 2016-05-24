@@ -13,7 +13,9 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
             </div>
             <div *ngIf!="propuesta.aprobada">
                 <h3> Propuesta "Sin Aprobar", faltan firmas</h3>
-                <button class="btn btn-primary" (click)="addP()">Unete</button>
+                <div *ngIf="this.loginService.user">
+                    <button class="btn btn-primary" (click)="addP()">Unete</button>
+                </div>
             </div>
           <div>
             <p>{{propuesta.contenido}}</p>
@@ -58,6 +60,6 @@ export class PropuestaDetailComponent {
     }
     
     addP() {
-        this.propuesta.firmantes[this.propuesta.firmantes.length +1] = this.http.get(URL+id).getUser;
+        this.propuesta.firmantes[this.propuesta.firmantes.length +1] = this.loginService.user;
     }
 }

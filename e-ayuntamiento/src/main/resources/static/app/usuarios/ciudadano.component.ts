@@ -7,6 +7,9 @@ import {PropuestaFormComponent} from './propuesta-form.component';
 import {CarrouselListComponent} from './carrousel-list.component';
 import {CarrouselFormComponent} from './carrousel-form.component';
 import {NoticiaListComponent} from '../index/noticia-list.component';
+import {ActaListComponent} from '../index/acta-list.component';
+import {ActaFormComponent} from '../index/acta-form.component';
+import {ActaDetailComponent} from '../index/acta-detail.component';
 import {ConcejalIndexComponent} from './index.component';
 import {LoginService} from '../index/login.service';
 
@@ -22,6 +25,9 @@ import {LoginService} from '../index/login.service';
     {path: '/carrousel/', name: 'CarrouselList', component: CarrouselListComponent},
     {path: '/carrousel/edit/:id', name: 'CarrouselEdit', component: CarrouselFormComponent},
     {path: '/news/', name: 'AdminNews', component: NoticiaListComponent},
+    {path: '/actas/', name: 'AdminActas', component: ActaListComponent},
+    {path: '/actas/nueva/', name: 'AdminActaNew', component: ActaFormComponent},
+    {path: '/acta/:id', name: 'AdminActaView', component: ActaDetailComponent},
     {path: '/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},
     {path: '/carrousel/nueva/', name: 'CarrouselNew', component: CarrouselFormComponent},
 ])
