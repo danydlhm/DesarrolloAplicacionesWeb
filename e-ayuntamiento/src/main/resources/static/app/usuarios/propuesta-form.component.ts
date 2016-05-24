@@ -27,7 +27,7 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
             <input type="file" (change)="selectFile($event)">
             <button class="btn btn-primary" (click)="upload()">Subir</button>
             <h3 *ngIf="subido">Imagen subida</h3>
-		</div>
+		  </div>
           <p>
             <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
             <button class="btn btn-primary" (click)="save()">Guardar</button>
@@ -68,7 +68,6 @@ export class PropuestaFormComponent {
   }
 
   save() {
-    this.propuesta.imagen = "/images/"+this.file.name.replace(" ","+");
     console.log(this.propuesta.imagen);
     if (this.subido){
         this.service.savePropuesta(this.propuesta);
@@ -104,6 +103,7 @@ export class PropuestaFormComponent {
 						
 			if (status == 200){				
 				console.debug("File has been uploaded");
+                this.propuesta.imagen = "/images/"+this.file.name.replace(" ","+");
 				this.subido = true;			
 			} else {
 				console.error("Error uploading file");
