@@ -1,19 +1,19 @@
 import {Component, OnInit}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {Noticia, NoticiaService}   from './noticia.service';
+import {Noticia, NoticiaService}   from '../index/noticia.service';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <div class="row" margin : 1em;>
+    <div class="row">
         <div class="col-md-4 col-sm-6 portfolio-item text-center" *ngFor="#noticia of noticias">
-            <a [routerLink]="['NoticiaDetail', {id: noticia.id}]" class="portfolio-link">
+            <a [routerLink]="['AdminNewsDetail', {id: noticia.id}]" class="portfolio-link">
                 <div class="portfolio-hover">
                     <div class="portfolio-hover-content">
                         <i class="fa fa-plus fa-3x"></i>
                     </div>
                 </div>
-                <img src="{{noticia.url}}" class="img-responsive center-block" alt="foto descriptiva de la noticia">
+                <img src="{{noticia.url}}" class="img-responsive center-block" alt="foto descriptiva de {{noticia.title}}">
             </a>
             <div class="portfolio-caption">
                 <h4>"{{noticia.title}}"</h4>

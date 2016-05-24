@@ -76,6 +76,7 @@ export class LoginService {
 			response => {
 				this.isLogged = false;
 				this.isAdmin = false;
+                this.isConcejal = false;
 				return response;
 			}
 		);

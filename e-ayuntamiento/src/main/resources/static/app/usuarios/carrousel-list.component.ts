@@ -5,9 +5,9 @@ import {Carrousel, CarrouselService}   from '../index/carrousel.service';
 @Component({
     directives: [ROUTER_DIRECTIVES],
     template: `
-    <div class="row">
+    <div class="row text-center">
         <h2>Fotos del Carrousel</h2>
-        <div class="col-md-4 col-sm-6 portfolio-item text-center " *ngFor="#img of carrousel">
+        <div class="col-md-4 col-sm-6 portfolio-item " *ngFor="#img of carrousel">
             <div class="cajita">
                 <a [routerLink]="['CarrouselEdit', {id: img.id}]" class="portfolio-link">
                     <hr>
