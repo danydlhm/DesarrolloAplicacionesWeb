@@ -59,7 +59,7 @@ public class ImageController {
 	@RequestMapping("/images/{fileName:.+}")
 	public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
 			throws FileNotFoundException, IOException {
-		
+
 		Path image = FILES_FOLDER.resolve(fileName);
 
 		if (Files.exists(image)) {

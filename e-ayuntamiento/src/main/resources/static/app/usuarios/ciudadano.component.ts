@@ -32,7 +32,7 @@ import {ActaDetailComponent} from '../index/acta-detail.component';
     {path: '/news/', name: 'AdminNews', component: NoticiaListComponent},
     {path: '/news/:id', name: 'AdminNewsDetail', component: NoticiaDetailComponent},
     {path: '/news/edit/:id', name: 'AdminNewsEdit', component: NoticiaFormComponent},
-    {path: '/news/nueva/', name: 'PropuestaNew', component: NoticiaFormComponent},
+    {path: '/news/nueva/', name: 'NoticiaNew', component: NoticiaFormComponent},
     {path: '/actas/', name: 'AdminActas', component: ActaListComponent},
     {path: '/actas/nueva/', name: 'AdminActaNew', component: ActaFormComponent},
     {path: '/acta/:id', name: 'AdminActaView', component: ActaDetailComponent},
