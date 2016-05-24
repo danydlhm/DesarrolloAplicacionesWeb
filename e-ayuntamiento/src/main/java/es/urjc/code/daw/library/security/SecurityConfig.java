@@ -50,9 +50,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// APP: This rules have to be changed by app developer
 
 		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");		
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/concejales/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/concejales/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/concejales/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/carrousel/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/carrousel/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/carrousel/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/noticias/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/noticias/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/noticias/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/actas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/actas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/actas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/propuestas/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/propuestas/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/propuestas/**").hasRole("ADMIN");
+		
 
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();
