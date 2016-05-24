@@ -41,7 +41,7 @@ public class ImageController {
 			Files.createDirectories(FILES_FOLDER);
 		}
 		
-		String fileName = name.replace(" ", "+")+".jpg";
+		String fileName = name.replace(" ", "+");
 		File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 		file.transferTo(uploadedFile);
 
