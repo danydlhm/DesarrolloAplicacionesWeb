@@ -9,44 +9,30 @@ import {Concejal} from '../index/login.service';
 })
 
 export class SignUpComponent{
+
   newUser: boolean;
   subido: boolean;
   user: User;
   
-  private file: File;
-
-  constructor(
-    private _router:Router,
-    routeParams:RouteParams,
-    private component: signUpComponent){
-
-      this.subido = false;
-      let id = routeParams.get('id');
-      if(id){
-        service.getPropuesta(id).subscribe(
-          propuesta => this.propuesta = propuesta,
-          error => console.error(error)
-        );
-        this.newPropuesta = false;
-      } else {
-        this.propuesta = new Propuesta(undefined,'',false,undefined,undefined,'','','');
-        this.newPropuesta = true;
-      }
-  }
+  constructor(private router:Router, private loginService: LoginService){}
+    
+    signUp(event: any, nick: string, name: String, pass: string, pass2: String){
+	  
+	  event.preventDefault();
+	  if(pass == pass2){
+	  this.loginService.signUp(nick, name, pass, pass2).subscribe(
+	      user => this.loginService.logIn(nick, pass).subscribe(
+	      response => this.router.navigate(['Ciudadano']),
+	      error => alert("Invalid user or password")
+      ),
+	      error => alert("Usuario ya registrado")
+      );}
+    }
 
   cancel() {
     window.history.back();
   }
-
-  save() {
-    console.log(this.propuesta.imagen);
-    if (this.subido){
-        this.service.savePropuesta(this.propuesta);
-        window.history.back();
-    }
-  }
   
-  	
 	selectFile($event) {		
 		this.file = $event.target.files[0];
 		console.debug("Selected file: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);		

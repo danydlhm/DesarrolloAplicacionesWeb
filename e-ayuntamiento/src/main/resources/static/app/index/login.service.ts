@@ -80,7 +80,22 @@ export class LoginService {
 				return response;
 			}
 		);
-	}	
+	}
+    
+    signUp(nick: String,name: String,pass: String, String imagen){
+        let user = {name: nick,nombre: name, passwordHash: pass, foto: imagen, roles: ['ROLE_USER'], propuestasAprobadas: [],
+        propuestasCreadas: [], propuestasFirmadas: []}
+        let body = JSON.stringify(user);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this.http.post('newUser', body, options)
+          .map(response => response.json())
+          .catch(error => this.handleError(error)); 
+    }
 }
 
 function utf8_to_b64(str) {
