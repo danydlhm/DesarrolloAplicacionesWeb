@@ -1,5 +1,7 @@
-import { Injectable, OnInit } from 'angular2/core';
-import { Http, RequestOptions, Headers } from 'angular2/http';
+import {Injectable, OnInit} from 'angular2/core';
+import {Observable} from 'rxjs/Observable';
+import {withObserver} from '../utils';
+import {Http, Response, RequestOptions, Headers} from 'angular2/http';
 import 'rxjs/Rx';
 
 export interface User {  
@@ -8,6 +10,7 @@ export interface User {
     nombre:string;
     foto:string;
     roles: string[];
+    concejal: Concejal
     propuestasAprobadas: Propuestas[];
     propuestasCreadas: Propuestas[];
     propuestasFirmadas: Propuestas[];
@@ -82,19 +85,24 @@ export class LoginService {
 		);
 	}
     
-    signUp(nick: String,name: String,pass: String, String imagen){
-        let user = {name: nick,nombre: name, passwordHash: pass, foto: imagen, roles: ['ROLE_USER'], propuestasAprobadas: [],
-        propuestasCreadas: [], propuestasFirmadas: []}
+    signUp(nick: String,name: String,pass: String, imagen: String){
+        let user = {name: nick,nombre: name, passwordHash: pass, foto: imagen, roles: ['ROLE_USER']}
         let body = JSON.stringify(user);
         let headers = new Headers({
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         });
         let options = new RequestOptions({ headers });
+        console.log(user);
 
         return this.http.post('newUser', body, options)
           .map(response => response.json())
           .catch(error => this.handleError(error)); 
+    }
+    
+    private handleError(error: any){
+      console.error(error);
+      return Observable.throw("Server error (" + error.status + "): " + error.text())
     }
 }
 

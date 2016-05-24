@@ -59,6 +59,7 @@ public class PropuestaController {
 		return anuncio;
 	}
 
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Propuesta> actulizaPropuesta(@PathVariable long id, @RequestBody Propuesta updatedPropuesta) {
 

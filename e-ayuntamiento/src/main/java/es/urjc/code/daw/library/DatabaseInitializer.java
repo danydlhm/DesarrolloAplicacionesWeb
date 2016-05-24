@@ -7,7 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 
 import es.urjc.code.daw.library.equipo.Concejal;
-import es.urjc.code.daw.library.equipo.ConcejalRepository;
 import es.urjc.code.daw.library.img.Carrousel;
 import es.urjc.code.daw.library.img.CarrouselRepository;
 import es.urjc.code.daw.library.noticias.Noticia;
@@ -22,8 +21,6 @@ import es.urjc.code.daw.library.user.UserRepository;
 @Controller
 public class DatabaseInitializer implements CommandLineRunner {
 
-	@Autowired
-	private ConcejalRepository concejalRepository;
 	
 	@Autowired
 	private CarrouselRepository carrouselRepository;
@@ -45,9 +42,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		
 		// Sample Concejal
 		
-		concejalRepository.save(new Concejal("Marta Higueras","Primera Teniente de Alcalde","img/team/Marta%20c%C3%ADrculo.png","http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/El-Pleno/Composicion/Corporacion-actual/Grupo-Municipal-Ahora-Madrid/Marta-Maria-Higueras-Garrobo?vgnextfmt=default&vgnextoid=1ddd0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=fe69d1cebc98d410VgnVCM1000000b205a0aRCRD"));
-		concejalRepository.save(new Concejal("Manuela Carmena","Alcaldesa","img/team/Manuela%20c%C3%ADrculo.png","https://twitter.com/@ManuelaCarmena','https://www.facebook.com/Manuela.Carmena.Castrillo","https://es.linkedin.com/in/manuela-carmena-9060b212?trk=pub-pbmap","http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Grupos-politicos/Grupo-Municipal-Ahora-Madrid/Manuela-Carmena-Castrillo?vgnextfmt=default&vgnextoid=806c0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=22da2569d1b13310VgnVCM2000000c205a0aRCRD"));
-		concejalRepository.save(new Concejal("Rita Maestre","Portavoz","img/team/Rita%20c%C3%ADrculo.png","http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=a06d0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=97f1ae2418a57310VgnVCM1000000b205a0aRCRD&vgnextfmt=default","https://www.instagram.com/ritamaestref/","https://www.instagram.com/ritamaestref/"));
+		
 		
 		// Sample Carrousel
 		
@@ -87,18 +82,24 @@ public class DatabaseInitializer implements CommandLineRunner {
 		plenoRepository.save(new Pleno("Domingo","Hodor, hodor. Hodor. Hodor, hodor hodor hodor - hodor... Hodor hodor hodor; hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor hodor! Hodor hodor - hodor hodor hodor... Hodor hodor hodor hodor hodor, hodor. Hodor hodor?! Hodor hodor HODOR! Hodor hodor HODOR hodor, hodor hodor hodor hodor, hodor, hodor hodor. Hodor, hodor hodor HODOR hodor, hodor hodor hodor hodor hodor hodor. Hodor. Hodor hodor; hodor hodor hodor, hodor. Hodor hodor. Hodor! Hodor hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.","Julio",21,2005));
 		
 		// Sample users
-
-		userRepository.save(new User("user", "pass", "ROLE_USER"));
-		userRepository.save(new User("manoloBombo", "1234", "ROLE_USER"));
-		userRepository.save(new User("rasputin", "1234", "ROLE_USER"));
-		userRepository.save(new User("admin", "pass", "ROLE_USER", "ROLE_ADMIN"));
+		Concejal conc = new Concejal("Marta Higueras","Primera Teniente de Alcalde","img/team/Marta%20c%C3%ADrculo.png","http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/El-Pleno/Composicion/Corporacion-actual/Grupo-Municipal-Ahora-Madrid/Marta-Maria-Higueras-Garrobo?vgnextfmt=default&vgnextoid=1ddd0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=fe69d1cebc98d410VgnVCM1000000b205a0aRCRD");
+		userRepository.save(new User(conc));
+		conc = new Concejal("Manuela Carmena","Alcaldesa","img/team/Manuela%20c%C3%ADrculo.png","https://twitter.com/@ManuelaCarmena','https://www.facebook.com/Manuela.Carmena.Castrillo","https://es.linkedin.com/in/manuela-carmena-9060b212?trk=pub-pbmap","http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Grupos-politicos/Grupo-Municipal-Ahora-Madrid/Manuela-Carmena-Castrillo?vgnextfmt=default&vgnextoid=806c0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=22da2569d1b13310VgnVCM2000000c205a0aRCRD");
+		userRepository.save(new User(conc));
+		conc = new Concejal("Rita Maestre","Portavoz","img/team/Rita%20c%C3%ADrculo.png","http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=a06d0001dd49d410VgnVCM2000000c205a0aRCRD&vgnextchannel=97f1ae2418a57310VgnVCM1000000b205a0aRCRD&vgnextfmt=default","https://www.instagram.com/ritamaestref/","https://www.instagram.com/ritamaestref/");
+		userRepository.save(new User(conc));
+		
+		userRepository.save(new User("user","Usuario", "pass","img/default-user-image.png","ROLE_USER"));
+		userRepository.save(new User("manoloBombo", "Manolo el del Bombo", "1234", "img/default-user-image.png","ROLE_USER"));
+		userRepository.save(new User("rasputin", "Rasputin", "1234", "img/default-user-image.png","ROLE_USER"));
+		userRepository.save(new User("admin","Administrador", "pass", "img/default-user-image.png","ROLE_USER", "ROLE_ADMIN"));
 		
 		// Sample propuestas
 		
 		User us = userRepository.findByName("manoloBombo");
 		propuestaRepository.save(new Propuesta("Quiero una Vuvuzela",false,"../img/Propuestas/manolo-bombo.jpg",us,null,new ArrayList<User>(),"Pues lo dicho quiero una vuvuzela, estoy harto del bombo. Quiero ser Manolo el Vuvuzelo."));
 		us = userRepository.findByName("rasputin");
-		propuestaRepository.save(new Propuesta( "Echar al Zar",false, "../img/Propuestas/Rasputin.jpg",us,null,new ArrayList<User>(),"Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina."));
+		propuestaRepository.save(new Propuesta("Echar al Zar",false, "../img/Propuestas/Rasputin.jpg",us,null,new ArrayList<User>(),"Pues lo dicho, vamos a juntar firmas para echar al Zar Nicolas II de Rusia. Que ya huele a naftalina."));
 
 
 		

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,12 +13,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
+import es.urjc.code.daw.library.equipo.Concejal;
 import es.urjc.code.daw.library.propuesta.Propuesta;
 
 /**
@@ -42,8 +44,9 @@ import es.urjc.code.daw.library.propuesta.Propuesta;
 @Entity
 public class User {
 	
-	public interface Basico{}
+	public interface Basico extends Concejal.Basico{}
 	public interface Detalle{}
+	public interface Configuracion extends Basico,Detalle{}
 
 	@JsonView(Basico.class)
 	@Id
@@ -67,8 +70,12 @@ public class User {
 	@OneToMany(mappedBy="creador")
 	private List<Propuesta> propuestasCreadas;
 
-	@JsonIgnore
+	@JsonView(Configuracion.class)
 	private String passwordHash;
+	
+	@JsonView(Basico.class)
+	@OneToOne(cascade=CascadeType.ALL)
+	private Concejal concejal;
 
 	@JsonView(Basico.class)
 	@ElementCollection(fetch = FetchType.EAGER)
@@ -77,16 +84,35 @@ public class User {
 	public User() {
 	}
 
-	public User(String name, String password, String... roles) {
+	public User(String name,String nombre, String password, String foto, String... roles) {
+		super();
 		this.name = name;
-		this.nombre = name;
+		this.nombre = nombre;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.propuestasCreadas = new ArrayList<>();
 		this.propuestasFirmadas = new ArrayList<>();
-		this.foto = "img/default-user-image.png";//foto deafult
+		this.foto = foto;
+		this.concejal = null;
 	}
 	
+	
+
+	public User(Concejal concejal) {
+		super();
+		String nick =concejal.getName().split(" ")[0].toLowerCase();
+		nick = nick+concejal.getName().split(" ")[1];
+		this.name = nick;
+		this.nombre = concejal.getName();
+		this.passwordHash = new BCryptPasswordEncoder().encode("1234");
+		this.roles = new ArrayList<>();
+		this.roles.add("ROLE_USER");
+		this.roles.add("ROLE_CONCEJAL");
+		this.propuestasCreadas = new ArrayList<>();
+		this.propuestasFirmadas = new ArrayList<>();
+		this.foto = concejal.getUrlFoto();
+		this.concejal = concejal;
+	}
 
 	public String getName() {
 		return name;
@@ -101,7 +127,7 @@ public class User {
 	}
 
 	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash);
 	}
 
 	public List<String> getRoles() {

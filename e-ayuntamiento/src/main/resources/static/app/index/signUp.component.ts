@@ -1,7 +1,9 @@
 import {Component}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
-import {User} from '../index/login.service';
-import {Concejal} from '../index/login.service';
+import {User,LoginService} from '../index/login.service';
+import {Concejal} from '../index/concejal.service';
+import {MultipartItem} from '../multipart-upload/multipart-item';
+import {MultipartUploader} from '../multipart-upload/multipart-uploader';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
@@ -13,6 +15,7 @@ export class SignUpComponent{
   newUser: boolean;
   subido: boolean;
   user: User;
+  foto: String;
   
   constructor(private router:Router, private loginService: LoginService){}
     
@@ -20,12 +23,12 @@ export class SignUpComponent{
 	  
 	  event.preventDefault();
 	  if(pass == pass2){
-	  this.loginService.signUp(nick, name, pass, pass2).subscribe(
+	  this.loginService.signUp(nick, name, pass, this.foto).subscribe(
 	      user => this.loginService.logIn(nick, pass).subscribe(
 	      response => this.router.navigate(['Ciudadano']),
 	      error => alert("Invalid user or password")
       ),
-	      error => alert("Usuario ya registrado")
+	      error => console.error('Error creating new user: '+error)
       );}
     }
 
@@ -42,7 +45,7 @@ export class SignUpComponent{
 		
 		console.debug("Uploading file...");
 
-		if (this.file == null || this.propuesta.titulo == null){
+		if (this.file == null){
 			console.error("You have to select a file and set a title.");
 			return;
 		}		
@@ -60,7 +63,7 @@ export class SignUpComponent{
 						
 			if (status == 200){				
 				console.debug("File has been uploaded");
-                this.propuesta.imagen = "/images/"+this.file.name.replace(" ","+");
+                this.foto = "/images/"+this.file.name.replace(" ","+");
 				this.subido = true;			
 			} else {
 				console.error("Error uploading file");

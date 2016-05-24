@@ -14,20 +14,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+
 @RestController
 @RequestMapping("/concejales")
 public class ConcejalController {
-
+	interface ConcejalDetalle extends Concejal.Basico,Concejal.Detalle{};
+	
 	private static final Logger log = LoggerFactory.getLogger(ConcejalController.class);
 
 	@Autowired
 	private ConcejalRepository repository;
 
+	@JsonView(Concejal.Basico.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Collection<Concejal> getConcejales() {
 		return repository.findAll();
 	}
-
+	
+	@JsonView(ConcejalDetalle.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Concejal> getConcejal(@PathVariable long id) {
 

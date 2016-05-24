@@ -21,7 +21,7 @@ import es.urjc.code.daw.library.propuesta.Propuesta;
 public class Concejal {
 	
 	public interface Basico{}
-	interface Detalle{}
+	interface Detalle extends Propuesta.Basico{}
 
 	@JsonView(Basico.class)
 	@Id

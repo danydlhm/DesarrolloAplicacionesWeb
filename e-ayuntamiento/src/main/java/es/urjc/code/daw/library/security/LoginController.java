@@ -36,7 +36,7 @@ public class LoginController {
 	
 	@Autowired
 	private UserRepository userRepository;
-
+	
 	@RequestMapping("/logIn")
 	@JsonView(User.Basico.class)
 	public ResponseEntity<User> logIn() {
@@ -66,7 +66,8 @@ public class LoginController {
 	
 	@RequestMapping(value = "/newUser", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public User nuevaPropuesta(@RequestBody User anuncio) {
+	@JsonView(User.Configuracion.class)
+	public User nuevaUsuario(@RequestBody User anuncio) {
 
 		userRepository.save(anuncio);
 

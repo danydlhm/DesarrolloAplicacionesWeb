@@ -1,6 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from '../utils';
+import {Propuesta} from '../usuario/propuesta.service'
 import {Http, Response, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
 
@@ -9,8 +10,9 @@ export class Concejal{
     name:string;
     urlFoto:string;
     descripcion:string;
-    propuestasAprobadas:string[];
+    propuestasAprobadas:Propuesta[];
     contactos:string[];
+
 }
 
 const URL = 'concejales/';
@@ -57,7 +59,9 @@ export class ConcejalService {
   }
   
   updateConcejal(concejal: Concejal) {
-
+    for (var prop of concejal.propuestasAprobadas){
+        prop.concejal = null;
+    }
     let body = JSON.stringify(concejal);
     let headers = new Headers({
       'Content-Type': 'application/json',

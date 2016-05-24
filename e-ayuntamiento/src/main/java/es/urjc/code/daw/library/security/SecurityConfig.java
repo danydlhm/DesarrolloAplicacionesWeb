@@ -52,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// URLs that need authentication to access to it
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/concejales/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/concejales/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/concejales/**").hasRole("CONCEJAL");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/concejales/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/carrousel/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/carrousel/**").hasRole("ADMIN");
@@ -62,9 +63,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/actas/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/actas/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/actas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/propuestas/**").hasRole("CONCEJAL");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/propuestas/**").hasRole("CONCEJAL");
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/propuestas/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/propuestas/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/propuestas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/propuestas/**").hasRole("CONCEJAL");
 		
 
 		// Other URLs can be accessed without authentication

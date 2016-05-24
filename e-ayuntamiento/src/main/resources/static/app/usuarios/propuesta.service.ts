@@ -62,7 +62,9 @@ export class PropuestaService {
   }
   
   updatePropuesta(propuesta: Propuesta) {
-
+    if (propuesta.concejal){
+        propuesta.concejal.propuestasAprobadas = [];
+    };
     let body = JSON.stringify(propuesta);
     let headers = new Headers({
       'Content-Type': 'application/json',
