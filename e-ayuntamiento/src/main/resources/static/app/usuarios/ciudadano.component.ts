@@ -36,7 +36,6 @@ import {ActaDetailComponent} from '../index/acta-detail.component';
     {path: '/actas/', name: 'AdminActas', component: ActaListComponent},
     {path: '/actas/nueva/', name: 'AdminActaNew', component: ActaFormComponent},
     {path: '/acta/:id', name: 'AdminActaView', component: ActaDetailComponent},
-    {path: '/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},
     
 ])
 
