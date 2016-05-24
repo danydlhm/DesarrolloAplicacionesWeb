@@ -9,20 +9,20 @@ import {Propuesta, PropuestaService}   from './propuesta.service';
           <h2>Propuesta : "{{propuesta.titulo}}"</h2>
           <img src="{{propuesta.imagen}}" alt="Imagen asociada a la propuesta" height="350" width="350">
             <div *ngIf="propuesta.aprobada">
-                <h3> Propuesta "Aprobada" por el Concejal : {{propuesta.concejal}}</h3>
+                <h3> Propuesta "Aprobada" por el Concejal : {{propuesta.concejal.name}}</h3>
             </div>
             <div *ngIf!="propuesta.aprobada">
                 <h3> Propuesta "Sin Aprobar", faltan firmas</h3>
-                <div *ngIf="this.loginService.user">
+                <div *ngIf="loginService.user">
                     <button class="btn btn-primary" (click)="addP()">Unete</button>
                 </div>
             </div>
           <div>
             <p>{{propuesta.contenido}}</p>
           </div>
-          <h4> Creada por : "{{propuesta.creador}}"</h4>
-            <button class="btn btn-primary" (click)="removePropuesta()">Eliminar</button>
-            <button class="btn btn-primary" (click)="editPropuesta()">Editar</button>
+          <h4> Creada por : "{{propuesta.creador.name}}"</h4>
+            <button class="btn btn-primary" *ngIf="loginService.user && loginService.isAdmin" (click)="removePropuesta()">Eliminar</button>
+            <button class="btn btn-primary" *ngIf="loginService.user && loginService.isAdmin" (click)="editPropuesta()">Editar</button>
             <br>
             <button class="btn btn-primary" (click)="gotoPropuestas()">Volver a Propuestas</button>
         </div>

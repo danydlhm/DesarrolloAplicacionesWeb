@@ -13,8 +13,8 @@ import {Acta, ActaService}   from './acta.service';
           </div>
           <div>
             <div class="col-lg-8 col-lg-offset-2 text-center ">
-                <button class="btn btn-primary" (click)="removeActa()">Eliminar</button>
-                <button class="btn btn-primary" (click)="editActa()">Editar</button>
+                <button class="btn btn-primary" *ngIf="loginService.user && loginService.isAdmin" (click)="removeActa()">Eliminar</button>
+                <button class="btn btn-primary" *ngIf="loginService.user && loginService.isAdmin" (click)="editActa()">Editar</button>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center ">
                 <button class="btn btn-primary" (click)="gotoActas()">Volver a las Actas</button>

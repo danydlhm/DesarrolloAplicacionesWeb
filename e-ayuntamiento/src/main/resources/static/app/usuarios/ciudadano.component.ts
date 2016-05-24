@@ -24,6 +24,7 @@ import {ActaDetailComponent} from '../index/acta-detail.component';
 @RouteConfig([
     {path: '/index', name: 'ConcejalIndex', component: ConcejalIndexComponent, useAsDefault: true},
     {path: '/propuesta/:id', name: 'PropuestaDetail', component: PropuestaDetailComponent},
+    {path: '/propuesta/edit/:id', name: 'PropuestaEdit', component: PropuestaFormComponent},
     {path: '/propuestas/', name: 'PropuestaList', component: PropuestaListComponent},
     {path: '/propuestas/nueva/', name: 'PropuestaNew', component: PropuestaFormComponent},
     {path: '/carrousel/', name: 'CarrouselList', component: CarrouselListComponent},
@@ -32,10 +33,11 @@ import {ActaDetailComponent} from '../index/acta-detail.component';
     {path: '/news/', name: 'AdminNews', component: NoticiaListComponent},
     {path: '/news/:id', name: 'AdminNewsDetail', component: NoticiaDetailComponent},
     {path: '/news/edit/:id', name: 'AdminNewsEdit', component: NoticiaFormComponent},
-    {path: '/news/nueva/', name: 'PropuestaNew', component: NoticiaFormComponent},
+    {path: '/news/nueva/', name: 'NoticiaNew', component: NoticiaFormComponent},
     {path: '/actas/', name: 'AdminActas', component: ActaListComponent},
     {path: '/actas/nueva/', name: 'AdminActaNew', component: ActaFormComponent},
     {path: '/acta/:id', name: 'AdminActaView', component: ActaDetailComponent},
+    {path: '/acta/edit/:id', name: 'AdminActaEdit', component: ActaFormComponent},
     
 ])
 

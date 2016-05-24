@@ -3,13 +3,15 @@ import {Observable} from 'rxjs/Observable';
 import {withObserver} from '../utils';
 import {Http, Response} from 'angular2/http';
 import 'rxjs/Rx';
+import {User} from '../index/login.service';
+import {Concejal} from '../index/login.service';
 
 export class Propuesta {
 
     id?: number;
-    creador: string;
+    creador: User;
     aprobada: boolean;
-    concejal: string;
+    concejal: Concejal;
     firmantes: User[];
     titulo: string;
     contenido: string;
