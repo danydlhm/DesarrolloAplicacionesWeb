@@ -10,25 +10,25 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Nick de Usuario:</label>
                                     <div class="col-xs-9">
-                                        <input type="text" class="form-control" id="nick" placeholder="nick">
+                                        <input #nick type="text" class="form-control" id="nick" placeholder="nick">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Nombre y Apellidos:</label>
                                     <div class="col-xs-9">
-                                        <input type="text" class="form-control" placeholder="Nombre">
+                                        <input #name type="text" class="form-control" placeholder="Nombre">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Password:</label>
                                     <div class="col-xs-9">
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        <input #pass type="password" class="form-control" id="inputPassword" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Confirmar Password:</label>
                                     <div class="col-xs-9">
-                                        <input type="password" class="form-control" placeholder="Confirmar Password">
+                                        <input #pass2 type="password" class="form-control" placeholder="Confirmar Password"><icon ngIf="pass != pass2"></icon>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -48,7 +48,7 @@
                                 <div class="form-group">
                                     <div class="col-xs-offset-3 col-xs-9">
                                         <button class="btn btn-primary" (click)="cancel()">Cancelar</button>
-                                        <button class="btn btn-primary" (click)="save()">Enviar</button>
+                                        <button type="submit" (click)="logIn($event,nick.value,name.value,pass.value,pass2.value)" class="btn btn-primary" id="botonRegistro">Entrar</button>
                                     </div>
                                 </div>
                             </form>
