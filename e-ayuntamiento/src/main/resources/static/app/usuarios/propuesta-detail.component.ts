@@ -60,10 +60,7 @@ export class PropuestaDetailComponent {
     }
 
     gotoPropuestas() {
-        this.service.updatePropuesta(this.propuesta).subscribe(
-        propuestas => this.router.navigate(['PropuestaList']),
-        error => console.log(error)
-      );
+        this.router.navigate(['PropuestaList']);
     }
     
     addP() {

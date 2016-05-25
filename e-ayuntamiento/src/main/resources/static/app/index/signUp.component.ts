@@ -16,25 +16,26 @@ export class SignUpComponent{
   subido: boolean;
   user: User;
   foto: String;
-  pass1: Sring;
-  pass3: String;
+  pass: String;
+  pass2: String
   
   constructor(private router:Router, private loginService: LoginService){
-        this.pass1 = "";
-        this.pass3 = "";
+        this.pass = "";
+        this.pass2 = "";
   }
     
-    signUp(event: any, nick: string, name: String, pass: string, pass2: String){
+    signUp(event: any, nick: string, name: String){
 	  
 	  event.preventDefault();
-	  if(pass == pass2){
-	  this.loginService.signUp(nick, name, pass, this.foto).subscribe(
-	      user => this.loginService.logIn(nick, pass).subscribe(
-	      response => this.router.navigate(['Ciudadano']),
-	      error => alert("Invalid user or password")
-      ),
+	  if(this.pass == this.pass2){
+	  this.loginService.signUp(nick, name, this.pass, this.foto).subscribe(
+	      user => this.loginService.logIn(nick, this.pass).subscribe(
+	               response => this.router.navigate(['Ciudadano']),
+	               error => alert("Invalid user or password")
+          ),
 	      error => console.error('Error creating new user: '+error)
-      );}
+        );
+      }
     }
 
   cancel() {

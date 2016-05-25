@@ -83,7 +83,7 @@ public class LoginController {
 
 		User user = userRepository.findOne(id);
 		if (user != null) {
-			updatedUser.setPasswordHash(user.getPasswordHash());
+			updatedUser.setPass(user.getPasswordHash());
 			updatedUser.setId(id);
 			userRepository.save(updatedUser);
 

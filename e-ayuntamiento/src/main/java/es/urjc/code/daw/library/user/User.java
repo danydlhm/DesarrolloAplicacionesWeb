@@ -127,7 +127,7 @@ public class User {
 	}
 
 	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+		this.passwordHash = new BCryptPasswordEncoder().encode(passwordHash);
 	}
 
 	public List<String> getRoles() {
@@ -184,5 +184,9 @@ public class User {
 
 	public void setConcejal(Concejal concejal) {
 		this.concejal = concejal;
+	}
+	
+	public void setPass(String pass){
+		this.passwordHash = pass;
 	}
 }
