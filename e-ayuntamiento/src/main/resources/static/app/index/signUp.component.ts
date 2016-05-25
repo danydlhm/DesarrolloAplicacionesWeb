@@ -19,7 +19,10 @@ export class SignUpComponent{
   pass1: Sring;
   pass3: String;
   
-  constructor(private router:Router, private loginService: LoginService){}
+  constructor(private router:Router, private loginService: LoginService){
+        this.pass1 = "";
+        this.pass3 = "";
+  }
     
     signUp(event: any, nick: string, name: String, pass: string, pass2: String){
 	  
