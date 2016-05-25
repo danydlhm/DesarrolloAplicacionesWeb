@@ -16,6 +16,8 @@ export class SignUpComponent{
   subido: boolean;
   user: User;
   foto: String;
+  pass1: Sring;
+  pass3: String;
   
   constructor(private router:Router, private loginService: LoginService){}
     

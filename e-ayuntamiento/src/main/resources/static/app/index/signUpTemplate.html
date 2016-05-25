@@ -22,17 +22,17 @@
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Password:</label>
                                     <div class="col-xs-9">
-                                        <input #pass type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        <input #pass [(ngModel)]="pass1" type="password" class="form-control" id="inputPassword" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-xs-3">Confirmar Password:</label>
                                     <div class="col-xs-9">
-                                        <input #pass2 type="password" class="form-control" placeholder="Confirmar Password">
-                                        <div *ngIf="pass.value == pass2.value">
+                                        <input #pass2 [(ngModel)]="pass3" type="password" class="form-control" placeholder="Confirmar Password">
+                                        <div *ngIf="pass1 === pass3 && pass1 !== '' && pass1">
                                             <span class="glyphicon glyphicon-ok" style="color:#00ff83"></span>
                                         </div>
-                                        <div *ngIf="pass.value != pass2.value">
+                                        <div *ngIf="pass1 !== pass3 && pass1 !== '' && pass1">
                                             <span class="glyphicon glyphicon-remove" style="color:#ff5a5f"></span>
                                         </div>
                                     </div>

@@ -8,5 +8,6 @@ import {ROUTER_DIRECTIVES, RouteParams, Router} from 'angular2/router';
 })
 
 export class NavigationComponent{
+    isCollap = true;
 
 }
